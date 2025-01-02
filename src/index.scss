@@ -1,0 +1,7 @@
+.bg-black {
+  background-color: #000;
+}
+
+body {
+  @apply bg-black;
+}
