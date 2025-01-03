@@ -1,5 +1,5 @@
 module.exports = {
     plugins: [
-        require('./src/postcss/plugin.ts')
+        require('./src/postcss/bootstrap')
     ]
 };
