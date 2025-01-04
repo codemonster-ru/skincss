@@ -37,4 +37,4 @@ const createApply = (root: any) => {
     });
 };
 
-exports.createApply = createApply;
+exports.create = createApply;

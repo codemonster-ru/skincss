@@ -1,12 +1,12 @@
-let classes = require('./classes');
-let apply = require('./apply');
+let apply = require('./declarations/apply');
+let codemonster = require('./declarations/codemonster');
 
 const plugin = () => {
     return {
         postcssPlugin: '${pluginName}',
         Once(root: any, { Rule }: any) {
-            classes.createClasses(root, { Rule });
-            apply.createApply(root);
+            apply.create(root);
+            codemonster.create(root, { Rule });
         },
     };
 };
