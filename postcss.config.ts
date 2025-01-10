@@ -1,5 +1,8 @@
-module.exports = {
+import bootstrap from './src/postcss/bootstrap';
+
+// noinspection JSUnusedGlobalSymbols
+export default {
     plugins: [
-        require('./src/postcss/bootstrap')
+        bootstrap
     ]
 };
