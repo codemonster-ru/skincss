@@ -1,15 +1,17 @@
-let apply = require('./declarations/apply');
-let codemonster = require('./declarations/codemonster');
+import { Root } from 'postcss';
+import apply from '@/postcss/declarations/apply';
+import codemonster from '@/postcss/declarations/codemonster';
 
-const plugin = () => {
+const plugin = (): { Once: (root: Root) => void, postcssPlugin: string } => {
     return {
-        postcssPlugin: '${pluginName}',
-        Once(root: any, { Rule }: any) {
-            apply.create(root);
-            codemonster.create(root, { Rule });
+        postcssPlugin: 'bootstrap',
+        'Once'(root: Root): void {
+            apply(root);
+            codemonster(root);
         },
     };
 };
 
-module.exports = plugin;
-module.exports.postcss = true;
+plugin.postcss = true;
+
+export default plugin;

@@ -1,23 +1,24 @@
-let base = require('../classes/base');
+import { Root, AtRule, ChildNode } from 'postcss';
+import base from '@/postcss/classes/base';
 
-const createCodemonster = (root: any, { Rule }: any) => {
-    root.walkAtRules('codemonster', (rule: any) => {
-        const classes = rule.params.toString().split(" ");
+export default (root: Root): void => {
+    root.walkAtRules('codemonster', (rule: AtRule): void => {
+        const classes: string[] = rule.params.toString().split(' ');
 
-        classes.forEach((selector: any) => {
+        classes.forEach((selector: string): void => {
             if (selector === 'base') {
-                base.createClasses(root, { Rule });
+                base(root);
             }
         });
 
-        const annotation = rule.prev();
+        const annotation: ChildNode | undefined = rule.prev();
 
-        if (annotation.type === 'comment' && annotation.text === 'noinspection CssInvalidAtRule') {
+        if (annotation !== undefined &&
+            annotation.type === 'comment' &&
+            annotation.text === 'noinspection CssInvalidAtRule') {
             annotation.remove();
         }
 
         rule.remove();
     });
 };
-
-exports.create = createCodemonster;

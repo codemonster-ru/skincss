@@ -1,6 +1,6 @@
 # @codemonster-ru/css
 
-Open source CSS library.
+Open source CSS framework.
 
 ## Author
 

@@ -1,7 +1,4 @@
 {
-    "env": {
-        "vue/setup-compiler-macros": true
-    },
     "root": true,
     "plugins": [
         "@typescript-eslint"
