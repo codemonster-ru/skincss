@@ -1,7 +1,8 @@
 {
     "name": "@codemonster-ru/css",
+    "type": "module",
     "version": "0.1.0",
-    "description": "Open source CSS library.",
+    "description": "Open source CSS framework.",
     "license": "MIT",
     "author": "Kirill Kolesnikov",
     "repository": {
@@ -45,7 +46,9 @@
         "prettier": "^3.3.2",
         "ts-node": "^10.9.2",
         "typescript": "^5.5.3",
-        "vite": "5.4.6",
-        "vite-plugin-dts": "^3.9.1"
+        "vite": "^6.0.7",
+        "vite-plugin-dts": "^3.9.1",
+        "tsx": "^4.19.2",
+        "jiti": "^2.4.2"
     }
 }

@@ -1,13 +1,15 @@
-const getDeclarationsForSelector = (selector: string, css: { walkRules: (arg0: (rule: any) => void) => void; }) => {
-    const decls: any[] = [];
+import { AtRule, Declaration, Root, Rule } from 'postcss';
 
-    css.walkRules(rule => {
-        let ruleHasSelector = rule.selectors.some((ruleSelector: string) => {
+const getDeclarationsForSelector = (selector: string, css: Root) => {
+    const decls: Declaration[] = [];
+
+    css.walkRules((rule: Rule): void => {
+        const ruleHasSelector: boolean = rule.selectors.some((ruleSelector: string): boolean => {
             return ruleSelector === selector;
         });
 
         if (ruleHasSelector) {
-            rule.walkDecls((decl: any) => {
+            rule.walkDecls((decl: Declaration): void => {
                 decls.push(decl);
             });
         }
@@ -16,25 +18,27 @@ const getDeclarationsForSelector = (selector: string, css: { walkRules: (arg0: (
     return decls;
 };
 
-const createApply = (root: any) => {
-    root.walkAtRules('apply', (rule: any) => {
-        const classes = rule.params.toString().replace(/\s/g, " ").split(" ");
+export default (root: Root): void => {
+    root.walkAtRules('apply', (rule: AtRule): void => {
 
-        classes.forEach((selector: any) => {
-            const decls = getDeclarationsForSelector(`.${selector}`, rule.root());
 
-            decls.forEach(decl => {
-                rule.parent.append({
-                    prop: decl.prop,
-                    value: decl.value ?? '',
-                    source: root.source,
-                    important: decl.important
-                });
+        const classes: string[] = rule.params.toString().replace(/\s/g, ' ').split(' ');
+
+        classes.forEach((selector: string): void => {
+            const decls: Declaration[] = getDeclarationsForSelector(`.${selector}`, rule.root());
+
+            decls.forEach((decl: Declaration): void => {
+                if (rule.parent !== undefined) {
+                    rule.parent.append({
+                        prop: decl.prop,
+                        value: decl.value ?? '',
+                        source: root.source,
+                        important: decl.important,
+                    });
+                }
             });
         });
 
         rule.remove();
     });
 };
-
-exports.create = createApply;
