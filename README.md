@@ -1,4 +1,4 @@
-# @codemonster-ru/css
+# MonsterCSS
 
 Open source CSS framework.
 
