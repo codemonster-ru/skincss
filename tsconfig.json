@@ -30,8 +30,11 @@
         }
     },
     "include": [
-        "./src/**/*",
+        "./src/**/*"
     ],
+    "ts-node": {
+        "esm": true
+    },
     "exclude": [
         "node_modules"
     ]

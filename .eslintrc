@@ -25,6 +25,7 @@
         "semi": [
             2,
             "always"
-        ]
+        ],
+        "@typescript-eslint/no-var-requires": "off"
     }
 }
