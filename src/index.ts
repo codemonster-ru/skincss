@@ -1,1 +1,1 @@
-export { default as monstercss } from '@/postcss/bootstrap';
+export { default as skincss } from '@/postcss/bootstrap';
