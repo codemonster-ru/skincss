@@ -2,7 +2,7 @@ import { Root, AtRule, ChildNode } from 'postcss';
 import base from '@/postcss/classes/base';
 
 export default (root: Root): void => {
-    root.walkAtRules('codemonster', (rule: AtRule): void => {
+    root.walkAtRules('skin', (rule: AtRule): void => {
         const classes: string[] = rule.params.toString().split(' ');
 
         classes.forEach((selector: string): void => {
