@@ -1,1 +1,1 @@
-export { default as skincss } from '@/postcss/bootstrap';
+export { default } from '@/postcss/bootstrap';

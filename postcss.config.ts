@@ -1,10 +1,10 @@
-import bootstrap from './src/postcss/bootstrap';
+import skincss from './src/index';
 import cssnano from 'cssnano';
 
 // noinspection JSUnusedGlobalSymbols
 export default {
     plugins: [
-        bootstrap,
+        skincss,
         cssnano,
     ],
 };
