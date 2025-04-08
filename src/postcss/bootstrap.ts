@@ -1,13 +1,13 @@
 import { Root } from 'postcss';
 import apply from '@/postcss/declarations/apply';
-import codemonster from '@/postcss/declarations/codemonster';
+import skin from '@/postcss/declarations/skin';
 
 const plugin = (): { Once: (root: Root) => void, postcssPlugin: string } => {
     return {
         postcssPlugin: 'bootstrap',
         'Once'(root: Root): void {
             apply(root);
-            codemonster(root);
+            skin(root);
         },
     };
 };

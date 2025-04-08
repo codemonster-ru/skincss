@@ -1,4 +1,4 @@
-# MonsterCSS
+# SkinCSS
 
 Open source CSS framework.
 
