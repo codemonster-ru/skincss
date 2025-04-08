@@ -40,8 +40,8 @@ export class ConfigClass {
                 const filePath: string = url.pathToFileURL(filename).href;
 
                 switch (file) {
-                case 'monstercss.config.ts':
-                case 'monstercss.config.js':
+                case 'skincss.config.ts':
+                case 'skincss.config.js':
                     this.config = await require(filePath).default as Config;
                     break;
                 }
@@ -50,7 +50,7 @@ export class ConfigClass {
             const error: ErrnoException = err as ErrnoException;
 
             if (error.code === 'ERR_MODULE_NOT_FOUND') {
-                console.log('Can\'t load monstercss.config!');
+                console.log('Can\'t load skincss.config!');
             }
         }
     }
