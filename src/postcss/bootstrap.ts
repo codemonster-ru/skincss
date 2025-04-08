@@ -4,7 +4,7 @@ import skin from '@/postcss/declarations/skin';
 
 const plugin = (): { Once: (root: Root) => void, postcssPlugin: string } => {
     return {
-        postcssPlugin: 'bootstrap',
+        postcssPlugin: 'skincss',
         'Once'(root: Root): void {
             apply(root);
             skin(root);
