@@ -1,7 +1,7 @@
 {
     "name": "@codemonster-ru/skincss",
     "type": "module",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Open source CSS framework.",
     "license": "MIT",
     "author": "Kirill Kolesnikov",
@@ -16,6 +16,7 @@
     "exports": {
         ".": {
             "import": {
+                "style": "./dist/index.css",
                 "types": "./dist/index.d.mts",
                 "default": "./dist/index.ts.mjs"
             },
