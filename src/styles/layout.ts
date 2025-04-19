@@ -3,6 +3,7 @@ import float from './layout/float';
 import columns from './layout/columns';
 import display from './layout/display';
 import overflow from './layout/overflow';
+import position from './layout/position';
 import objectFit from './layout/objectFit';
 import isolation from './layout/isolation';
 import boxSizing from './layout/boxSizing';
@@ -20,6 +21,7 @@ export default {
     columns,
     display,
     overflow,
+    position,
     objectFit,
     isolation,
     boxSizing,
