@@ -3,6 +3,7 @@ import breakAfter from './layout/breakAfter';
 import breakBefore from './layout/breakBefore';
 import breakInside from './layout/breakInside';
 import aspectRatio from './layout/aspectRatio';
+import boxDecorationBreak from './layout/boxDecorationBreak';
 
 export default {
     columns,
@@ -10,4 +11,5 @@ export default {
     breakBefore,
     breakInside,
     aspectRatio,
+    boxDecorationBreak,
 };
