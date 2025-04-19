@@ -1,3 +1,4 @@
+import clear from './layout/clear';
 import float from './layout/float';
 import columns from './layout/columns';
 import display from './layout/display';
@@ -10,6 +11,7 @@ import boxDecorationBreak from './layout/boxDecorationBreak';
 
 export default {
     float,
+    clear,
     columns,
     display,
     boxSizing,
