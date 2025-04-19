@@ -83,13 +83,20 @@ export class ConfigClass {
 
     needIncludeDeepStyles(variant: string): boolean {
         const variantValue = variant as keyof typeof this.config.styles;
+        console.log(this.config);
 
         if (this.config.styles === undefined) {
+            console.log(1);
+
             return false;
         }
 
         if (this.config.styles[variantValue] !== undefined) {
+            console.log(2);
+
             if (this.config.styles[variantValue]) {
+                console.log(this.hasDeepProperty(`styles.${variant}`));
+
                 return this.hasDeepProperty(`styles.${variant}`) ? true : false;
             }
         }
