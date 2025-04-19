@@ -1,6 +1,6 @@
 import { Root } from 'postcss';
-import apply from '@/postcss/declarations/apply';
 import skin from '@/postcss/declarations/skin';
+import apply from '@/postcss/declarations/apply';
 
 const plugin = (): { Once: (root: Root) => void, postcssPlugin: string } => {
     return {
