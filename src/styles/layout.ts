@@ -1,5 +1,6 @@
 import clear from './layout/clear';
 import float from './layout/float';
+import zIndex from './layout/zIndex';
 import columns from './layout/columns';
 import display from './layout/display';
 import overflow from './layout/overflow';
@@ -20,6 +21,7 @@ import boxDecorationBreak from './layout/boxDecorationBreak';
 export default {
     float,
     clear,
+    zIndex,
     columns,
     display,
     overflow,
