@@ -2,6 +2,7 @@ import clear from './layout/clear';
 import float from './layout/float';
 import columns from './layout/columns';
 import display from './layout/display';
+import overflow from './layout/overflow';
 import objectFit from './layout/objectFit';
 import isolation from './layout/isolation';
 import boxSizing from './layout/boxSizing';
@@ -17,6 +18,7 @@ export default {
     clear,
     columns,
     display,
+    overflow,
     objectFit,
     isolation,
     boxSizing,
