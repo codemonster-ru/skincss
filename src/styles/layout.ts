@@ -12,6 +12,7 @@ import breakBefore from './layout/breakBefore';
 import breakInside from './layout/breakInside';
 import aspectRatio from './layout/aspectRatio';
 import objectPosition from './layout/objectPosition';
+import topRightBottomLeft from './layout/topRightBottomLeft';
 import overscrollBehavior from './layout/overscrollBehavior';
 import boxDecorationBreak from './layout/boxDecorationBreak';
 
@@ -30,6 +31,7 @@ export default {
     breakInside,
     aspectRatio,
     objectPosition,
+    topRightBottomLeft,
     overscrollBehavior,
     boxDecorationBreak,
 };
