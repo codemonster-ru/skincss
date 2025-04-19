@@ -1,7 +1,8 @@
 import { Root, Rule } from 'postcss';
 import styleBase from '@/styles/base';
-import { camelToSnakeCase } from '@/utils/helper';
+import styleLayout from '@/styles/layout';
 import { ConfigClass } from '@/utils/config';
+import { camelToSnakeCase } from '@/utils/helper';
 
 interface Property {
     [index: string]: string;
@@ -11,9 +12,17 @@ interface Style {
     [index: string]: Property;
 }
 
-export default async (root: Root): Promise<void> => {
-    const styles: Style = styleBase;
+export default async (root: Root, variant: string): Promise<void> => {
+    let styles: Style;
     const configClass: ConfigClass = new ConfigClass();
+
+    if (variant === 'base') {
+        styles = styleBase;
+    } else if (variant === 'layout') {
+        styles = styleLayout;
+    } else {
+        return;
+    }
 
     await configClass.init();
 
