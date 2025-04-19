@@ -2,6 +2,7 @@ import clear from './layout/clear';
 import float from './layout/float';
 import columns from './layout/columns';
 import display from './layout/display';
+import isolation from './layout/isolation';
 import boxSizing from './layout/boxSizing';
 import breakAfter from './layout/breakAfter';
 import breakBefore from './layout/breakBefore';
@@ -14,6 +15,7 @@ export default {
     clear,
     columns,
     display,
+    isolation,
     boxSizing,
     breakAfter,
     breakBefore,
