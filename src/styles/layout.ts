@@ -9,6 +9,7 @@ import breakAfter from './layout/breakAfter';
 import breakBefore from './layout/breakBefore';
 import breakInside from './layout/breakInside';
 import aspectRatio from './layout/aspectRatio';
+import objectPosition from './layout/objectPosition';
 import boxDecorationBreak from './layout/boxDecorationBreak';
 
 export default {
@@ -23,5 +24,6 @@ export default {
     breakBefore,
     breakInside,
     aspectRatio,
+    objectPosition,
     boxDecorationBreak,
 };
