@@ -26,7 +26,7 @@ export default async (root: Root, variant: string): Promise<void> => {
 
     await configClass.init();
 
-    if (configClass.needIncludeDeepStyles()) {
+    if (configClass.needIncludeDeepStyles(variant)) {
         Object.keys(styles).forEach((key: string) => {
             const properties: Property = styles[key];
             const rule: Rule = new Rule({

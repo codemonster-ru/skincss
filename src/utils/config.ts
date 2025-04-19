@@ -42,7 +42,7 @@ export class ConfigClass {
                 switch (file) {
                 case 'skincss.config.ts':
                 case 'skincss.config.js':
-                    this.config = await require(filePath).default as Config;
+                    this.config = (await require(filePath).default) as Config;
                     break;
                 }
             });
@@ -50,7 +50,7 @@ export class ConfigClass {
             const error: ErrnoException = err as ErrnoException;
 
             if (error.code === 'ERR_MODULE_NOT_FOUND') {
-                console.log('Can\'t load skincss.config!');
+                console.log("Can't load skincss.config!");
             }
         }
     }
@@ -81,7 +81,19 @@ export class ConfigClass {
         return result;
     }
 
-    needIncludeDeepStyles(): boolean {
-        return this.hasDeepProperty('styles.base') ? this.config.styles?.base === true : true;
+    needIncludeDeepStyles(variant: string): boolean {
+        const variantValue = variant as keyof typeof this.config.styles;
+
+        if (this.config.styles === undefined) {
+            return false;
+        }
+
+        if (this.config.styles[variantValue] !== undefined) {
+            if (this.config.styles[variantValue]) {
+                return this.hasDeepProperty(`styles.${variant}`) ? true : false;
+            }
+        }
+
+        return false;
     }
 }
