@@ -7,6 +7,7 @@ import position from './layout/position';
 import objectFit from './layout/objectFit';
 import isolation from './layout/isolation';
 import boxSizing from './layout/boxSizing';
+import visibility from './layout/visibility';
 import breakAfter from './layout/breakAfter';
 import breakBefore from './layout/breakBefore';
 import breakInside from './layout/breakInside';
@@ -26,6 +27,7 @@ export default {
     objectFit,
     isolation,
     boxSizing,
+    visibility,
     breakAfter,
     breakBefore,
     breakInside,
