@@ -1,14 +1,13 @@
 import connectionClasses from '@/postcss/classes';
 import { Root, AtRule, ChildNode } from 'postcss';
 
-export default (root: Root): void => {
-    root.walkAtRules('skin', (rule: AtRule): void => {
-        const classes: string[] = rule.params.toString().split(' ');
-        const annotation: ChildNode | undefined = rule.prev();
+export default async (root: Root): Promise<void> => {
+    const classes: string[] = [];
 
-        classes.forEach((selector: string): void => {
-            connectionClasses(root, selector);
-        });
+    root.walkAtRules('skin', (rule: AtRule) => {
+        classes.push(rule.params.toString());
+
+        const annotation: ChildNode | undefined = rule.prev();
 
         if (
             annotation !== undefined &&
@@ -20,4 +19,10 @@ export default (root: Root): void => {
 
         rule.remove();
     });
+
+    await Promise.all(
+        classes.map(async (selector: string): Promise<void> => {
+            await connectionClasses(root, selector);
+        }),
+    );
 };

@@ -6,16 +6,14 @@ import { fileURLToPath, URL } from 'url';
 export default defineConfig({
     plugins: [dts()],
     resolve: {
-        alias: [
-            { find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
-        ],
+        alias: [{ find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) }],
     },
     build: {
         emptyOutDir: true,
         cssCodeSplit: true,
         lib: {
             name: 'index',
-            entry: resolve(__dirname, './src/index.ts'),
+            entry: resolve('./', './src/index.ts'),
             fileName: 'index.ts',
             formats: ['es', 'umd'],
         },
