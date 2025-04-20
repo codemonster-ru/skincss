@@ -5,9 +5,9 @@ import apply from '@/postcss/declarations/apply';
 const plugin = (): { Once: (root: Root) => void, postcssPlugin: string } => {
     return {
         postcssPlugin: 'skincss',
-        'Once'(root: Root): void {
+        async 'Once'(root: Root): Promise<void> {
+            await skin(root);
             apply(root);
-            skin(root);
         },
     };
 };

@@ -13,8 +13,11 @@ interface Style {
 }
 
 export default async (root: Root, variant: string): Promise<void> => {
-    let styles: Style;
     const configClass: ConfigClass = new ConfigClass();
+
+    await configClass.init();
+
+    let styles: Style;
 
     if (variant === 'base') {
         styles = styleBase;
@@ -23,8 +26,6 @@ export default async (root: Root, variant: string): Promise<void> => {
     } else {
         return;
     }
-
-    await configClass.init();
 
     if (configClass.needIncludeDeepStyles(variant)) {
         Object.keys(styles).forEach((key: string) => {
