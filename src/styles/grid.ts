@@ -6,6 +6,7 @@ import flexGrow from './grid/flexGrow';
 import flexBasis from './grid/flexBasis';
 import flexShrink from './grid/flexShrink';
 import gridColumn from './grid/gridColumn';
+import justifySelf from './grid/justifySelf';
 import justifyItems from './grid/justifyItems';
 import gridAutoRows from './grid/gridAutoRows';
 import gridAutoFlow from './grid/gridAutoFlow';
@@ -25,6 +26,7 @@ export default {
     ...flexBasis,
     ...flexShrink,
     ...gridColumn,
+    ...justifySelf,
     ...justifyItems,
     ...gridAutoRows,
     ...gridAutoFlow,
