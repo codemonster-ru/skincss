@@ -2,6 +2,7 @@ import { Root, Rule } from 'postcss';
 import styleBase from '@/styles/base';
 import styleGrid from '@/styles/grid';
 import styleLayout from '@/styles/layout';
+import styleSpacing from '@/styles/spacing';
 import { ConfigClass } from '@/utils/config';
 import { camelToSnakeCase } from '@/utils/helper';
 
@@ -26,6 +27,8 @@ export default async (root: Root, variant: string): Promise<void> => {
         styles = styleGrid;
     } else if (variant === 'layout') {
         styles = styleLayout;
+    } else if (variant === 'spacing') {
+        styles = styleSpacing;
     } else {
         return;
     }
