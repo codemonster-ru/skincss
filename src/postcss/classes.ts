@@ -1,5 +1,6 @@
 import { Root, Rule } from 'postcss';
 import styleBase from '@/styles/base';
+import styleGrid from '@/styles/grid';
 import styleLayout from '@/styles/layout';
 import { ConfigClass } from '@/utils/config';
 import { camelToSnakeCase } from '@/utils/helper';
@@ -21,6 +22,8 @@ export default async (root: Root, variant: string): Promise<void> => {
 
     if (variant === 'base') {
         styles = styleBase;
+    } else if (variant === 'grid') {
+        styles = styleGrid;
     } else if (variant === 'layout') {
         styles = styleLayout;
     } else {
