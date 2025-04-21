@@ -2,6 +2,7 @@ import flex from './grid/flex';
 import flexWrap from './grid/flexWrap';
 import flexGrow from './grid/flexGrow';
 import flexBasis from './grid/flexBasis';
+import flexShrink from './grid/flexShrink';
 import flexDirection from './grid/flexDirection';
 
 export default {
@@ -9,5 +10,6 @@ export default {
     ...flexWrap,
     ...flexGrow,
     ...flexBasis,
+    ...flexShrink,
     ...flexDirection,
 };
