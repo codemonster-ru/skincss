@@ -12,6 +12,7 @@ import justifySelf from './grid/justifySelf';
 import alignContent from './grid/alignContent';
 import justifyItems from './grid/justifyItems';
 import gridAutoRows from './grid/gridAutoRows';
+import placeContent from './grid/placeContent';
 import gridAutoFlow from './grid/gridAutoFlow';
 import flexDirection from './grid/flexDirection';
 import justifyContent from './grid/justifyContent';
@@ -35,6 +36,7 @@ export default {
     ...alignContent,
     ...justifyItems,
     ...gridAutoRows,
+    ...placeContent,
     ...gridAutoFlow,
     ...flexDirection,
     ...justifyContent,
