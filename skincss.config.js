@@ -4,5 +4,6 @@ export default {
         base: true,
         grid: true,
         layout: true,
+        spacing: true,
     },
 };
