@@ -4,6 +4,7 @@ import flexWrap from './grid/flexWrap';
 import flexGrow from './grid/flexGrow';
 import flexBasis from './grid/flexBasis';
 import flexShrink from './grid/flexShrink';
+import gridColumn from './grid/gridColumn';
 import flexDirection from './grid/flexDirection';
 import gridTemplateColumns from './grid/gridTemplateColumns';
 
@@ -14,6 +15,7 @@ export default {
     ...flexGrow,
     ...flexBasis,
     ...flexShrink,
+    ...gridColumn,
     ...flexDirection,
     ...gridTemplateColumns,
 };
