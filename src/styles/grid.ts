@@ -6,6 +6,7 @@ import flexBasis from './grid/flexBasis';
 import flexShrink from './grid/flexShrink';
 import gridColumn from './grid/gridColumn';
 import flexDirection from './grid/flexDirection';
+import gridTemplateRows from './grid/gridTemplateRows';
 import gridTemplateColumns from './grid/gridTemplateColumns';
 
 export default {
@@ -17,5 +18,6 @@ export default {
     ...flexShrink,
     ...gridColumn,
     ...flexDirection,
+    ...gridTemplateRows,
     ...gridTemplateColumns,
 };
