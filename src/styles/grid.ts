@@ -9,11 +9,13 @@ import gridColumn from './grid/gridColumn';
 import gridAutoRows from './grid/gridAutoRows';
 import gridAutoFlow from './grid/gridAutoFlow';
 import flexDirection from './grid/flexDirection';
+import justifyContent from './grid/justifyContent';
 import gridAutoColumns from './grid/gridAutoColumns';
 import gridTemplateRows from './grid/gridTemplateRows';
 import gridTemplateColumns from './grid/gridTemplateColumns';
 
 export default {
+    // TODO: gap
     ...flex,
     ...order,
     ...gridRow,
@@ -25,6 +27,7 @@ export default {
     ...gridAutoRows,
     ...gridAutoFlow,
     ...flexDirection,
+    ...justifyContent,
     ...gridAutoColumns,
     ...gridTemplateRows,
     ...gridTemplateColumns,
