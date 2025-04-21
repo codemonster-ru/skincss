@@ -8,6 +8,7 @@ import flexShrink from './grid/flexShrink';
 import gridColumn from './grid/gridColumn';
 import gridAutoFlow from './grid/gridAutoFlow';
 import flexDirection from './grid/flexDirection';
+import gridAutoColumns from './grid/gridAutoColumns';
 import gridTemplateRows from './grid/gridTemplateRows';
 import gridTemplateColumns from './grid/gridTemplateColumns';
 
@@ -22,6 +23,7 @@ export default {
     ...gridColumn,
     ...gridAutoFlow,
     ...flexDirection,
+    ...gridAutoColumns,
     ...gridTemplateRows,
     ...gridTemplateColumns,
 };
