@@ -3,6 +3,7 @@ import height from './sizing/height';
 import minWidth from './sizing/minWidth';
 import maxWidth from './sizing/maxWidth';
 import minHeight from './sizing/minHeight';
+import maxHeight from './sizing/maxHeight';
 
 export default {
     ...width,
@@ -10,4 +11,5 @@ export default {
     ...minWidth,
     ...maxWidth,
     ...minHeight,
+    ...maxHeight,
 };
