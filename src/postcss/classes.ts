@@ -1,6 +1,7 @@
 import { Root, Rule } from 'postcss';
 import styleBase from '@/styles/base';
 import styleGrid from '@/styles/grid';
+import styleSizing from '@/styles/sizing';
 import styleLayout from '@/styles/layout';
 import styleSpacing from '@/styles/spacing';
 import { ConfigClass } from '@/utils/config';
@@ -25,6 +26,8 @@ export default async (root: Root, variant: string): Promise<void> => {
         styles = styleBase;
     } else if (variant === 'grid') {
         styles = styleGrid;
+    } else if (variant === 'sizing') {
+        styles = styleSizing;
     } else if (variant === 'layout') {
         styles = styleLayout;
     } else if (variant === 'spacing') {
