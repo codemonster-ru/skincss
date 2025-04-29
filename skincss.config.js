@@ -5,5 +5,6 @@ export default {
         sizing: true,
         layout: true,
         spacing: true,
+        typography: true,
     },
 };
