@@ -48,11 +48,12 @@ export default async (root: Root, variant: string): Promise<void> => {
             });
 
             Object.keys(properties).forEach((index: string) => {
-                const property: string = properties[index];
+                const prop: string = index.includes('-') ? index : camelToSnakeCase(index);
+                const value: string = properties[index];
 
                 rule.append({
-                    prop: camelToSnakeCase(index),
-                    value: property,
+                    prop: prop,
+                    value: value,
                     source: root.source,
                 });
             });
