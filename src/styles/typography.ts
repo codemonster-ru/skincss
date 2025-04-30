@@ -1,3 +1,4 @@
+import color from './typography/color';
 import fontFamily from './typography/fontFamily';
 import fontSize from './typography/fontSize';
 import fontSmoothing from './typography/fontSmoothing';
@@ -14,6 +15,7 @@ import listStyleType from './typography/listStyleType';
 import textAlign from './typography/textAlign';
 
 export default {
+    ...color,
     ...fontFamily,
     ...fontSize,
     ...fontSmoothing,
