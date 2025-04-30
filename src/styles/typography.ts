@@ -13,6 +13,7 @@ import listStyleImage from './typography/listStyleImage';
 import listStylePosition from './typography/listStylePosition';
 import listStyleType from './typography/listStyleType';
 import textAlign from './typography/textAlign';
+import textDecorationLine from './typography/textDecorationLine';
 
 export default {
     ...color,
@@ -30,4 +31,5 @@ export default {
     ...listStylePosition,
     ...listStyleType,
     ...textAlign,
+    ...textDecorationLine,
 };
