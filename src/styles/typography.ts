@@ -9,6 +9,7 @@ import letterSpacing from './typography/letterSpacing';
 import lineClamp from './typography/lineClamp';
 import lineHeight from './typography/lineHeight';
 import listStyleImage from './typography/listStyleImage';
+import listStylePosition from './typography/listStylePosition';
 
 export default {
     ...fontFamily,
@@ -22,4 +23,5 @@ export default {
     ...lineClamp,
     ...lineHeight,
     ...listStyleImage,
+    ...listStylePosition,
 };
