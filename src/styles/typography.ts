@@ -10,6 +10,7 @@ import lineClamp from './typography/lineClamp';
 import lineHeight from './typography/lineHeight';
 import listStyleImage from './typography/listStyleImage';
 import listStylePosition from './typography/listStylePosition';
+import listStyleType from './typography/listStyleType';
 
 export default {
     ...fontFamily,
@@ -24,4 +25,5 @@ export default {
     ...lineHeight,
     ...listStyleImage,
     ...listStylePosition,
+    ...listStyleType,
 };
