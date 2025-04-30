@@ -11,6 +11,7 @@ import lineHeight from './typography/lineHeight';
 import listStyleImage from './typography/listStyleImage';
 import listStylePosition from './typography/listStylePosition';
 import listStyleType from './typography/listStyleType';
+import textAlign from './typography/textAlign';
 
 export default {
     ...fontFamily,
@@ -26,4 +27,5 @@ export default {
     ...listStyleImage,
     ...listStylePosition,
     ...listStyleType,
+    ...textAlign,
 };
