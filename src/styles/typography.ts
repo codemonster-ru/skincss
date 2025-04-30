@@ -7,6 +7,7 @@ import fontVariantNumeric from './typography/fontVariantNumeric';
 import fontWeight from './typography/fontWeight';
 import letterSpacing from './typography/letterSpacing';
 import lineClamp from './typography/lineClamp';
+import lineHeight from './typography/lineHeight';
 
 export default {
     ...fontFamily,
@@ -18,4 +19,5 @@ export default {
     ...fontWeight,
     ...letterSpacing,
     ...lineClamp,
+    ...lineHeight,
 };
