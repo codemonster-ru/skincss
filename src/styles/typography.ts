@@ -5,6 +5,7 @@ import fontStretch from './typography/fontStretch';
 import fontStyle from './typography/fontStyle';
 import fontVariantNumeric from './typography/fontVariantNumeric';
 import fontWeight from './typography/fontWeight';
+import letterSpacing from './typography/letterSpacing';
 
 export default {
     ...fontFamily,
@@ -14,4 +15,5 @@ export default {
     ...fontStyle,
     ...fontVariantNumeric,
     ...fontWeight,
+    ...letterSpacing,
 };
