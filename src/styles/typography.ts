@@ -17,6 +17,7 @@ import textDecorationColor from './typography/textDecorationColor';
 import textDecorationLine from './typography/textDecorationLine';
 import textDecorationStyle from './typography/textDecorationStyle';
 import textDecorationThickness from './typography/textDecorationThickness';
+import textUnderlineOffset from './typography/textUnderlineOffset';
 
 export default {
     ...color,
@@ -38,4 +39,5 @@ export default {
     ...textDecorationLine,
     ...textDecorationStyle,
     ...textDecorationThickness,
+    ...textUnderlineOffset,
 };
