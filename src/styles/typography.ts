@@ -24,6 +24,7 @@ import textUnderlineOffset from './typography/textUnderlineOffset';
 import textWrap from './typography/textWrap';
 import verticalAlign from './typography/verticalAlign';
 import whiteSpace from './typography/whiteSpace';
+import wordBreak from './typography/wordBreak';
 
 export default {
     ...color,
@@ -52,4 +53,5 @@ export default {
     ...textWrap,
     ...verticalAlign,
     ...whiteSpace,
+    ...wordBreak,
 };
