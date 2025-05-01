@@ -7,5 +7,6 @@ export default {
         spacing: true,
         typography: true,
         background: true,
+        border: true,
     },
 };

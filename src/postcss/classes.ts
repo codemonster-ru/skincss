@@ -6,6 +6,7 @@ import styleLayout from '@/styles/layout';
 import styleSpacing from '@/styles/spacing';
 import styleTypography from '@/styles/typography';
 import styleBackground from '@/styles/backgrounds';
+import styleBorder from '@/styles/borders';
 import { ConfigClass } from '@/utils/config';
 import { camelToSnakeCase } from '@/utils/helper';
 
@@ -38,6 +39,8 @@ export default async (root: Root, variant: string): Promise<void> => {
         styles = styleTypography;
     } else if (variant === 'background') {
         styles = styleBackground;
+    } else if (variant === 'border') {
+        styles = styleBorder;
     } else {
         return;
     }
