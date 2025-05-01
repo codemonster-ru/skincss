@@ -22,6 +22,7 @@ import textOverflow from './typography/textOverflow';
 import textTransform from './typography/textTransform';
 import textUnderlineOffset from './typography/textUnderlineOffset';
 import textWrap from './typography/textWrap';
+import verticalAlign from './typography/verticalAlign';
 
 export default {
     ...color,
@@ -48,4 +49,5 @@ export default {
     ...textTransform,
     ...textUnderlineOffset,
     ...textWrap,
+    ...verticalAlign,
 };
