@@ -23,6 +23,7 @@ import textTransform from './typography/textTransform';
 import textUnderlineOffset from './typography/textUnderlineOffset';
 import textWrap from './typography/textWrap';
 import verticalAlign from './typography/verticalAlign';
+import whiteSpace from './typography/whiteSpace';
 
 export default {
     ...color,
@@ -50,4 +51,5 @@ export default {
     ...textUnderlineOffset,
     ...textWrap,
     ...verticalAlign,
+    ...whiteSpace,
 };
