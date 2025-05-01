@@ -20,6 +20,7 @@ import textDecorationThickness from './typography/textDecorationThickness';
 import textOverflow from './typography/textOverflow';
 import textTransform from './typography/textTransform';
 import textUnderlineOffset from './typography/textUnderlineOffset';
+import textWrap from './typography/textWrap';
 
 export default {
     ...color,
@@ -44,4 +45,5 @@ export default {
     ...textOverflow,
     ...textTransform,
     ...textUnderlineOffset,
+    ...textWrap,
 };
