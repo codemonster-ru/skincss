@@ -16,6 +16,7 @@ import textAlign from './typography/textAlign';
 import textDecorationColor from './typography/textDecorationColor';
 import textDecorationLine from './typography/textDecorationLine';
 import textDecorationStyle from './typography/textDecorationStyle';
+import textDecorationThickness from './typography/textDecorationThickness';
 
 export default {
     ...color,
@@ -36,4 +37,5 @@ export default {
     ...textDecorationColor,
     ...textDecorationLine,
     ...textDecorationStyle,
+    ...textDecorationThickness,
 };
