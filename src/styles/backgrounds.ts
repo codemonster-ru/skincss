@@ -4,6 +4,7 @@ import backgroundColor from './backgrounds/backgroundColor';
 import backgroundImage from './backgrounds/backgroundImage';
 import backgroundOrigin from './backgrounds/backgroundOrigin';
 import backgroundPosition from './backgrounds/backgroundPosition';
+import backgroundRepeat from './backgrounds/backgroundRepeat';
 
 export default {
     ...backgroundAttachment,
@@ -12,4 +13,5 @@ export default {
     ...backgroundImage,
     ...backgroundOrigin,
     ...backgroundPosition,
+    ...backgroundRepeat,
 };
