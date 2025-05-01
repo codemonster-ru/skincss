@@ -1,4 +1,5 @@
 import color from './typography/color';
+import content from './typography/content';
 import fontFamily from './typography/fontFamily';
 import fontSize from './typography/fontSize';
 import fontSmoothing from './typography/fontSmoothing';
@@ -30,6 +31,7 @@ import wordBreak from './typography/wordBreak';
 
 export default {
     ...color,
+    ...content,
     ...fontFamily,
     ...fontSize,
     ...fontSmoothing,
