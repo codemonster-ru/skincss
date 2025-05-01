@@ -3,6 +3,7 @@ import borderRadius from './borders/borderRadius';
 import borderStyle from './borders/borderStyle';
 import borderWidth from './borders/borderWidth';
 import outlineColor from './borders/outlineColor';
+import outlineStyle from './borders/outlineStyle';
 import outlineWidth from './borders/outlineWidth';
 
 export default {
@@ -11,5 +12,6 @@ export default {
     ...borderStyle,
     ...borderWidth,
     ...outlineColor,
+    ...outlineStyle,
     ...outlineWidth,
 };
