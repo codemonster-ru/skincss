@@ -12,6 +12,7 @@ import lineHeight from './typography/lineHeight';
 import listStyleImage from './typography/listStyleImage';
 import listStylePosition from './typography/listStylePosition';
 import listStyleType from './typography/listStyleType';
+import overflowWrap from './typography/overflowWrap';
 import textAlign from './typography/textAlign';
 import textDecorationColor from './typography/textDecorationColor';
 import textDecorationLine from './typography/textDecorationLine';
@@ -41,6 +42,7 @@ export default {
     ...listStyleImage,
     ...listStylePosition,
     ...listStyleType,
+    ...overflowWrap,
     ...textAlign,
     ...textDecorationColor,
     ...textDecorationLine,
