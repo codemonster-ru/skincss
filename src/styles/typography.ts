@@ -6,6 +6,7 @@ import fontStretch from './typography/fontStretch';
 import fontStyle from './typography/fontStyle';
 import fontVariantNumeric from './typography/fontVariantNumeric';
 import fontWeight from './typography/fontWeight';
+import hyphens from './typography/hyphens';
 import letterSpacing from './typography/letterSpacing';
 import lineClamp from './typography/lineClamp';
 import lineHeight from './typography/lineHeight';
@@ -36,6 +37,7 @@ export default {
     ...fontStyle,
     ...fontVariantNumeric,
     ...fontWeight,
+    ...hyphens,
     ...letterSpacing,
     ...lineClamp,
     ...lineHeight,
