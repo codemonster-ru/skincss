@@ -8,6 +8,7 @@ import maskOrigin from './effects/maskOrigin';
 import maskPosition from './effects/maskPosition';
 import maskRepeat from './effects/maskRepeat';
 import maskSize from './effects/maskSize';
+import maskType from './effects/maskType';
 import mixBlendMode from './effects/mixBlendMode';
 import opacity from './effects/opacity';
 import textShadow from './effects/textShadow';
@@ -23,6 +24,7 @@ export default {
     ...maskPosition,
     ...maskRepeat,
     ...maskSize,
+    ...maskType,
     ...mixBlendMode,
     ...opacity,
     ...textShadow,
