@@ -6,6 +6,7 @@ import scale from './transforms/scale';
 import skew from './transforms/skew';
 import transform from './transforms/transform';
 import transformOrigin from './transforms/transformOrigin';
+import transformStyle from './transforms/transformStyle';
 
 export default {
     ...backfaceVisibility,
@@ -16,4 +17,5 @@ export default {
     ...skew,
     ...transform,
     ...transformOrigin,
+    ...transformStyle,
 };
