@@ -6,6 +6,7 @@ import cursor from './interactivity/cursor';
 import fieldSizing from './interactivity/fieldSizing';
 import pointerEvents from './interactivity/pointerEvents';
 import resize from './interactivity/resize';
+import scrollBehavior from './interactivity/scrollBehavior';
 
 export default {
     ...accentColor,
@@ -16,4 +17,5 @@ export default {
     ...fieldSizing,
     ...pointerEvents,
     ...resize,
+    ...scrollBehavior,
 };
