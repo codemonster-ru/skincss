@@ -3,6 +3,7 @@ import brightness from './filters/filter/brightness';
 import contrast from './filters/filter/contrast';
 import dropShadow from './filters/filter/dropShadow';
 import grayscale from './filters/filter/grayscale';
+import hueRotate from './filters/filter/hueRotate';
 
 export default {
     ...blur,
@@ -10,4 +11,5 @@ export default {
     ...contrast,
     ...dropShadow,
     ...grayscale,
+    ...hueRotate,
 };
