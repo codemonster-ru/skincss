@@ -14,6 +14,7 @@ import styleTransition from '@/styles/transitions';
 import styleTransform from '@/styles/transforms';
 import styleInteractivity from '@/styles/interactivity';
 import styleSvg from '@/styles/svg';
+import styleAccessibility from '@/styles/accessibility';
 import { ConfigClass } from '@/utils/config';
 import { camelToSnakeCase } from '@/utils/helper';
 
@@ -62,6 +63,8 @@ export default async (root: Root, variant: string): Promise<void> => {
         styles = styleInteractivity;
     } else if (variant === 'svg') {
         styles = styleSvg;
+    } else if (variant === 'accessibility') {
+        styles = styleAccessibility;
     } else {
         return;
     }
