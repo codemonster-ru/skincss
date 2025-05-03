@@ -5,6 +5,7 @@ import maskComposite from './effects/maskComposite';
 import maskImage from './effects/maskImage';
 import maskMode from './effects/maskMode';
 import maskOrigin from './effects/maskOrigin';
+import maskPosition from './effects/maskPosition';
 import mixBlendMode from './effects/mixBlendMode';
 import opacity from './effects/opacity';
 import textShadow from './effects/textShadow';
@@ -17,6 +18,7 @@ export default {
     ...maskImage,
     ...maskMode,
     ...maskOrigin,
+    ...maskPosition,
     ...mixBlendMode,
     ...opacity,
     ...textShadow,
