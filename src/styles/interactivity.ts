@@ -8,6 +8,7 @@ import pointerEvents from './interactivity/pointerEvents';
 import resize from './interactivity/resize';
 import scrollBehavior from './interactivity/scrollBehavior';
 import scrollMargin from './interactivity/scrollMargin';
+import scrollPadding from './interactivity/scrollPadding';
 
 export default {
     ...accentColor,
@@ -20,4 +21,5 @@ export default {
     ...resize,
     ...scrollBehavior,
     ...scrollMargin,
+    ...scrollPadding,
 };
