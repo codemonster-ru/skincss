@@ -12,5 +12,6 @@ export default {
         filter: true,
         table: true,
         transition: true,
+        transform: true,
     },
 };
