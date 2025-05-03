@@ -17,6 +17,7 @@ import backdropFilterGrayscale from './filters/backdropFilter/grayscale';
 import backdropFilterHueRotate from './filters/backdropFilter/hueRotate';
 import backdropFilterInvert from './filters/backdropFilter/invert';
 import backdropFilterOpacity from './filters/backdropFilter/opacity';
+import backdropFilterSaturate from './filters/backdropFilter/saturate';
 
 export default {
     // filter
@@ -37,4 +38,5 @@ export default {
     ...backdropFilterHueRotate,
     ...backdropFilterInvert,
     ...backdropFilterOpacity,
+    ...backdropFilterSaturate,
 };
