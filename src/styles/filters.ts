@@ -12,6 +12,7 @@ import sepia from './filters/filter/sepia';
 // backdrop filter
 import backdropFilterBlur from './filters/backdropFilter/blur';
 import backdropFilterBrightness from './filters/backdropFilter/brightness';
+import backdropFilterContrast from './filters/backdropFilter/brightness';
 
 export default {
     // filter
@@ -27,4 +28,5 @@ export default {
     // backdrop filter
     ...backdropFilterBlur,
     ...backdropFilterBrightness,
+    ...backdropFilterContrast,
 };
