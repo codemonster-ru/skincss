@@ -3,6 +3,7 @@ import appearance from './interactivity/appearance';
 import caretColor from './interactivity/caretColor';
 import colorScheme from './interactivity/colorScheme';
 import cursor from './interactivity/cursor';
+import fieldSizing from './interactivity/fieldSizing';
 
 export default {
     ...accentColor,
@@ -10,4 +11,5 @@ export default {
     ...caretColor,
     ...colorScheme,
     ...cursor,
+    ...fieldSizing,
 };
