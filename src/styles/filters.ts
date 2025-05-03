@@ -6,6 +6,7 @@ import grayscale from './filters/filter/grayscale';
 import hueRotate from './filters/filter/hueRotate';
 import invert from './filters/filter/invert';
 import saturate from './filters/filter/saturate';
+import sepia from './filters/filter/sepia';
 
 export default {
     ...blur,
@@ -16,4 +17,5 @@ export default {
     ...hueRotate,
     ...invert,
     ...saturate,
+    ...sepia,
 };
