@@ -12,6 +12,7 @@ import scrollPadding from './interactivity/scrollPadding';
 import scrollSnapAlign from './interactivity/scrollSnapAlign';
 import scrollSnapStop from './interactivity/scrollSnapStop';
 import scrollSnapType from './interactivity/scrollSnapType';
+import selectNone from './interactivity/selectNone';
 import touchAction from './interactivity/touchAction';
 
 export default {
@@ -29,5 +30,6 @@ export default {
     ...scrollSnapAlign,
     ...scrollSnapStop,
     ...scrollSnapType,
+    ...selectNone,
     ...touchAction,
 };
