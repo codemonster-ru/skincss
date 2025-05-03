@@ -10,6 +10,7 @@ import styleBorder from '@/styles/borders';
 import styleEffect from '@/styles/effects';
 import styleFilter from '@/styles/filters';
 import styleTable from '@/styles/tables';
+import styleTransition from '@/styles/transitions';
 import { ConfigClass } from '@/utils/config';
 import { camelToSnakeCase } from '@/utils/helper';
 
@@ -50,6 +51,8 @@ export default async (root: Root, variant: string): Promise<void> => {
         styles = styleFilter;
     } else if (variant === 'table') {
         styles = styleTable;
+    } else if (variant === 'transition') {
+        styles = styleTransition;
     } else {
         return;
     }
