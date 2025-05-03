@@ -13,5 +13,6 @@ export default {
         table: true,
         transition: true,
         transform: true,
+        interactivity: true,
     },
 };
