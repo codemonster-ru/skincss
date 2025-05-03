@@ -5,6 +5,7 @@ import colorScheme from './interactivity/colorScheme';
 import cursor from './interactivity/cursor';
 import fieldSizing from './interactivity/fieldSizing';
 import pointerEvents from './interactivity/pointerEvents';
+import resize from './interactivity/resize';
 
 export default {
     ...accentColor,
@@ -14,4 +15,5 @@ export default {
     ...cursor,
     ...fieldSizing,
     ...pointerEvents,
+    ...resize,
 };
