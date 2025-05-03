@@ -4,6 +4,7 @@ import caretColor from './interactivity/caretColor';
 import colorScheme from './interactivity/colorScheme';
 import cursor from './interactivity/cursor';
 import fieldSizing from './interactivity/fieldSizing';
+import pointerEvents from './interactivity/pointerEvents';
 
 export default {
     ...accentColor,
@@ -12,4 +13,5 @@ export default {
     ...colorScheme,
     ...cursor,
     ...fieldSizing,
+    ...pointerEvents,
 };
