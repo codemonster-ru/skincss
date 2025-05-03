@@ -9,6 +9,7 @@ import resize from './interactivity/resize';
 import scrollBehavior from './interactivity/scrollBehavior';
 import scrollMargin from './interactivity/scrollMargin';
 import scrollPadding from './interactivity/scrollPadding';
+import scrollSnapAlign from './interactivity/scrollSnapAlign';
 
 export default {
     ...accentColor,
@@ -22,4 +23,5 @@ export default {
     ...scrollBehavior,
     ...scrollMargin,
     ...scrollPadding,
+    ...scrollSnapAlign,
 };
