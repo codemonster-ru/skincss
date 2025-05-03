@@ -5,6 +5,7 @@ import dropShadow from './filters/filter/dropShadow';
 import grayscale from './filters/filter/grayscale';
 import hueRotate from './filters/filter/hueRotate';
 import invert from './filters/filter/invert';
+import saturate from './filters/filter/saturate';
 
 export default {
     ...blur,
@@ -14,4 +15,5 @@ export default {
     ...grayscale,
     ...hueRotate,
     ...invert,
+    ...saturate,
 };
