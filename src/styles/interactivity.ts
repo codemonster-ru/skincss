@@ -14,6 +14,7 @@ import scrollSnapStop from './interactivity/scrollSnapStop';
 import scrollSnapType from './interactivity/scrollSnapType';
 import selectNone from './interactivity/selectNone';
 import touchAction from './interactivity/touchAction';
+import willChange from './interactivity/willChange';
 
 export default {
     ...accentColor,
@@ -32,4 +33,5 @@ export default {
     ...scrollSnapType,
     ...selectNone,
     ...touchAction,
+    ...willChange,
 };
