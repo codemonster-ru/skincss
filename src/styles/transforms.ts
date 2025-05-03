@@ -4,6 +4,7 @@ import perspectiveOrigin from './transforms/perspectiveOrigin';
 import rotate from './transforms/rotate';
 import scale from './transforms/scale';
 import skew from './transforms/skew';
+import transform from './transforms/transform';
 
 export default {
     ...backfaceVisibility,
@@ -12,4 +13,5 @@ export default {
     ...rotate,
     ...scale,
     ...skew,
+    ...transform,
 };
