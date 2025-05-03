@@ -7,6 +7,7 @@ import styleSpacing from '@/styles/spacing';
 import styleTypography from '@/styles/typography';
 import styleBackground from '@/styles/backgrounds';
 import styleBorder from '@/styles/borders';
+import styleEffect from '@/styles/effects';
 import { ConfigClass } from '@/utils/config';
 import { camelToSnakeCase } from '@/utils/helper';
 
@@ -41,6 +42,8 @@ export default async (root: Root, variant: string): Promise<void> => {
         styles = styleBackground;
     } else if (variant === 'border') {
         styles = styleBorder;
+    } else if (variant === 'effect') {
+        styles = styleEffect;
     } else {
         return;
     }
