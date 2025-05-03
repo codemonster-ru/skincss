@@ -1,3 +1,4 @@
+// filter
 import blur from './filters/filter/blur';
 import brightness from './filters/filter/brightness';
 import contrast from './filters/filter/contrast';
@@ -8,7 +9,11 @@ import invert from './filters/filter/invert';
 import saturate from './filters/filter/saturate';
 import sepia from './filters/filter/sepia';
 
+// backdrop filter
+import backdropFilterBlur from './filters/backdropFilter/blur';
+
 export default {
+    // filter
     ...blur,
     ...brightness,
     ...contrast,
@@ -18,4 +23,6 @@ export default {
     ...invert,
     ...saturate,
     ...sepia,
+    // backdrop filter
+    ...backdropFilterBlur,
 };
