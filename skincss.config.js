@@ -8,5 +8,6 @@ export default {
         typography: true,
         background: true,
         border: true,
+        effect: true,
     },
 };
