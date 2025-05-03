@@ -9,5 +9,6 @@ export default {
         background: true,
         border: true,
         effect: true,
+        filter: true,
     },
 };
