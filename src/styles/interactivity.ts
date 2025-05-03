@@ -11,6 +11,7 @@ import scrollMargin from './interactivity/scrollMargin';
 import scrollPadding from './interactivity/scrollPadding';
 import scrollSnapAlign from './interactivity/scrollSnapAlign';
 import scrollSnapStop from './interactivity/scrollSnapStop';
+import scrollSnapType from './interactivity/scrollSnapType';
 
 export default {
     ...accentColor,
@@ -26,4 +27,5 @@ export default {
     ...scrollPadding,
     ...scrollSnapAlign,
     ...scrollSnapStop,
+    ...scrollSnapType,
 };
