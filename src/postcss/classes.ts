@@ -78,13 +78,17 @@ export default async (root: Root, variant: string): Promise<void> => {
                 source: root.source,
             });
 
-            Object.keys(properties).forEach((index: string) => {
-                const prop: string = index.includes('-') ? index : camelToSnakeCase(index);
-                const value: string = properties[index];
+            Object.keys(properties).forEach((value: string, index: number) => {
+                const prop: string = value.includes('-') ? value : camelToSnakeCase(value);
+                let propValue: string = properties[value];
+
+                if (index === Object.keys(properties).length - 1) {
+                    propValue += ';';
+                }
 
                 rule.append({
                     prop: prop,
-                    value: value,
+                    value: propValue,
                     source: root.source,
                 });
             });
