@@ -71,9 +71,10 @@ export default async (root: Root, variant: string): Promise<void> => {
 
     if (configClass.needIncludeDeepStyles(variant)) {
         Object.keys(styles).forEach((key: string) => {
+            const selector = variant === 'base' ? key : `.${key}`;
             const properties: Property = styles[key];
             const rule: Rule = new Rule({
-                selector: key,
+                selector: selector,
                 source: root.source,
             });
 
