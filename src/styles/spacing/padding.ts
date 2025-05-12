@@ -1,4 +1,8 @@
-export default {
+const styles = <
+    {
+        [index: string]: object;
+    }
+>{
     'p-px': {
         padding: '1px',
     },
@@ -27,3 +31,11 @@ export default {
         paddingLeft: '1px',
     },
 };
+
+for (let step = 1; step <= 100; ++step) {
+    styles[`p-${step}`] = {
+        padding: `calc(var(--spacing) * ${step});`,
+    };
+}
+
+export default styles;
