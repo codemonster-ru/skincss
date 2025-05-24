@@ -1,4 +1,5 @@
 import styles from '@/styles';
+import { ConfigClass } from '@/utils/config';
 
 const fs = require('fs');
 const url = require('url');
@@ -20,6 +21,10 @@ export class ScanClasses {
 
     get rootDir(): string {
         return this._rootDir;
+    }
+
+    set rootDir(value: string) {
+        this._rootDir = value;
     }
 
     get styles(): string[] {
@@ -116,6 +121,16 @@ export class ScanClasses {
 
     async init(): Promise<void> {
         try {
+            const configClass: ConfigClass = new ConfigClass();
+
+            await configClass.init();
+
+            const source = configClass.getSource();
+
+            if (source) {
+                this.rootDir = source as string;
+            }
+
             const files: string[] = await this.getDeepFiles(this.rootDir);
 
             await Promise.all(
