@@ -48,16 +48,16 @@ export class ConfigClass {
             await Promise.all(
                 rootFiles.map(async (file: string): Promise<void> => {
                     switch (file) {
-                    case 'skincss.config.js':
-                    case 'skincss.config.cjs':
-                    case 'skincss.config.mjs':
-                    case 'skincss.config.ts':
-                    case 'skincss.config.cts':
-                    case 'skincss.config.mts':
-                        this.config = await this.loadFile(file, rootDir);
-                        this.config = this.config.default as Config;
+                        case 'skincss.config.js':
+                        case 'skincss.config.cjs':
+                        case 'skincss.config.mjs':
+                        case 'skincss.config.ts':
+                        case 'skincss.config.cts':
+                        case 'skincss.config.mts':
+                            this.config = await this.loadFile(file, rootDir);
+                            this.config = this.config.default as Config;
 
-                        break;
+                            break;
                     }
                 }),
             );
@@ -96,21 +96,5 @@ export class ConfigClass {
         });
 
         return result;
-    }
-
-    needIncludeDeepStyles(variant: string): boolean {
-        const variantValue = variant as keyof typeof this.config.styles;
-
-        if (this.config.styles === undefined) {
-            return false;
-        }
-
-        if (this.config.styles[variantValue] !== undefined) {
-            if (this.config.styles[variantValue]) {
-                return this.hasDeepProperty(`styles.${variant}`) ? true : false;
-            }
-        }
-
-        return false;
     }
 }
