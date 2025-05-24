@@ -127,17 +127,19 @@ export class ScanClasses {
 
             const source = configClass.getSource();
 
-            if (source) {
-                this.rootDir = source as string;
+            if (source !== 'none') {
+                if (source) {
+                    this.rootDir = source as string;
+                }
+
+                const files: string[] = await this.getDeepFiles(this.rootDir);
+
+                await Promise.all(
+                    files.map(async (file: string) => {
+                        this.parseFile(this.loadFile(file));
+                    }),
+                );
             }
-
-            const files: string[] = await this.getDeepFiles(this.rootDir);
-
-            await Promise.all(
-                files.map(async (file: string) => {
-                    this.parseFile(this.loadFile(file));
-                }),
-            );
         } catch (err: unknown) {
             const error: ErrnoException = err as ErrnoException;
 

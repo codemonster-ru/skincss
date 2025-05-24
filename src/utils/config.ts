@@ -102,7 +102,11 @@ export class ConfigClass {
         if (this.hasProperty('source', this.config)) {
             const source = this.config['source'] as string;
 
-            return path.join(path.resolve('./'), source);
+            if (source !== 'none') {
+                return path.join(path.resolve('./'), source);
+            } else {
+                return 'none';
+            }
         }
 
         return false;
