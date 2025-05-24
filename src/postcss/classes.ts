@@ -26,7 +26,7 @@ interface Style {
     [index: string]: Property;
 }
 
-export default async (root: Root, variant: string): Promise<void> => {
+export default async (root: Root, variant: string, allowedStyles: string[]): Promise<void> => {
     const configClass: ConfigClass = new ConfigClass();
 
     await configClass.init();
@@ -71,29 +71,31 @@ export default async (root: Root, variant: string): Promise<void> => {
 
     if (configClass.needIncludeDeepStyles(variant)) {
         Object.keys(styles).forEach((key: string) => {
-            const selector = variant === 'base' ? key : `.${key}`;
-            const properties: Property = styles[key];
-            const rule: Rule = new Rule({
-                selector: selector,
-                source: root.source,
-            });
-
-            Object.keys(properties).forEach((value: string, index: number) => {
-                const prop: string = value.includes('-') ? value : camelToSnakeCase(value);
-                let propValue: string = properties[value];
-
-                if (index === Object.keys(properties).length - 1) {
-                    propValue += ';';
-                }
-
-                rule.append({
-                    prop: prop,
-                    value: propValue,
+            if (allowedStyles.includes(key)) {
+                const selector = variant === 'base' ? key : `.${key}`;
+                const properties: Property = styles[key];
+                const rule: Rule = new Rule({
+                    selector: selector,
                     source: root.source,
                 });
-            });
 
-            root.append(rule);
+                Object.keys(properties).forEach((value: string, index: number) => {
+                    const prop: string = value.includes('-') ? value : camelToSnakeCase(value);
+                    let propValue: string = properties[value];
+
+                    if (index === Object.keys(properties).length - 1) {
+                        propValue += ';';
+                    }
+
+                    rule.append({
+                        prop: prop,
+                        value: propValue,
+                        source: root.source,
+                    });
+                });
+
+                root.append(rule);
+            }
         });
     }
 };

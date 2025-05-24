@@ -1,7 +1,7 @@
 import connectionClasses from '@/postcss/classes';
 import { Root, AtRule, ChildNode } from 'postcss';
 
-export default async (root: Root): Promise<void> => {
+export default async (root: Root, styles: string[]): Promise<void> => {
     const classes: string[] = [];
 
     root.walkAtRules('skin', (rule: AtRule) => {
@@ -22,7 +22,7 @@ export default async (root: Root): Promise<void> => {
 
     await Promise.all(
         classes.map(async (selector: string): Promise<void> => {
-            await connectionClasses(root, selector);
+            await connectionClasses(root, selector, styles);
         }),
     );
 };
