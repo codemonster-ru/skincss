@@ -9,7 +9,7 @@ interface Styles {
 }
 
 export interface Config {
-    [key: string]: object | undefined;
+    [key: string]: object | string | undefined;
 
     styles?: Styles;
 }
@@ -96,5 +96,15 @@ export class ConfigClass {
         });
 
         return result;
+    }
+
+    getSource(): string | boolean {
+        if (this.hasProperty('source', this.config)) {
+            const source = this.config['source'] as string;
+
+            return path.join(path.resolve('./'), source);
+        }
+
+        return false;
     }
 }
