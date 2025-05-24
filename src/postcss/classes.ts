@@ -1,4 +1,3 @@
-import { Root, Rule } from 'postcss';
 import styleBase from '@/styles/base';
 import styleGrid from '@/styles/grid';
 import styleSizing from '@/styles/sizing';
@@ -15,7 +14,7 @@ import styleTransform from '@/styles/transforms';
 import styleInteractivity from '@/styles/interactivity';
 import styleSvg from '@/styles/svg';
 import styleAccessibility from '@/styles/accessibility';
-import { ConfigClass } from '@/utils/config';
+import { Root, Rule } from 'postcss';
 import { camelToSnakeCase } from '@/utils/helper';
 
 interface Property {
@@ -27,10 +26,6 @@ interface Style {
 }
 
 export default async (root: Root, variant: string, allowedStyles: string[]): Promise<void> => {
-    const configClass: ConfigClass = new ConfigClass();
-
-    await configClass.init();
-
     let styles: Style;
 
     if (variant === 'base') {
@@ -69,33 +64,31 @@ export default async (root: Root, variant: string, allowedStyles: string[]): Pro
         return;
     }
 
-    if (configClass.needIncludeDeepStyles(variant)) {
-        Object.keys(styles).forEach((key: string) => {
-            if (allowedStyles.includes(key)) {
-                const selector = variant === 'base' ? key : `.${key}`;
-                const properties: Property = styles[key];
-                const rule: Rule = new Rule({
-                    selector: selector,
+    Object.keys(styles).forEach((key: string) => {
+        if (allowedStyles.includes(key)) {
+            const selector = variant === 'base' ? key : `.${key}`;
+            const properties: Property = styles[key];
+            const rule: Rule = new Rule({
+                selector: selector,
+                source: root.source,
+            });
+
+            Object.keys(properties).forEach((value: string, index: number) => {
+                const prop: string = value.includes('-') ? value : camelToSnakeCase(value);
+                let propValue: string = properties[value];
+
+                if (index === Object.keys(properties).length - 1) {
+                    propValue += ';';
+                }
+
+                rule.append({
+                    prop: prop,
+                    value: propValue,
                     source: root.source,
                 });
+            });
 
-                Object.keys(properties).forEach((value: string, index: number) => {
-                    const prop: string = value.includes('-') ? value : camelToSnakeCase(value);
-                    let propValue: string = properties[value];
-
-                    if (index === Object.keys(properties).length - 1) {
-                        propValue += ';';
-                    }
-
-                    rule.append({
-                        prop: prop,
-                        value: propValue,
-                        source: root.source,
-                    });
-                });
-
-                root.append(rule);
-            }
-        });
-    }
+            root.append(rule);
+        }
+    });
 };
