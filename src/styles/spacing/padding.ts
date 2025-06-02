@@ -1,8 +1,4 @@
-const styles = <
-    {
-        [index: string]: object;
-    }
->{
+export default {
     'p-px': {
         padding: '1px',
     },
@@ -30,12 +26,87 @@ const styles = <
     'pl-px': {
         paddingLeft: '1px',
     },
+    arbitraryValues: {
+        'p-<number>': {
+            padding: 'calc(var(--spacing) * <number>)',
+        },
+        'p-(<variable>)': {
+            padding: 'var(<variable>)',
+        },
+        'p-[<value>]': {
+            padding: '<value>',
+        },
+        'px-<number>': {
+            paddingInline: 'calc(var(--spacing) * <number>)',
+        },
+        'px-(<variable>)': {
+            paddingInline: 'var(<variable>)',
+        },
+        'px-[<value>]': {
+            paddingInline: '<value>',
+        },
+        'py-<number>': {
+            paddingBlock: 'calc(var(--spacing) * <number>)',
+        },
+        'py-(<variable>)': {
+            paddingBlock: 'var(<variable>)',
+        },
+        'py-[<value>]': {
+            paddingBlock: '<value>',
+        },
+        'ps-<number>': {
+            paddingInlineStart: 'calc(var(--spacing) * <number>)',
+        },
+        'ps-(<variable>)': {
+            paddingInlineStart: 'var(<variable>)',
+        },
+        'ps-[<value>]': {
+            paddingInlineStart: '<value>',
+        },
+        'pe-<number>': {
+            paddingInlineEnd: 'calc(var(--spacing) * <number>)',
+        },
+        'pe-(<variable>)': {
+            paddingInlineEnd: 'var(<variable>)',
+        },
+        'pe-[<value>]': {
+            paddingInlineEnd: '<value>',
+        },
+        'pt-<number>': {
+            paddingTop: 'calc(var(--spacing) * <number>)',
+        },
+        'pt-(<variable>)': {
+            paddingTop: 'var(<variable>)',
+        },
+        'pt-[<value>]': {
+            paddingTop: '<value>',
+        },
+        'pr-<number>': {
+            paddingRight: 'calc(var(--spacing) * <number>)',
+        },
+        'pr-(<variable>)': {
+            paddingRight: 'var(<variable>)',
+        },
+        'pr-[<value>]': {
+            paddingRight: '<value>',
+        },
+        'pb-<number>': {
+            paddingBottom: 'calc(var(--spacing) * <number>)',
+        },
+        'pb-(<variable>)': {
+            paddingBottom: 'var(<variable>)',
+        },
+        'pb-[<value>]': {
+            paddingBottom: '<value>',
+        },
+        'pl-<number>': {
+            paddingLeft: 'calc(var(--spacing) * <number>)',
+        },
+        'pl-(<variable>)': {
+            paddingLeft: 'var(<variable>)',
+        },
+        'pl-[<value>]': {
+            paddingLeft: '<value>',
+        },
+    },
 };
-
-for (let step = 1; step <= 100; ++step) {
-    styles[`p-${step}`] = {
-        padding: `calc(var(--spacing) * ${step});`,
-    };
-}
-
-export default styles;
