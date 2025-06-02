@@ -1,6 +1,4 @@
 export default {
-    // TODO number
-    // TODO space
     'm-auto': {
         margin: '1px',
     },
@@ -81,5 +79,115 @@ export default {
     },
     '-ml-px': {
         marginLeft: '-1px',
+    },
+    arbitraryValues: {
+        'm-<number>': {
+            margin: 'calc(var(--spacing) * <number>)',
+        },
+        '-m-<number>': {
+            margin: 'calc(var(--spacing) * -<number>)',
+        },
+        'm-(<variable>)': {
+            margin: 'var(<variable>)',
+        },
+        'm-[<value>]': {
+            margin: '<value>',
+        },
+        'mx-<number>': {
+            marginInline: 'calc(var(--spacing) * <number>)',
+        },
+        '-mx-<number>': {
+            marginInline: 'calc(var(--spacing) * -<number>)',
+        },
+        'mx-(<variable>)': {
+            marginInline: 'var(<variable>)',
+        },
+        'mx-[<value>]': {
+            marginInline: '<value>',
+        },
+        'my-<number>': {
+            marginBlock: 'calc(var(--spacing) * <number>)',
+        },
+        '-my-<number>': {
+            marginBlock: 'calc(var(--spacing) * -<number>)',
+        },
+        'my-(<variable>)': {
+            marginBlock: 'var(<variable>)',
+        },
+        'my-[<value>]': {
+            marginBlock: '<value>',
+        },
+        'ms-<number>': {
+            marginInlineStart: 'calc(var(--spacing) * <number>)',
+        },
+        '-ms-<number>': {
+            marginInlineStart: 'calc(var(--spacing) * -<number>)',
+        },
+        'ms-(<variable>)': {
+            marginInlineStart: 'var(<variable>)',
+        },
+        'ms-[<value>]': {
+            marginInlineStart: '<value>',
+        },
+        'me-<number>': {
+            marginInlineEnd: 'calc(var(--spacing) * <number>)',
+        },
+        '-me-<number>': {
+            marginInlineEnd: 'calc(var(--spacing) * -<number>)',
+        },
+        'me-(<variable>)': {
+            marginInlineEnd: 'var(<variable>)',
+        },
+        'me-[<value>]': {
+            marginInlineEnd: '<value>',
+        },
+        'mt-<number>': {
+            marginTop: 'calc(var(--spacing) * <number>)',
+        },
+        '-mt-<number>': {
+            marginTop: 'calc(var(--spacing) * -<number>)',
+        },
+        'mt-(<variable>)': {
+            marginTop: 'var(<variable>)',
+        },
+        'mt-[<value>]': {
+            marginTop: '<value>',
+        },
+        'mr-<number>': {
+            marginRight: 'calc(var(--spacing) * <number>)',
+        },
+        '-mr-<number>': {
+            marginRight: 'calc(var(--spacing) * -<number>)',
+        },
+        'mr-(<variable>)': {
+            marginRight: 'var(<variable>)',
+        },
+        'mr-[<value>]': {
+            marginRight: '<value>',
+        },
+        'mb-<number>': {
+            marginBottom: 'calc(var(--spacing) * <number>)',
+        },
+        '-mb-<number>': {
+            marginBottom: 'calc(var(--spacing) * -<number>)',
+        },
+        'mb-(<variable>)': {
+            marginBottom: 'var(<variable>)',
+        },
+        'mb-[<value>]': {
+            marginBottom: '<value>',
+        },
+        'ml-<number>': {
+            marginLeft: 'calc(var(--spacing) * <number>)',
+        },
+        '-ml-<number>': {
+            marginLeft: 'calc(var(--spacing) * -<number>)',
+        },
+        'ml-(<variable>)': {
+            marginLeft: 'var(<variable>)',
+        },
+        'ml-[<value>]': {
+            marginLeft: '<value>',
+        },
     },
 };
