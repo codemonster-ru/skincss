@@ -740,4 +740,12 @@ export default {
     'decoration-stone-950': {
         textDecorationColor: 'var(--color-stone-950)',
     },
+    arbitraryValues: {
+        'decoration-(<variable>)': {
+            textDecorationColor: 'var(<variable>)',
+        },
+        'decoration-[<value>]': {
+            textDecorationColor: '<value>',
+        },
+    },
 };

@@ -8,4 +8,12 @@ export default {
     'font-mono': {
         fontFamily: 'var(--font-mono)',
     },
+    arbitraryValues: {
+        'font-(<variable>)': {
+            fontFamily: 'var(<variable>)',
+        },
+        'font-[<value>]': {
+            fontFamily: '<value>',
+        },
+    },
 };
