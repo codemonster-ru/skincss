@@ -17,4 +17,12 @@ export default {
     'perspective-none': {
         perspective: 'none',
     },
+    arbitraryValues: {
+        'perspective-(<variable>)': {
+            perspective: 'var(<variable>)',
+        },
+        'perspective-[<value>]': {
+            perspective: '<value>',
+        },
+    },
 };

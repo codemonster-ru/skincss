@@ -26,4 +26,12 @@ export default {
     'perspective-origin-top-left': {
         perspectiveOrigin: 'top left',
     },
+    arbitraryValues: {
+        'perspective-origin-(<variable>)': {
+            perspectiveOrigin: 'var(<variable>)',
+        },
+        'perspective-origin-[<value>]': {
+            perspectiveOrigin: '<value>',
+        },
+    },
 };

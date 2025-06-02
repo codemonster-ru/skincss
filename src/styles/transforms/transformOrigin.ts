@@ -26,4 +26,12 @@ export default {
     'origin-top-left': {
         transformOrigin: 'top left',
     },
+    arbitraryValues: {
+        'origin-(<variable>)': {
+            transformOrigin: 'var(<variable>)',
+        },
+        'origin-[<value>]': {
+            transformOrigin: '<value>',
+        },
+    },
 };

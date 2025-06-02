@@ -8,4 +8,12 @@ export default {
     'transform-cpu': {
         transform: 'var(--rotate-x) var(--rotate-y) var(--rotate-z) var(--skew-x) var(--skew-y)',
     },
+    arbitraryValues: {
+        'transform-(<variable>)': {
+            transform: 'var(<variable>)',
+        },
+        'transform-[<value>]': {
+            transform: '<value>',
+        },
+    },
 };
