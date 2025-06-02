@@ -8,4 +8,18 @@ export default {
     'flex-none': {
         flex: 'none',
     },
+    arbitraryValues: {
+        'flex-<number>': {
+            flex: '<number>',
+        },
+        'flex-<fraction>': {
+            flex: 'calc(<fraction> * 100%)',
+        },
+        'flex-(<variable>)': {
+            flex: 'var(<variable>)',
+        },
+        'flex-[<value>]': {
+            flex: '<value>',
+        },
+    },
 };

@@ -11,4 +11,12 @@ export default {
     'auto-cols-fr': {
         gridAutoColumns: 'minmax(0, 1fr)',
     },
+    arbitraryValues: {
+        'auto-cols-(<variable>)': {
+            gridAutoColumns: 'var(<variable>)',
+        },
+        'auto-cols-[<value>]': {
+            gridAutoColumns: '<value>',
+        },
+    },
 };
