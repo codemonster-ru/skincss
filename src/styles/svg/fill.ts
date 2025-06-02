@@ -743,4 +743,12 @@ export default {
     'fill-stone-950': {
         fill: 'var(--color-stone-950)',
     },
+    arbitraryValues: {
+        'fill-(<variable>)': {
+            fill: 'var(<variable>)',
+        },
+        'fill-[<color>]': {
+            fill: '<color>',
+        },
+    },
 };
