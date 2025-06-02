@@ -764,4 +764,15 @@ export default {
     'text-shadow-stone-950': {
         '--text-shadow-color': 'var(--color-stone-950)',
     },
+    arbitraryValues: {
+        'text-shadow-(<variable>)': {
+            textShadow: 'var(<variable>)',
+        },
+        'text-shadow-(color:<variable>)': {
+            '--text-shadow-color': 'var(<variable>)',
+        },
+        'text-shadow-[<value>]': {
+            textShadow: '<value>',
+        },
+    },
 };

@@ -1,5 +1,13 @@
 export default {
-    // 'opacity-<number>': {
-    //     opacity: '<number>%',
-    // },
+    arbitraryValues: {
+        'opacity-<number>': {
+            opacity: '<number>%',
+        },
+        'opacity-(<variable>)': {
+            opacity: 'var(<variable>)',
+        },
+        'opacity-[<value>]': {
+            opacity: '<value>',
+        },
+    },
 };

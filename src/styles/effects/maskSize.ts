@@ -8,4 +8,12 @@ export default {
     'mask-contain': {
         maskSize: 'contain',
     },
+    arbitraryValues: {
+        'mask-size-(<variable>)': {
+            maskSize: 'var(<variable>)',
+        },
+        'mask-size-[<value>]': {
+            maskSize: '<value>',
+        },
+    },
 };
