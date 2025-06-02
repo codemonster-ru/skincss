@@ -1,5 +1,13 @@
 export default {
-    // 'stroke-<number>': {
-    //     strokeWidth: '<number>',
-    // },
+    arbitraryValues: {
+        'stroke-<number>': {
+            strokeWidth: '<number>',
+        },
+        'stroke-(length:<variable>)': {
+            strokeWidth: 'var(<variable>)',
+        },
+        'stroke-[<value>]': {
+            strokeWidth: '<value>',
+        },
+    },
 };

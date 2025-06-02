@@ -743,4 +743,12 @@ export default {
     'stroke-stone-950': {
         stroke: 'var(--color-stone-950)',
     },
+    arbitraryValues: {
+        'stroke-(<variable>)': {
+            stroke: 'var(<variable>)',
+        },
+        'stroke-[<color>]': {
+            stroke: '<color>',
+        },
+    },
 };
