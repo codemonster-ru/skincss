@@ -1,3 +1,5 @@
+import height from './height';
+
 export default {
     'w-3xs': {
         width: '16rem',
@@ -124,5 +126,33 @@ export default {
     'size-fit': {
         width: 'fit-content',
         height: 'fit-content',
+    },
+    arbitraryValues: {
+        'w-<number>': {
+            width: 'calc(var(--spacing) * <number>)',
+        },
+        'w-<fraction>': {
+            width: 'calc(<fraction> * 100%)',
+        },
+        'w-(<variable>)': {
+            width: 'var(<variable>)',
+        },
+        'w-[<value>]': {
+            width: '<value>',
+        },
+        'size-<number>': {
+            width: 'calc(var(--spacing) * <number>)',
+            height: 'calc(var(--spacing) * <number>)',
+        },
+        'size-<fraction>': {
+            width: 'calc(<fraction> * 100%)',
+            height: 'calc(<fraction> * 100%)',
+        },
+        'size-(<variable>)': {
+            width: 'var(<variable>)',
+        },
+        'size-[<value>]': {
+            width: '<value>',
+        },
     },
 };
