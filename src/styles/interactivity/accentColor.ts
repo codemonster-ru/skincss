@@ -740,4 +740,12 @@ export default {
     'accent-stone-950': {
         accentColor: 'var(--color-stone-950)',
     },
+    arbitraryValues: {
+        'accent-<variable>': {
+            accentColor: 'var(<variable>)',
+        },
+        'accent-[<value>]': {
+            accentColor: '<value>',
+        },
+    },
 };

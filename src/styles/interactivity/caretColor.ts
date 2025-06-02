@@ -740,4 +740,12 @@ export default {
     'caret-stone-950': {
         caretColor: 'var(--color-stone-950)',
     },
+    arbitraryValues: {
+        'caret-<variable>': {
+            caretColor: 'var(<variable>)',
+        },
+        'caret-[<value>]': {
+            caretColor: '<value>',
+        },
+    },
 };

@@ -11,4 +11,12 @@ export default {
     'will-change-transform': {
         willChange: 'transform',
     },
+    arbitraryValues: {
+        'will-change-<variable>': {
+            willChange: 'var(<variable>)',
+        },
+        'will-change-[<value>]': {
+            willChange: '<value>',
+        },
+    },
 };

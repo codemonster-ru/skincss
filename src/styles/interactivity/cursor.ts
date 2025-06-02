@@ -107,4 +107,12 @@ export default {
     'cursor-zoom-out': {
         cursor: 'zoom-out',
     },
+    arbitraryValues: {
+        'cursor-(<variable>)': {
+            cursor: 'var(<variable>)',
+        },
+        'cursor-[<value>]': {
+            cursor: '<value>',
+        },
+    },
 };
