@@ -26,4 +26,12 @@ export default {
     'object-bottom-right': {
         objectPosition: 'bottom right',
     },
+    arbitraryValues: {
+        'object-(<variable>)': {
+            objectPosition: 'var(<variable>)',
+        },
+        'object-[<value>]': {
+            objectPosition: '<value>',
+        },
+    },
 };

@@ -8,4 +8,15 @@ export default {
     'aspect-auto': {
         aspectRatio: 'auto',
     },
+    arbitraryValues: {
+        'aspect-<ratio>': {
+            aspectRatio: '<ratio>',
+        },
+        'aspect-(<variable>)': {
+            aspectRatio: 'var(<variable>)',
+        },
+        'aspect-[<value>]': {
+            aspectRatio: '<value>',
+        },
+    },
 };
