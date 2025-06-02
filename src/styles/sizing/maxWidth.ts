@@ -77,4 +77,18 @@ export default {
     'max-w-fit': {
         maxWidth: 'fit-content',
     },
+    arbitraryValues: {
+        'max-w-<number>': {
+            maxWidth: 'calc(var(--spacing) * <number>)',
+        },
+        'max-w-<fraction>': {
+            maxWidth: 'calc(<fraction> * 100%)',
+        },
+        'max-w-(<variable>)': {
+            maxWidth: 'var(<variable>)',
+        },
+        'max-w-[<value>]': {
+            maxWidth: '<value>',
+        },
+    },
 };

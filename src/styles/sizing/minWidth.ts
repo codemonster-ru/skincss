@@ -77,4 +77,18 @@ export default {
     'min-w-fit': {
         minWidth: 'fit-content',
     },
+    arbitraryValues: {
+        'min-w-<number>': {
+            minWidth: 'calc(var(--spacing) * <number>)',
+        },
+        'min-w-<fraction>': {
+            minWidth: 'calc(<fraction> * 100%)',
+        },
+        'min-w-(<variable>)': {
+            minWidth: 'var(<variable>)',
+        },
+        'min-w-[<value>]': {
+            minWidth: '<value>',
+        },
+    },
 };
