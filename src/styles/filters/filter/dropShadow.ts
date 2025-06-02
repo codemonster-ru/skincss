@@ -761,4 +761,15 @@ export default {
     'drop-shadow-stone-950': {
         '--drop-shadow-color': 'var(--color-stone-950)',
     },
+    arbitraryValues: {
+        'drop-shadow-(<variable>)': {
+            filter: 'drop-shadow(var(<variable>))',
+        },
+        'drop-shadow-(color:<variable>)': {
+            '--drop-shadow-color': 'var(<variable>)',
+        },
+        'drop-shadow-[<value>]': {
+            filter: 'drop-shadow(<value>)',
+        },
+    },
 };
