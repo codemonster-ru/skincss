@@ -11,4 +11,12 @@ export default {
     'auto-rows-fr': {
         gridAutoRows: 'minmax(0, 1fr)',
     },
+    arbitraryValues: {
+        'auto-rows-(<variable>)': {
+            gridAutoRows: 'var(<variable>)',
+        },
+        'auto-rows-[<value>]': {
+            gridAutoRows: '<value>',
+        },
+    },
 };
