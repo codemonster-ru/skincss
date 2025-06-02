@@ -23,4 +23,12 @@ export default {
     'backdrop-blur-none': {
         backdropFilter: '',
     },
+    arbitraryValues: {
+        'backdrop-blur-(<variable>)': {
+            backdropFilter: 'blur(var(<variable>))',
+        },
+        'backdrop-blur-[<value>]': {
+            backdropFilter: 'blur(<value>)',
+        },
+    },
 };
