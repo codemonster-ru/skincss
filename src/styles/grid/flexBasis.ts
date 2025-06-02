@@ -44,4 +44,18 @@ export default {
     'basis-7xl': {
         flexBasis: '80rem',
     },
+    arbitraryValues: {
+        'basis-<number>': {
+            flexBasis: 'calc(var(--spacing) * <number>)',
+        },
+        'basis-<fraction>': {
+            flexBasis: 'calc(<fraction> * 100%)',
+        },
+        'basis-(<variable>)': {
+            flexBasis: 'var(<variable>)',
+        },
+        'basis-[<value>]': {
+            flexBasis: '<value>',
+        },
+    },
 };
