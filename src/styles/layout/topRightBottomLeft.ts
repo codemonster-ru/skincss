@@ -134,4 +134,168 @@ export default {
     'left-auto': {
         left: 'auto',
     },
+    arbitraryValues: {
+        'inset-<number>': {
+            inset: 'calc(var(--spacing) * <number>)',
+        },
+        '-inset-<number>': {
+            inset: 'calc(var(--spacing) * -<number>)',
+        },
+        'inset-<fraction>': {
+            inset: 'calc(<fraction> * 100%)',
+        },
+        '-inset-<fraction>': {
+            inset: 'calc(<fraction> * -100%)',
+        },
+        'inset-(<variable>)': {
+            inset: 'var(<variable>)',
+        },
+        'inset-[<value>]': {
+            inset: '<value>',
+        },
+        'inset-x-<number>': {
+            insetInline: 'calc(var(--spacing) * <number>)',
+        },
+        '-inset-x-<number>': {
+            insetInline: 'calc(var(--spacing) * -<number>)',
+        },
+        'inset-x-<fraction>': {
+            insetInline: 'calc(<fraction> * 100%)',
+        },
+        '-inset-x-<fraction>': {
+            insetInline: 'calc(<fraction> * -100%)',
+        },
+        'inset-x-(<variable>)': {
+            insetInline: 'var(<variable>)',
+        },
+        'inset-x-[<value>]': {
+            insetInline: '<value>',
+        },
+        'inset-y-<number>': {
+            insetBlock: 'calc(var(--spacing) * <number>)',
+        },
+        '-inset-y-<number>': {
+            insetBlock: 'calc(var(--spacing) * -<number>)',
+        },
+        'inset-y-<fraction>': {
+            insetBlock: 'calc(<fraction> * 100%)',
+        },
+        '-inset-y-<fraction>': {
+            insetBlock: 'calc(<fraction> * -100%)',
+        },
+        'inset-y-(<variable>)': {
+            insetBlock: 'var(<variable>)',
+        },
+        'inset-y-[<value>]': {
+            insetBlock: '<value>',
+        },
+        'start-<number>': {
+            insetInlineStart: 'calc(var(--spacing) * <number>)',
+        },
+        '-start-<number>': {
+            insetInlineStart: 'calc(var(--spacing) * -<number>)',
+        },
+        'start-<fraction>': {
+            insetInlineStart: 'calc(<fraction> * 100%)',
+        },
+        '-start-<fraction>': {
+            insetInlineStart: 'calc(<fraction> * -100%)',
+        },
+        'start-(<variable>)': {
+            insetInlineStart: 'var(<variable>)',
+        },
+        'start-[<value>]': {
+            insetInlineStart: '<value>',
+        },
+        'end-<number>': {
+            insetInlineEnd: 'calc(var(--spacing) * <number>)',
+        },
+        '-end-<number>': {
+            insetInlineEnd: 'calc(var(--spacing) * -<number>)',
+        },
+        'end-<fraction>': {
+            insetInlineEnd: 'calc(<fraction> * 100%)',
+        },
+        '-end-<fraction>': {
+            insetInlineEnd: 'calc(<fraction> * -100%)',
+        },
+        'end-(<variable>)': {
+            insetInlineEnd: 'var(<variable>)',
+        },
+        'end-[<value>]': {
+            insetInlineEnd: '<value>',
+        },
+        'top-<number>': {
+            top: 'calc(var(--spacing) * <number>)',
+        },
+        '-top-<number>': {
+            top: 'calc(var(--spacing) * -<number>)',
+        },
+        'top-<fraction>': {
+            top: 'calc(<fraction> * 100%)',
+        },
+        '-top-<fraction>': {
+            top: 'calc(<fraction> * -100%)',
+        },
+        'top-(<variable>)': {
+            top: 'var(<variable>)',
+        },
+        'top-[<value>]': {
+            top: '<value>',
+        },
+        'right-<number>': {
+            right: 'calc(var(--spacing) * <number>)',
+        },
+        '-right-<number>': {
+            right: 'calc(var(--spacing) * -<number>)',
+        },
+        'right-<fraction>': {
+            right: 'calc(<fraction> * 100%)',
+        },
+        '-right-<fraction>': {
+            right: 'calc(<fraction> * -100%)',
+        },
+        'right-(<variable>)': {
+            right: 'var(<variable>)',
+        },
+        'right-[<value>]': {
+            right: '<value>',
+        },
+        'bottom-<number>': {
+            bottom: 'calc(var(--spacing) * <number>)',
+        },
+        '-bottom-<number>': {
+            bottom: 'calc(var(--spacing) * -<number>)',
+        },
+        'bottom-<fraction>': {
+            bottom: 'calc(<fraction> * 100%)',
+        },
+        '-bottom-<fraction>': {
+            bottom: 'calc(<fraction> * -100%)',
+        },
+        'bottom-(<variable>)': {
+            bottom: 'var(<variable>)',
+        },
+        'bottom-[<value>]': {
+            bottom: '<value>',
+        },
+        'left-<number>': {
+            left: 'calc(var(--spacing) * <number>)',
+        },
+        '-left-<number>': {
+            left: 'calc(var(--spacing) * -<number>)',
+        },
+        'left-<fraction>': {
+            left: 'calc(<fraction> * 100%)',
+        },
+        '-left-<fraction>': {
+            left: 'calc(<fraction> * -100%)',
+        },
+        'left-(<variable>)': {
+            left: 'var(<variable>)',
+        },
+        'left-[<value>]': {
+            left: '<value>',
+        },
+    },
 };
