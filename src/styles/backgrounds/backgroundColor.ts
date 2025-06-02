@@ -740,4 +740,12 @@ export default {
     'bg-stone-950': {
         backgroundColor: 'var(--color-stone-950)',
     },
+    arbitraryValues: {
+        'bg-(<variable>)': {
+            backgroundColor: 'var(<variable>)',
+        },
+        'bg-[<value>]': {
+            backgroundColor: '<value>',
+        },
+    },
 };
