@@ -23,4 +23,12 @@ export default {
     'blur-none': {
         filter: '',
     },
+    arbitraryValues: {
+        'blur-(<variable>)': {
+            filter: 'blur(var(<variable>))',
+        },
+        'blur-[<value>]': {
+            filter: 'blur(<value>)',
+        },
+    },
 };
