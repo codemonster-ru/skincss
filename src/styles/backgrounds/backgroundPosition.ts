@@ -26,4 +26,12 @@ export default {
     'bg-bottom-right': {
         backgroundPosition: 'bottom right',
     },
+    arbitraryValues: {
+        'bg-position-(<variable>)': {
+            backgroundPosition: 'var(<variable>)',
+        },
+        'bg-position-[<value>]': {
+            backgroundPosition: '<value>',
+        },
+    },
 };
