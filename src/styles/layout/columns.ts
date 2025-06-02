@@ -41,4 +41,15 @@ export default {
     'columns-auto': {
         columns: 'auto',
     },
+    arbitraryValues: {
+        'columns-<number>': {
+            columns: '<number>',
+        },
+        'columns-(<variable>)': {
+            columns: 'var(<variable>)',
+        },
+        'columns-[<value>]': {
+            columns: '<value>',
+        },
+    },
 };
