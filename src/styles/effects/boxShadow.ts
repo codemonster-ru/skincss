@@ -3005,4 +3005,39 @@ export default {
     'inset-ring-stone-950': {
         '--inset-ring-color': 'var(--color-stone-950)',
     },
+    arbitraryValues: {
+        'shadow-(<variable>)': {
+            boxShadow: 'var(<variable>)',
+        },
+        'shadow-(color:<variable>)': {
+            '--shadow-color': 'var(<variable>)',
+        },
+        'shadow-[<value>]': {
+            boxShadow: '<value>',
+        },
+        'inset-shadow-(<variable>)': {
+            boxShadow: 'var(<variable>)',
+        },
+        'inset-shadow-[<value>]': {
+            boxShadow: '<value>',
+        },
+        'ring-<number>': {
+            '--ring-shadow': '0 0 0 <number>px',
+        },
+        'ring-(<variable>)': {
+            '--ring-shadow': '0 0 0 var(<variable>)',
+        },
+        'ring-[<value>]': {
+            '--ring-shadow': '0 0 0 <value>',
+        },
+        'inset-ring-<number>': {
+            '--inset-ring-shadow': 'inset 0 0 0 <number>px',
+        },
+        'inset-ring-(<variable>)': {
+            '--inset-ring-shadow': 'inset 0 0 0 var(<variable>)',
+        },
+        'inset-ring-[<value>]': {
+            '--inset-ring-shadow': 'inset 0 0 0 <value>',
+        },
+    },
 };

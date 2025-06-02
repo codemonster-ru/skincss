@@ -26,4 +26,12 @@ export default {
     'mask-bottom-right': {
         maskPosition: 'bottom right',
     },
+    arbitraryValues: {
+        'mask-position-(<variable>)': {
+            maskPosition: 'var(<variable>)',
+        },
+        'mask-position-[<value>]': {
+            maskPosition: '<value>',
+        },
+    },
 };
