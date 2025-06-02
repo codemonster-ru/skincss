@@ -26,4 +26,12 @@ export default {
     'font-black': {
         fontWeight: '900',
     },
+    arbitraryValues: {
+        'font-(<variable>)': {
+            fontWeight: 'var(<variable>)',
+        },
+        'font-[<value>]': {
+            fontWeight: '<value>',
+        },
+    },
 };

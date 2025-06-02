@@ -5,4 +5,15 @@ export default {
     'decoration-auto': {
         textDecorationThickness: 'auto',
     },
+    arbitraryValues: {
+        'decoration-<number>': {
+            textDecorationThickness: '<number>px',
+        },
+        'decoration-(length:<variable>)': {
+            textDecorationThickness: 'var(<variable>)',
+        },
+        'decoration-[<value>]': {
+            textDecorationThickness: '<value>',
+        },
+    },
 };

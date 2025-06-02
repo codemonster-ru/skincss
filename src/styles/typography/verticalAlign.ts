@@ -23,4 +23,12 @@ export default {
     'align-super': {
         verticalAlign: 'super',
     },
+    arbitraryValues: {
+        'align-(<variable>)': {
+            verticalAlign: 'var(<variable>)',
+        },
+        'align-[<value>]': {
+            verticalAlign: '<value>',
+        },
+    },
 };
