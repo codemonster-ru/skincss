@@ -740,4 +740,12 @@ export default {
     'outline-stone-950': {
         outlineColor: 'var(--color-stone-950)',
     },
+    arbitraryValues: {
+        'outline-(<variable>)': {
+            outlineColor: 'var(<variable>)',
+        },
+        'outline-[<value>]': {
+            outlineColor: '<value>',
+        },
+    },
 };
