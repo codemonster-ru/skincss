@@ -38,4 +38,18 @@ export default {
     'h-fit': {
         height: 'fit-content',
     },
+    arbitraryValues: {
+        'h-<number>': {
+            height: 'calc(var(--spacing) * <number>)',
+        },
+        'h-<fraction>': {
+            height: 'calc(<fraction> * 100%)',
+        },
+        'h-(<variable>)': {
+            height: 'var(<variable>)',
+        },
+        'h-[<value>]': {
+            height: '<value>',
+        },
+    },
 };

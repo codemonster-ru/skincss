@@ -38,4 +38,18 @@ export default {
     'max-h-fit': {
         maxHeight: 'fit-content',
     },
+    arbitraryValues: {
+        'max-h-<number>': {
+            maxHeight: 'calc(var(--spacing) * <number>)',
+        },
+        'max-h-<fraction>': {
+            maxHeight: 'calc(<fraction> * 100%)',
+        },
+        'max-h-(<variable>)': {
+            maxHeight: 'var(<variable>)',
+        },
+        'max-h-[<value>]': {
+            maxHeight: '<value>',
+        },
+    },
 };

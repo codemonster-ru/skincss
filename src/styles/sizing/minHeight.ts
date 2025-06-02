@@ -38,4 +38,18 @@ export default {
     'min-h-fit': {
         minHeight: 'fit-content',
     },
+    arbitraryValues: {
+        'min-h-<number>': {
+            minHeight: 'calc(var(--spacing) * <number>)',
+        },
+        'min-h-<fraction>': {
+            minHeight: 'calc(<fraction> * 100%)',
+        },
+        'min-h-(<variable>)': {
+            minHeight: 'var(<variable>)',
+        },
+        'min-h-[<value>]': {
+            minHeight: '<value>',
+        },
+    },
 };
