@@ -51,4 +51,12 @@ export default {
         fontSize: 'var(--text-9xl)',
         lineHeight: 'var(--text-9xl--line-height)',
     },
+    arbitraryValues: {
+        'text-(length:<variable>)': {
+            fontSize: 'var(<variable>)',
+        },
+        'text-[<value>]': {
+            fontSize: '<value>',
+        },
+    },
 };

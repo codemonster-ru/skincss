@@ -740,4 +740,12 @@ export default {
     'text-stone-950': {
         color: 'var(--color-stone-950)',
     },
+    arbitraryValues: {
+        'text-(<variable>)': {
+            color: 'var(<variable>)',
+        },
+        'text-[<value>]': {
+            color: '<value>',
+        },
+    },
 };

@@ -5,4 +5,24 @@ export default {
         '-webkit-box-orient': 'horizontal',
         '-webkit-line-clamp': 'unset',
     },
+    arbitraryValues: {
+        'line-clamp-<number>': {
+            overflow: 'hidden',
+            display: '-webkit-box',
+            '-webkit-box-orient': 'vertical',
+            '-webkit-line-clamp': '<number>',
+        },
+        'line-clamp-(<variable>)': {
+            overflow: 'hidden',
+            display: '-webkit-box',
+            '-webkit-box-orient': 'vertical',
+            '-webkit-line-clamp': 'var(<variable>)',
+        },
+        'line-clamp-[<value>]': {
+            overflow: 'hidden',
+            display: '-webkit-box',
+            '-webkit-box-orient': 'vertical',
+            '-webkit-line-clamp': '<value>',
+        },
+    },
 };

@@ -26,4 +26,12 @@ export default {
     'font-stretch-ultra-expanded': {
         fontStretch: 'ultra-expanded',
     },
+    arbitraryValues: {
+        'font-stretch-(<variable>)': {
+            fontStretch: 'var(<variable>)',
+        },
+        'font-stretch-[<value>]': {
+            fontStretch: '<value>',
+        },
+    },
 };

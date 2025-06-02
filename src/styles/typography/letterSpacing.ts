@@ -17,4 +17,12 @@ export default {
     'tracking-widest': {
         letterSpacing: 'var(--tracking-widest)',
     },
+    arbitraryValues: {
+        'tracking-(<variable>)': {
+            letterSpacing: 'var(<variable>)',
+        },
+        'tracking-[<value>]': {
+            letterSpacing: '<value>',
+        },
+    },
 };
