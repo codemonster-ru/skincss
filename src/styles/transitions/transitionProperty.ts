@@ -34,4 +34,16 @@ export default {
     'transition-none': {
         transitionProperty: 'none',
     },
+    arbitraryValues: {
+        'transition-(<variable>)': {
+            transitionProperty: 'var(<variable>)',
+            transitionTimingFunction: 'var(--default-transition-timing-function)',
+            transitionDuration: 'var(--default-transition-duration)',
+        },
+        'transition-[<value>]': {
+            transitionProperty: '<variable>',
+            transitionTimingFunction: 'var(--default-transition-timing-function)',
+            transitionDuration: 'var(--default-transition-duration)',
+        },
+    },
 };

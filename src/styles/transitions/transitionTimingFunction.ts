@@ -14,4 +14,12 @@ export default {
     'ease-initial': {
         transitionTimingFunction: 'initial',
     },
+    arbitraryValues: {
+        'ease-(<variable>)': {
+            transitionTimingFunction: 'var(<variable>)',
+        },
+        'ease-[<value>]': {
+            transitionTimingFunction: '<value>',
+        },
+    },
 };
