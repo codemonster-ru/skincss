@@ -6668,4 +6668,60 @@ export default {
     'border-l-stone-950': {
         borderLeftColor: 'var(--color-stone-950)',
     },
+    arbitraryValues: {
+        'border-(<variable>)': {
+            borderColor: 'var(<variable>)',
+        },
+        'border-[<value>]': {
+            borderColor: '<value>',
+        },
+        'border-x-(<variable>)': {
+            borderInlineColor: 'var(<variable>)',
+        },
+        'border-x-[<value>]': {
+            borderInlineColor: '<value>',
+        },
+        'border-y-(<variable>)': {
+            borderBlockColor: 'var(<variable>)',
+        },
+        'border-y-[<value>]': {
+            borderBlockColor: '<value>',
+        },
+        'border-s-(<variable>)': {
+            borderInlineStartColor: 'var(<variable>)',
+        },
+        'border-s-[<value>]': {
+            borderInlineStartColor: '<value>',
+        },
+        'border-e-(<variable>)': {
+            borderInlineEndColor: 'var(<variable>)',
+        },
+        'border-e-[<value>]': {
+            borderInlineEndColor: '<value>',
+        },
+        'border-t-(<variable>)': {
+            borderTopColor: 'var(<variable>)',
+        },
+        'border-t-[<value>]': {
+            borderTopColor: '<value>',
+        },
+        'border-r-(<variable>)': {
+            borderRightColor: 'var(<variable>)',
+        },
+        'border-r-[<value>]': {
+            borderRightColor: '<value>',
+        },
+        'border-b-(<variable>)': {
+            borderBottomColor: 'var(<variable>)',
+        },
+        'border-b-[<value>]': {
+            borderBottomColor: '<value>',
+        },
+        'border-l-(<variable>)': {
+            borderLeftColor: 'var(<variable>)',
+        },
+        'border-l-[<value>]': {
+            borderLeftColor: '<value>',
+        },
+    },
 };

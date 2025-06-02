@@ -509,4 +509,108 @@ export default {
     'rounded-bl-full': {
         borderBottomLeftRadius: 'calc(infinity * 1px)',
     },
+    arbitraryValues: {
+        'rounded-(<variable>)': {
+            borderRadius: 'var(<variable>)',
+        },
+        'rounded-[<value>]': {
+            borderRadius: '<value>',
+        },
+        'rounded-s-(<variable>)': {
+            borderStartStartRadius: 'var(<variable>)',
+            borderEndStartRadius: 'var(<variable>)',
+        },
+        'rounded-s-[<value>]': {
+            borderStartStartRadius: '<value>',
+            borderEndStartRadius: '<value>',
+        },
+        'rounded-e-(<variable>)': {
+            borderStartEndRadius: 'var(<variable>)',
+            borderEndEndRadius: 'var(<variable>)',
+        },
+        'rounded-e-[<value>]': {
+            borderStartEndRadius: '<value>',
+            borderEndEndRadius: '<value>',
+        },
+        'rounded-t-(<variable>)': {
+            borderTopLeftRadius: 'var(<variable>)',
+            borderTopRightRadius: 'var(<variable>)',
+        },
+        'rounded-t-[<value>]': {
+            borderTopLeftRadius: '<value>',
+            borderTopRightRadius: '<value>',
+        },
+        'rounded-r-(<variable>)': {
+            borderTopRightRadius: 'var(<variable>)',
+            borderBottomRightRadius: 'var(<variable>)',
+        },
+        'rounded-r-[<value>]': {
+            borderTopRightRadius: '<value>',
+            borderBottomRightRadius: '<value>',
+        },
+        'rounded-b-(<variable>)': {
+            borderBottomRightRadius: 'var(<variable>)',
+            borderBottomLeftRadius: 'var(<variable>)',
+        },
+        'rounded-b-[<value>]': {
+            borderBottomRightRadius: '<value>',
+            borderBottomLeftRadius: '<value>',
+        },
+        'rounded-l-(<variable>)': {
+            borderTopLeftRadius: 'var(<variable>)',
+            borderBottomLeftRadius: 'var(<variable>)',
+        },
+        'rounded-l-[<value>]': {
+            borderTopLeftRadius: '<value>',
+            borderBottomLeftRadius: '<value>',
+        },
+        'rounded-ss-(<variable>)': {
+            borderStartStartRadius: 'var(<variable>)',
+        },
+        'rounded-ss-[<value>]': {
+            borderStartStartRadius: '<value>',
+        },
+        'rounded-se-(<variable>)': {
+            borderStartEndRadius: 'var(<variable>)',
+        },
+        'rounded-se-[<value>]': {
+            borderStartEndRadius: '<value>',
+        },
+        'rounded-ee-(<variable>)': {
+            borderEndEndRadius: 'var(<variable>)',
+        },
+        'rounded-ee-[<value>]': {
+            borderEndEndRadius: '<value>',
+        },
+        'rounded-es-(<variable>)': {
+            borderEndStartRadius: 'var(<variable>)',
+        },
+        'rounded-es-[<value>]': {
+            borderEndStartRadius: '<value>',
+        },
+        'rounded-tl-(<variable>)': {
+            borderTopLeftRadius: 'var(<variable>)',
+        },
+        'rounded-tl-[<value>]': {
+            borderTopLeftRadius: '<value>',
+        },
+        'rounded-tr-(<variable>)': {
+            borderTopRightRadius: 'var(<variable>)',
+        },
+        'rounded-tr-[<value>]': {
+            borderTopRightRadius: '<value>',
+        },
+        'rounded-br-(<variable>)': {
+            borderBottomRightRadius: 'var(<variable>)',
+        },
+        'rounded-br-[<value>]': {
+            borderBottomRightRadius: '<value>',
+        },
+        'rounded-bl-(<variable>)': {
+            borderBottomLeftRadius: 'var(<variable>)',
+        },
+        'rounded-bl-[<value>]': {
+            borderBottomLeftRadius: '<value>',
+        },
+    },
 };
