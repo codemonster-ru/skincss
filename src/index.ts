@@ -1,1 +1,1 @@
-export { default } from '@/postcss/bootstrap';
+export { default } from '@/postcss/bootstrap.ts';

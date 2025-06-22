@@ -1,35 +1,32 @@
-import accessibility from './accessibility';
-import backgrounds from './backgrounds';
-import base from './base';
-import borders from './borders';
-import effects from './effects';
-import filters from './filters';
-import grid from './grid';
-import interactivity from './interactivity';
-import layout from './layout';
-import sizing from './sizing';
-import spacing from './spacing';
-import svg from './svg';
-import tables from './tables';
-import transforms from './transforms';
-import transitions from './transitions';
-import typography from './typography';
+import url from 'url';
+import path from 'path';
+import { ScanClasses } from '@/utils/scan.ts';
 
-export default {
-    ...accessibility,
-    ...backgrounds,
-    ...base,
-    ...borders,
-    ...effects,
-    ...filters,
-    ...grid,
-    ...interactivity,
-    ...layout,
-    ...sizing,
-    ...spacing,
-    ...svg,
-    ...tables,
-    ...transforms,
-    ...transitions,
-    ...typography,
+const styles: string[] = [];
+const arbitraryValues: {
+    [index: string]: object;
+} = {};
+const getStyles = async () => {
+    const scanClasses: ScanClasses = new ScanClasses();
+    const files: string[] = await scanClasses.getDeepFiles(path.resolve('./src/styles/'));
+
+    await Promise.all(
+        files.map(async (file: string) => {
+            if (!file.endsWith('styles\\index.ts')) {
+                const style = (await import(url.pathToFileURL(file).href)).default;
+
+                if (style.arbitraryValues !== undefined) {
+                    arbitraryValues[file] = style.arbitraryValues;
+
+                    delete style.arbitraryValues;
+                }
+
+                Object.assign(styles, style);
+            }
+        }),
+    );
 };
+
+await getStyles();
+
+export { styles, arbitraryValues };

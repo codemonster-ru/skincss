@@ -1,3 +1,4 @@
 export default {
-    source: '/src',
+    source: '/index.html',
+    // source: '/src',
 };

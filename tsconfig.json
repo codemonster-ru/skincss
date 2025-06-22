@@ -10,8 +10,8 @@
         "allowSyntheticDefaultImports": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
-        "module": "ESNext",
-        "moduleResolution": "node",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
@@ -21,6 +21,9 @@
             "@/*": ["./src/*"]
         }
     },
+    "ts-node": {
+        "esm": true
+    },
     "include": ["./src/**/*"],
-    "exclude": ["node_modules"],
+    "exclude": ["node_modules"]
 }
