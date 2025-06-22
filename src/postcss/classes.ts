@@ -1,73 +1,21 @@
-import styleBase from '@/styles/base';
-import styleGrid from '@/styles/grid';
-import styleSizing from '@/styles/sizing';
-import styleLayout from '@/styles/layout';
-import styleSpacing from '@/styles/spacing';
-import styleTypography from '@/styles/typography';
-import styleBackground from '@/styles/backgrounds';
-import styleBorder from '@/styles/borders';
-import styleEffect from '@/styles/effects';
-import styleFilter from '@/styles/filters';
-import styleTable from '@/styles/tables';
-import styleTransition from '@/styles/transitions';
-import styleTransform from '@/styles/transforms';
-import styleInteractivity from '@/styles/interactivity';
-import styleSvg from '@/styles/svg';
-import styleAccessibility from '@/styles/accessibility';
 import { Root, Rule } from 'postcss';
-import { camelToSnakeCase } from '@/utils/helper';
+import { camelToSnakeCase } from '@/utils/helper.ts';
+import { ScanClasses } from '@/utils/scan.ts';
 
 interface Property {
     [index: string]: string;
 }
 
-interface Style {
-    [index: string]: Property;
-}
-
-export default async (root: Root, variant: string, allowedStyles: string[]): Promise<void> => {
-    let styles: Style;
-
-    if (variant === 'base') {
-        styles = styleBase;
-    } else if (variant === 'grid') {
-        styles = styleGrid;
-    } else if (variant === 'sizing') {
-        styles = styleSizing;
-    } else if (variant === 'layout') {
-        styles = styleLayout;
-    } else if (variant === 'spacing') {
-        styles = styleSpacing;
-    } else if (variant === 'typography') {
-        styles = styleTypography;
-    } else if (variant === 'background') {
-        styles = styleBackground;
-    } else if (variant === 'border') {
-        styles = styleBorder;
-    } else if (variant === 'effect') {
-        styles = styleEffect;
-    } else if (variant === 'filter') {
-        styles = styleFilter;
-    } else if (variant === 'table') {
-        styles = styleTable;
-    } else if (variant === 'transition') {
-        styles = styleTransition;
-    } else if (variant === 'transform') {
-        styles = styleTransform;
-    } else if (variant === 'interactivity') {
-        styles = styleInteractivity;
-    } else if (variant === 'svg') {
-        styles = styleSvg;
-    } else if (variant === 'accessibility') {
-        styles = styleAccessibility;
-    } else {
+export default async (root: Root, variant: string, scanClass: ScanClasses): Promise<void> => {
+    if (variant !== 'all') {
         return;
     }
 
-    Object.keys(styles).forEach((key: string) => {
-        if (allowedStyles.includes(key)) {
-            const selector = variant === 'base' ? key : `.${key}`;
-            const properties: Property = styles[key];
+    Object.keys(scanClass.allStyles).forEach((key: string) => {
+        if (scanClass.styles.includes(key)) {
+            // const selector = variant === 'base' ? key : `.${key}`;
+            const selector = `.${key}`;
+            const properties: Property = scanClass.allStyles[key];
             const rule: Rule = new Rule({
                 selector: selector,
                 source: root.source,
@@ -90,5 +38,31 @@ export default async (root: Root, variant: string, allowedStyles: string[]): Pro
 
             root.append(rule);
         }
+    });
+
+    Object.keys(scanClass.arbitraryValues).map(key => {
+        const selector = `.${key.replace('(', '\\(').replace(')', '\\)').replace('[', '\\[').replace(']', '\\]')}`;
+        const properties: Property = scanClass.arbitraryValues[key as keyof typeof scanClass.arbitraryValues];
+        const rule: Rule = new Rule({
+            selector: selector,
+            source: root.source,
+        });
+
+        Object.keys(properties).forEach((value: string, index: number) => {
+            const prop: string = value.includes('-') ? value : camelToSnakeCase(value);
+            let propValue: string = properties[value];
+
+            if (index === Object.keys(properties).length - 1) {
+                propValue += ';';
+            }
+
+            rule.append({
+                prop: prop,
+                value: propValue,
+                source: root.source,
+            });
+        });
+
+        root.append(rule);
     });
 };

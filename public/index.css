@@ -1,16 +1,1 @@
-@skin base;
-@skin grid;
-@skin sizing;
-@skin layout;
-@skin spacing;
-@skin typography;
-@skin background;
-@skin border;
-@skin effect;
-@skin filter;
-@skin table;
-@skin transition;
-@skin transform;
-@skin interactivity;
-@skin svg;
-@skin accessibility;
+@skin all;
