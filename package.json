@@ -1,7 +1,7 @@
 {
     "name": "@codemonster-ru/skincss",
     "type": "module",
-    "version": "0.22.0",
+    "version": "0.23.0",
     "description": "Open source CSS framework.",
     "license": "MIT",
     "author": "Kirill Kolesnikov",
@@ -47,7 +47,7 @@
         "postcss": "^8.4.49",
         "prettier": "^3.3.2",
         "ts-node": "^10.9.2",
-        "tsx": "^4.19.2",
+        "tsx": "^4.20.3",
         "typescript": "^5.5.3",
         "vite": "^6.3.2",
         "vite-plugin-dts": "^4.5.0"
