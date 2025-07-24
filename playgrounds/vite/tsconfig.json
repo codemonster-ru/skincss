@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
+        "target": "esnext",
         "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "types": ["vite/client", "node"],
         "allowJs": true,
@@ -10,20 +10,24 @@
         "allowSyntheticDefaultImports": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
-        "module": "nodenext",
-        "moduleResolution": "nodenext",
+        "module": "esnext",
+        "moduleResolution": "bundler",
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "preserve",
         "baseUrl": "./",
         "paths": {
-            "@/*": ["./src/*"]
-        }
+            "@/*": ["./*"]
+        },
+        "declaration": true,
+        "declarationMap": true
     },
     "ts-node": {
-        "esm": true
+        "esm": true,
+        "compiler": "typescript",
+        "experimentalSpecifierResolution": "node",
     },
-    "include": ["./src/**/*"],
-    "exclude": ["node_modules"]
+    "include": ["./**/*"],
+    "exclude": ["./dist/", "./node_modules/"]
 }
