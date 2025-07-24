@@ -1,0 +1,48 @@
+{
+    "name": "@codemonster-ru/skincss",
+    "type": "module",
+    "version": "0.24.0",
+    "description": "Open source CSS framework.",
+    "license": "MIT",
+    "author": "Kirill Kolesnikov",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/codemonster-ru/skincss.git",
+        "directory": "packages/@codemonster-ru-skincss"
+    },
+    "keywords": [],
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": {
+                "style": "./dist/index.css",
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            },
+            "require": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.cjs"
+            }
+        },
+        "./dist/*.css": {
+            "import": "./dist/*.css",
+            "require": "./dist/*.css"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup"
+    },
+    "devDependencies": {
+        "@types/node": "^24.1.0",
+        "tsup": "8.5.0",
+        "typescript": "^5.8.3"
+    },
+    "dependencies": {
+        "@codemonster-ru/skincss-root": "file:../.."
+    }
+}

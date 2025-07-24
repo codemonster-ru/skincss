@@ -1,55 +1,20 @@
 {
-    "name": "@codemonster-ru/skincss",
-    "type": "module",
-    "version": "0.23.0",
-    "description": "Open source CSS framework.",
+    "name": "@codemonster-ru/skincss-root",
+    "version": "1.0.0",
     "license": "MIT",
     "author": "Kirill Kolesnikov",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/codemonster-ru/skincss.git"
-    },
-    "keywords": [],
-    "main": "./dist/index.ts.umd.cjs",
-    "module": "./dist/index.ts.mjs",
-    "types": "./dist/index.d.ts",
-    "exports": {
-        ".": {
-            "import": {
-                "style": "./dist/index.css",
-                "types": "./dist/index.d.ts",
-                "default": "./dist/index.ts.mjs"
-            },
-            "require": {
-                "types": "./dist/index.d.ts",
-                "default": "./dist/index.ts.umd.cjs"
-            }
-        },
-        "./dist/*.css": {
-            "import": "./dist/*.css",
-            "require": "./dist/*.css"
-        }
-    },
-    "files": [
-        "dist"
-    ],
     "scripts": {
-        "dev": "vite dev --force --mode development",
-        "build": "vite build --mode production"
+        "boostrap": "npm cache clear --force && npm run uninstall-all && npm run link-all && npm run install-all && npm run link-all",
+        "build-all": "cd ./packages/@codemonster-ru-skincss && npm run build && cd ../../packages/@codemonster-ru-vite && npm run build",
+        "link-all": "cd ./packages/@codemonster-ru-vite && npm run link-package && cd ../../playgrounds/vite && npm run link-packages",
+        "install-all": "npm i && cd ./packages/@codemonster-ru-skincss && npm i && cd ../../packages/@codemonster-ru-vite && npm i && cd ../../playgrounds/vite && npm i",
+        "uninstall-all": "(rm -rf **/node_modules) || ((if exist .\\node_modules rd /s /q .\\node_modules) && (if exist .\\packages\\@codemonster-ru-skincss\\node_modules rd /s /q .\\packages\\@codemonster-ru-skincss\\node_modules) && (if exist .\\packages\\@codemonster-ru-vite\\node_modules rd /s /q .\\packages\\@codemonster-ru-vite\\node_modules) && (if exist .\\playgrounds\\vite\\node_modules rd /s /q .\\playgrounds\\vite\\node_modules))"
     },
     "devDependencies": {
-        "@types/node": "^20.14.10",
-        "@typescript-eslint/eslint-plugin": "^7.16.0",
-        "eslint": "^8.57.0",
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-prettier": "^5.1.3",
-        "jiti": "^2.4.2",
-        "postcss": "^8.4.49",
-        "prettier": "^3.3.2",
-        "ts-node": "^10.9.2",
-        "tsx": "^4.20.3",
-        "typescript": "^5.5.3",
-        "vite": "^6.3.2",
-        "vite-plugin-dts": "^4.5.0"
+        "@typescript-eslint/eslint-plugin": "^8.35.0",
+        "eslint": "^9.30.0",
+        "eslint-config-prettier": "^10.1.5",
+        "eslint-plugin-prettier": "^5.5.1",
+        "prettier": "^3.6.2"
     }
 }

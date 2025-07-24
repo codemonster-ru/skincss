@@ -1,5 +1,3 @@
-import height from './height';
-
 export default {
     'w-3xs': {
         width: '16rem',
