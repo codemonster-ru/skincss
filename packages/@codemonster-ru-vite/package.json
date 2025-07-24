@@ -33,6 +33,9 @@
         "link-package": "npm link ../@codemonster-ru-skincss",
         "build": "tsup"
     },
+    "dependencies": {
+        "@codemonster-ru/skincss": "*"
+    },
     "devDependencies": {
         "@types/node": "^24.0.7",
         "tsup": "8.5.0",

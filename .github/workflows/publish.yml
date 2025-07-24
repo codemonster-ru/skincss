@@ -16,6 +16,7 @@ jobs:
               working-directory: ./packages/@codemonster-ru-skincss
               run: |
                   npm ci
+                  npm cache clear --force
                   npm run build
                   npm audit signatures
                   npm publish --access public
@@ -25,6 +26,7 @@ jobs:
               working-directory: ./packages/@codemonster-ru-vite
               run: |
                   npm ci
+                  npm cache clear --force
                   npm run build
                   npm audit signatures
                   npm publish --access public
