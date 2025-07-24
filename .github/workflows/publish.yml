@@ -7,14 +7,24 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            -   uses: actions/checkout@v4
-            -   uses: actions/setup-node@v4
-                with:
-                    node-version: 20
-                    registry-url: 'https://registry.npmjs.org'
-            -   run: npm ci
-            -   run: npm run build
-            -   run: npm audit signatures
-            -   run: npm publish --access public
-                env:
-                    NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  registry-url: 'https://registry.npmjs.org'
+            - name: publish @codemonster-ru-skincss
+              working-directory: ./packages/@codemonster-ru-skincss
+              run: |
+                  npm ci
+                  npm run build
+                  npm audit signatures
+                  npm publish --access public
+            - name: publish @codemonster-ru-vite
+              working-directory: ./packages/@codemonster-ru-vite
+              run: |
+                  npm ci
+                  npm run build
+                  npm audit signatures
+                  npm publish --access public
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
