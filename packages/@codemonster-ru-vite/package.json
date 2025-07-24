@@ -1,0 +1,42 @@
+{
+    "name": "@codemonster-ru/vite-plugin-skincss",
+    "type": "module",
+    "version": "0.1.0",
+    "description": "Vite plugin for SkinCSS.",
+    "license": "MIT",
+    "author": "Kirill Kolesnikov",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/codemonster-ru/skincss.git",
+        "directory": "packages/@codemonster-ru-vite-plugin-skincss"
+    },
+    "keywords": [],
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            },
+            "require": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.cjs"
+            }
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "link-package": "npm link ../@codemonster-ru-skincss",
+        "build": "tsup"
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.7",
+        "tsup": "8.5.0",
+        "typescript": "^5.8.3",
+        "vite": "7.0.5"
+    }
+}
