@@ -34,11 +34,11 @@
         "build": "tsup"
     },
     "dependencies": {
-        "@codemonster-ru/skincss": "*"
+        "@codemonster-ru/skincss": "^0.24.0"
     },
     "devDependencies": {
         "@types/node": "^24.0.7",
-        "tsup": "8.5.0",
+        "tsup": "8.4.0",
         "typescript": "^5.8.3",
         "vite": "7.0.5"
     }
