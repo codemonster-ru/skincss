@@ -16,8 +16,6 @@ jobs:
               working-directory: ./packages/@codemonster-ru-vite
               run: |
                   npm ci
-                  npm cache clear --force
-                  npm i
                   npm run build
                   npm audit signatures
                   npm publish --access public
