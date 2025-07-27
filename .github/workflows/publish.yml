@@ -13,6 +13,7 @@ jobs:
                   node-version: 20
                   registry-url: 'https://registry.npmjs.org'
             - name: publish @codemonster-ru-skincss
+              continue-on-error: true
               working-directory: ./packages/@codemonster-ru-skincss
               run: |
                   npm cache clear --force
@@ -23,6 +24,7 @@ jobs:
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
             - name: publish @codemonster-ru-vite
+              continue-on-error: true
               working-directory: ./packages/@codemonster-ru-vite
               run: |
                   npm cache clear --force
