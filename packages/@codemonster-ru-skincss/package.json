@@ -1,7 +1,7 @@
 {
     "name": "@codemonster-ru/skincss",
     "type": "module",
-    "version": "0.24.0",
+    "version": "0.24.1",
     "description": "Open source CSS framework.",
     "license": "MIT",
     "author": "Kirill Kolesnikov",
@@ -41,8 +41,5 @@
         "@types/node": "^24.1.0",
         "tsup": "8.5.0",
         "typescript": "^5.8.3"
-    },
-    "dependencies": {
-        "@codemonster-ru/skincss-root": "file:../.."
     }
 }
