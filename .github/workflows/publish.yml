@@ -11,11 +11,22 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                   node-version: 20
-                  registry-url: 'https://registry.npmjs.org'            
+                  registry-url: 'https://registry.npmjs.org'
+            - name: publish @codemonster-ru-skincss
+              working-directory: ./packages/@codemonster-ru-skincss
+              run: |
+                  npm cache clear --force
+                  npm ci
+                  npm run build
+                  npm audit signatures
+                  npm publish --access public
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
             - name: publish @codemonster-ru-vite
               working-directory: ./packages/@codemonster-ru-vite
               run: |
-                  npm i
+                  npm cache clear --force
+                  npm ci
                   npm run build
                   npm audit signatures
                   npm publish --access public
