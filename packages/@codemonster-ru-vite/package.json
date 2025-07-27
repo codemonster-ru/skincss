@@ -34,7 +34,7 @@
         "build": "tsup"
     },
     "dependencies": {
-        "@codemonster-ru/skincss": "^0.25.0"
+        "@codemonster-ru/skincss": "*"
     },
     "devDependencies": {
         "vite": "7.0.5",
