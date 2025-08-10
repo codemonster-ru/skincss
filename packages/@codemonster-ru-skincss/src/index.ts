@@ -1,7 +1,7 @@
 import './index.css';
 import path from 'path';
-import ConfigClass from './core/utils/config';
-import ScannerClass from './core/utils/scanner';
+import ConfigClass from './core/config';
+import ScannerClass from './core/scanner';
 
 const config = new ConfigClass();
 const scanner = new ScannerClass();
