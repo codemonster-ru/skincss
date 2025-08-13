@@ -622,8 +622,8 @@ export default class ScannerClass {
         return this.convertStyleToCss(obj.styles) + this.convertBreakpointStyleToCss(obj.breakpointStyles);
     };
 
-    getCss = async (config: ConfigClass) => {
-        return this.convertToCss(this.prepareScanResult(await this.parseFiles(await this.scanDirectory(config))));
+    getCss = async (files: string[]) => {
+        return this.convertToCss(this.prepareScanResult(await this.parseFiles(files)));
     };
 
     getVarCss = (css: string) => {
@@ -640,12 +640,13 @@ export default class ScannerClass {
     };
 
     applyCss = async (config: ConfigClass, code: string) => {
+        let files: string[] = [];
         const replaced = [...code.matchAll(importRegex)];
 
         if (replaced) {
             await this.loadCss();
-
-            let css = await this.getCss(config);
+            files = await this.scanDirectory(config);
+            let css = await this.getCss(files);
 
             if (css) {
                 const varCss = this.getVarCss(css);
@@ -688,6 +689,6 @@ export default class ScannerClass {
             }
         }
 
-        return code;
+        return { code: code, files: files };
     };
 }
