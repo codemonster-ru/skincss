@@ -42,5 +42,8 @@ const bootstrap = async (code: string, id: string) => {
         return await scanner.applyCss(config, code);
     }
 };
+const refresh = () => {
+    config.enable = false;
+};
 
-export { setBase, bootstrap };
+export { setBase, refresh, bootstrap };
