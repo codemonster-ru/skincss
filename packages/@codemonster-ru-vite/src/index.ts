@@ -1,5 +1,5 @@
 import { Plugin, ResolvedConfig } from 'vite';
-import { setBase, bootstrap } from '@codemonster-ru/skincss';
+import { setBase, refresh, bootstrap } from '@codemonster-ru/skincss';
 
 export default function skincss(): Plugin[] {
     let end = false;
@@ -18,11 +18,20 @@ export default function skincss(): Plugin[] {
                     if (result) {
                         end = true;
 
-                        return { code: result };
+                        result.files.map((file: string) => {
+                            this.addWatchFile(file);
+                        });
+
+                        return { code: result.code };
                     }
                 }
 
                 return { code };
+            },
+            watchChange() {
+                end = false;
+
+                refresh();
             },
         },
     ] satisfies Plugin[];
