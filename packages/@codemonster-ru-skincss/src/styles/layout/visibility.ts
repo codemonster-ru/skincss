@@ -1,11 +1,11 @@
 export default {
-    'visible': {
+    visible: {
         visibility: 'visible',
     },
-    'invisible': {
+    invisible: {
         visibility: 'hidden',
     },
-    'collapse': {
+    collapse: {
         visibility: 'collapse',
     },
-};
+} satisfies RawStylesType;

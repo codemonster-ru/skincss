@@ -41,7 +41,7 @@ export default {
     'columns-auto': {
         columns: 'auto',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'columns-<number>': {
             columns: '<number>',
         },
@@ -52,4 +52,4 @@ export default {
             columns: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

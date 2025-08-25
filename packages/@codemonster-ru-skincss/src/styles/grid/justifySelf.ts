@@ -20,4 +20,4 @@ export default {
     'justify-self-stretch': {
         justifySelf: 'stretch',
     },
-};
+} satisfies RawStylesType;

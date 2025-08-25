@@ -29,4 +29,4 @@ export default {
     'place-content-stretch': {
         placeContent: 'stretch',
     },
-};
+} satisfies RawStylesType;

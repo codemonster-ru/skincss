@@ -17,7 +17,7 @@ export default {
     'tracking-widest': {
         letterSpacing: 'var(--tracking-widest)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'tracking-(<variable>)': {
             letterSpacing: 'var(<variable>)',
         },
@@ -25,4 +25,4 @@ export default {
             letterSpacing: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

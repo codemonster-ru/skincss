@@ -2,7 +2,7 @@ export default {
     'backdrop-grayscale': {
         backdropFilter: 'grayscale(100%)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'backdrop-grayscale-<number>': {
             backdropFilter: 'grayscale(<number>%)',
         },
@@ -13,4 +13,4 @@ export default {
             backdropFilter: 'grayscale(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

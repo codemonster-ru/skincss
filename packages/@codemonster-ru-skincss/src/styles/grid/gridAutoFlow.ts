@@ -14,4 +14,4 @@ export default {
     'grid-flow-col-dense': {
         gridAutoFlow: 'column dense',
     },
-};
+} satisfies RawStylesType;

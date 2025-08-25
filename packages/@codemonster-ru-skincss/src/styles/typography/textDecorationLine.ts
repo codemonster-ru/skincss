@@ -11,4 +11,4 @@ export default {
     'no-underline': {
         textDecorationLine: 'none',
     },
-};
+} satisfies RawStylesType;

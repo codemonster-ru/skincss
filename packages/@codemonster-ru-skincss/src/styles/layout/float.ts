@@ -14,4 +14,4 @@ export default {
     'float-none': {
         float: 'none',
     },
-};
+} satisfies RawStylesType;

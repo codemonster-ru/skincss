@@ -23,7 +23,7 @@ export default {
     'backdrop-blur-none': {
         backdropFilter: '',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'backdrop-blur-(<variable>)': {
             backdropFilter: 'blur(var(<variable>))',
         },
@@ -31,4 +31,4 @@ export default {
             backdropFilter: 'blur(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

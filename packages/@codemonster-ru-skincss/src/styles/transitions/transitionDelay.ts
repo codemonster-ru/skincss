@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'delay-<number>': {
             transitionDelay: '<number>ms',
         },
@@ -10,4 +10,4 @@ export default {
             transitionDelay: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

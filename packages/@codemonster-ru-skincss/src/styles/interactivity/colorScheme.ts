@@ -17,4 +17,4 @@ export default {
     'scheme-only-light': {
         colorScheme: 'only light',
     },
-};
+} satisfies RawStylesType;

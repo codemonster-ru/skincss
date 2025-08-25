@@ -2,7 +2,7 @@ export default {
     outline: {
         outlineWidth: '1px',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'outline-<number>': {
             outlineWidth: '<number>px',
         },
@@ -13,4 +13,4 @@ export default {
             outlineWidth: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

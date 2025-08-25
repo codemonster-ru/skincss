@@ -17,4 +17,4 @@ export default {
     'border-none': {
         borderStyle: 'none',
     },
-};
+} satisfies RawStylesType;

@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'gap-<number>': {
             gap: 'calc(var(--spacing) * <value>)',
         },
@@ -28,4 +28,4 @@ export default {
             rowGap: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

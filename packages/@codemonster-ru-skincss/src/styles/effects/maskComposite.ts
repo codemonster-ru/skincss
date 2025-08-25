@@ -11,4 +11,4 @@ export default {
     'mask-exclude': {
         maskComposite: 'exclude',
     },
-};
+} satisfies RawStylesType;

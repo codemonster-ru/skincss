@@ -2,7 +2,7 @@ export default {
     'backdrop-sepia': {
         backdropFilter: 'sepia(100%)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'backdrop-sepia-<number>': {
             backdropFilter: 'sepia(<number>%)',
         },
@@ -13,4 +13,4 @@ export default {
             backdropFilter: 'sepia(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

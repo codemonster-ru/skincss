@@ -5,4 +5,4 @@ export default {
     'pointer-events-none': {
         pointerEvents: 'none',
     },
-};
+} satisfies RawStylesType;

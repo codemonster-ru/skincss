@@ -55,3 +55,12 @@ interface FontWeightSetterType {
     key: string;
     value: string;
 }
+
+interface GlobalThemeType {
+    fontFamily: FontsType;
+    color: ColorsType;
+    spacing: SpacingsType;
+    breakpoint: BreakpointsType;
+    text: TextsType;
+    fontWeight: FontWeightsType;
+}

@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'backdrop-brightness-<number>': {
             backdropFilter: 'brightness(<number>%)',
         },
@@ -10,4 +10,4 @@ export default {
             backdropFilter: 'brightness(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

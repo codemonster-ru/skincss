@@ -8,7 +8,7 @@ export default {
     'order-none': {
         order: '0',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'order-<number>': {
             order: '<number>',
         },
@@ -22,4 +22,4 @@ export default {
             order: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

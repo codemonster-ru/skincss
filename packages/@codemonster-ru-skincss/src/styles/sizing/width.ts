@@ -125,7 +125,7 @@ export default {
         width: 'fit-content',
         height: 'fit-content',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'w-<number>': {
             width: 'calc(var(--spacing) * <number>)',
         },
@@ -153,4 +153,4 @@ export default {
             width: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

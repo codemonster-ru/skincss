@@ -23,4 +23,4 @@ export default {
     'self-baseline': {
         alignSelf: 'baseline',
     },
-};
+} satisfies RawStylesType;

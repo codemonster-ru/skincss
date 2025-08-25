@@ -11,4 +11,4 @@ export default {
     'resize-x': {
         resize: 'horizontal',
     },
-};
+} satisfies RawStylesType;

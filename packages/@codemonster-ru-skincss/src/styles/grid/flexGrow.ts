@@ -2,7 +2,7 @@ export default {
     grow: {
         flexGrow: '1',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'grow-<number>': {
             flexGrow: '<number>',
         },
@@ -13,4 +13,4 @@ export default {
             flexGrow: '<value>',
         },
     },
-};
+} satisfies RawStylesType;
