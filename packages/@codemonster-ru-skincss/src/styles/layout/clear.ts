@@ -17,4 +17,4 @@ export default {
     'clear-none': {
         clear: 'none',
     },
-};
+} satisfies RawStylesType;

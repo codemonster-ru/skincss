@@ -17,4 +17,4 @@ export default {
     'snap-proximity': {
         '--scroll-snap-strictness': 'proximity',
     },
-};
+} satisfies RawStylesType;

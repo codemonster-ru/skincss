@@ -7,4 +7,4 @@ export default {
         '-webkit-font-smoothing': 'auto',
         '-moz-osx-font-smoothing': 'auto',
     },
-};
+} satisfies RawStylesType;

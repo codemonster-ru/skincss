@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'scroll-p-<number>': {
             scrollPadding: 'calc(var(--spacing) * <number>)',
         },
@@ -109,4 +109,4 @@ export default {
             scrollPaddingLeft: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

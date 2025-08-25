@@ -11,7 +11,7 @@ export default {
     'col-auto': {
         gridColumn: 'auto',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'col-span-<number>': {
             gridColumn: 'span <number> / span <number>',
         },
@@ -58,4 +58,4 @@ export default {
             gridColumnStart: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

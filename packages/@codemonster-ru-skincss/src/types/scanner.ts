@@ -1,22 +1,11 @@
-interface arbitraryStylesType {
-    [key: string]: object;
-}
-
-interface StylesType {
-    [key: string]: object;
-}
-
-interface breakpointStylesType {
-    [key: string]: string[];
-}
-
-interface breakpointArbitraryStylesType {
-    [key: string]: arbitraryStylesType;
-}
-
-interface ScanResult {
+interface ScanFileResult {
     styles: string[];
-    breakpointStyles: breakpointStylesType;
-    arbitraryStyles: arbitraryStylesType;
-    breakpointArbitraryStyles: breakpointArbitraryStylesType;
+    arbitraryStyles: string[];
+}
+
+interface ScannerStylesType {
+    styles: string;
+    arbitraryStyles: string;
+    ignored: string[];
+    config: import('../core/config.ts').default;
 }

@@ -17,4 +17,4 @@ export default {
     'mask-origin-view': {
         maskOrigin: 'view-box',
     },
-};
+} satisfies RawStylesType;

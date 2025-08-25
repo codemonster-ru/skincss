@@ -11,7 +11,7 @@ export default {
     'will-change-transform': {
         willChange: 'transform',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'will-change-<variable>': {
             willChange: 'var(<variable>)',
         },
@@ -19,4 +19,4 @@ export default {
             willChange: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

@@ -740,7 +740,7 @@ export default {
     'bg-stone-950': {
         backgroundColor: 'var(--color-stone-950)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'bg-(<variable>)': {
             backgroundColor: 'var(<variable>)',
         },
@@ -748,4 +748,4 @@ export default {
             backgroundColor: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

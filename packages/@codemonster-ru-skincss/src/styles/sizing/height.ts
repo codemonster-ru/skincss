@@ -38,7 +38,7 @@ export default {
     'h-fit': {
         height: 'fit-content',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'h-<number>': {
             height: 'calc(var(--spacing) * <number>)',
         },
@@ -52,4 +52,4 @@ export default {
             height: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

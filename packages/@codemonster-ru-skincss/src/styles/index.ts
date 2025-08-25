@@ -1,204 +1,205 @@
-// accessibility
-export * as accessibilityForcedColorAdjust from './accessibility/forcedColorAdjust';
+import { deepMerge } from '../core/helper';
 
-// backgrounds
-export * as backgroundsBackgroundAttachment from './backgrounds/backgroundAttachment';
-export * as backgroundsBackgroundClip from './backgrounds/backgroundClip';
-export * as backgroundsBackgroundColor from './backgrounds/backgroundColor';
-export * as backgroundsBackgroundImage from './backgrounds/backgroundImage';
-export * as backgroundsBackgroundOrigin from './backgrounds/backgroundOrigin';
-export * as backgroundsBackgroundPosition from './backgrounds/backgroundPosition';
-export * as backgroundsBackgroundRepeat from './backgrounds/backgroundRepeat';
-export * as backgroundsBackgroundSize from './backgrounds/backgroundSize';
+export default deepMerge(
+    // accessibility
+    require('./accessibility/forcedColorAdjust').default,
 
-// borders
-export * as bordersBorderColor from './borders/borderColor';
-export * as bordersBorderRadius from './borders/borderRadius';
-export * as bordersBorderStyle from './borders/borderStyle';
-export * as bordersBorderWidth from './borders/borderWidth';
-export * as bordersOutlineColor from './borders/outlineColor';
-export * as bordersOutlineOffset from './borders/outlineOffset';
-export * as bordersOutlineStyle from './borders/outlineStyle';
-export * as bordersOutlineWidth from './borders/outlineWidth';
+    // backgrounds
+    require('./backgrounds/backgroundAttachment').default,
+    require('./backgrounds/backgroundClip').default,
+    require('./backgrounds/backgroundColor').default,
+    require('./backgrounds/backgroundImage').default,
+    require('./backgrounds/backgroundOrigin').default,
+    require('./backgrounds/backgroundPosition').default,
+    require('./backgrounds/backgroundRepeat').default,
+    require('./backgrounds/backgroundSize').default,
 
-// effects
-export * as effectsBackgroundBlendMode from './effects/backgroundBlendMode';
-export * as effectsBoxShadow from './effects/boxShadow';
-export * as effectsMaskClip from './effects/maskClip';
-export * as effectsMaskComposite from './effects/maskComposite';
-export * as effectsMaskImage from './effects/maskImage';
-export * as effectsMaskMode from './effects/maskMode';
-export * as effectsMaskOrigin from './effects/maskOrigin';
-export * as effectsMaskPosition from './effects/maskPosition';
-export * as effectsMaskRepeat from './effects/maskRepeat';
-export * as effectsMaskSize from './effects/maskSize';
-export * as effectsMaskType from './effects/maskType';
-export * as effectsMixBlendMode from './effects/mixBlendMode';
-export * as effectsOpacity from './effects/opacity';
-export * as effectsTextShadow from './effects/textShadow';
+    // borders
+    require('./borders/borderColor').default,
+    require('./borders/borderRadius').default,
+    require('./borders/borderStyle').default,
+    require('./borders/borderWidth').default,
+    require('./borders/outlineColor').default,
+    require('./borders/outlineOffset').default,
+    require('./borders/outlineStyle').default,
+    require('./borders/outlineWidth').default,
 
-// filters
-export * as filtersBackdropFilterBlur from './filters/backdropFilter/blur';
-export * as filtersBackdropFilterBrightness from './filters/backdropFilter/brightness';
-export * as filtersBackdropFilterContrast from './filters/backdropFilter/contrast';
-export * as filtersBackdropFilterGrayscale from './filters/backdropFilter/grayscale';
-export * as filtersBackdropFilterHueRotate from './filters/backdropFilter/hueRotate';
-export * as filtersBackdropFilterInvert from './filters/backdropFilter/invert';
-export * as filtersBackdropFilterOpacity from './filters/backdropFilter/opacity';
-export * as filtersBackdropFilterSaturate from './filters/backdropFilter/saturate';
-export * as filtersBackdropFilterSepia from './filters/backdropFilter/sepia';
+    // effects
+    require('./effects/backgroundBlendMode').default,
+    require('./effects/boxShadow').default,
+    require('./effects/maskClip').default,
+    require('./effects/maskComposite').default,
+    require('./effects/maskImage').default,
+    require('./effects/maskMode').default,
+    require('./effects/maskOrigin').default,
+    require('./effects/maskPosition').default,
+    require('./effects/maskRepeat').default,
+    require('./effects/maskSize').default,
+    require('./effects/maskType').default,
+    require('./effects/mixBlendMode').default,
+    require('./effects/opacity').default,
+    require('./effects/textShadow').default,
 
-// filters
-export * as filtersFilterBlur from './filters/filter/blur';
-export * as filtersFilterBrightness from './filters/filter/brightness';
-export * as filtersFilterContrast from './filters/filter/contrast';
-export * as filtersFilterDropShadow from './filters/filter/dropShadow';
-export * as filtersFilterGrayscale from './filters/filter/grayscale';
-export * as filtersFilterHueRotate from './filters/filter/hueRotate';
-export * as filtersFilterInvert from './filters/filter/invert';
-export * as filtersFilterSaturate from './filters/filter/saturate';
-export * as filtersFilterSepia from './filters/filter/sepia';
+    // filters
+    require('./filters/backdropFilter/blur').default,
+    require('./filters/backdropFilter/brightness').default,
+    require('./filters/backdropFilter/contrast').default,
+    require('./filters/backdropFilter/grayscale').default,
+    require('./filters/backdropFilter/hueRotate').default,
+    require('./filters/backdropFilter/invert').default,
+    require('./filters/backdropFilter/opacity').default,
+    require('./filters/backdropFilter/saturate').default,
+    require('./filters/backdropFilter/sepia').default,
 
-// grid
-export * as gridAlignContent from './grid/alignContent';
-export * as gridAlignItems from './grid/alignItems';
-export * as gridAlignSelf from './grid/alignSelf';
-export * as gridFlex from './grid/flex';
-export * as gridFlexBasis from './grid/flexBasis';
-export * as gridFlexDirection from './grid/flexDirection';
-export * as gridFlexGrow from './grid/flexGrow';
-export * as gridFlexShrink from './grid/flexShrink';
-export * as gridFlexWrap from './grid/flexWrap';
-export * as gridGap from './grid/gap';
-export * as gridGridAutoColumns from './grid/gridAutoColumns';
-export * as gridGridAutoFlow from './grid/gridAutoFlow';
-export * as gridGridAutoRows from './grid/gridAutoRows';
-export * as gridGridColumn from './grid/gridColumn';
-export * as gridGridRow from './grid/gridRow';
-export * as gridGridTemplateColumns from './grid/gridTemplateColumns';
-export * as gridGridTemplateRows from './grid/gridTemplateRows';
-export * as gridJustifyContent from './grid/justifyContent';
-export * as gridJustifyItems from './grid/justifyItems';
-export * as gridJustifySelf from './grid/justifySelf';
-export * as gridOrder from './grid/order';
-export * as gridPlaceContent from './grid/placeContent';
-export * as gridPlaceItems from './grid/placeItems';
-export * as gridPlaceSelf from './grid/placeSelf';
+    // filters
+    require('./filters/filter/blur').default,
+    require('./filters/filter/brightness').default,
+    require('./filters/filter/contrast').default,
+    require('./filters/filter/dropShadow').default,
+    require('./filters/filter/grayscale').default,
+    require('./filters/filter/hueRotate').default,
+    require('./filters/filter/invert').default,
+    require('./filters/filter/saturate').default,
+    require('./filters/filter/sepia').default,
 
-// interactivity
-export * as interactivityAccentColor from './interactivity/accentColor';
-export * as interactivityAppearance from './interactivity/appearance';
-export * as interactivityCaretColor from './interactivity/caretColor';
-export * as interactivityColorScheme from './interactivity/colorScheme';
-export * as interactivityCursor from './interactivity/cursor';
-export * as interactivityFieldSizing from './interactivity/fieldSizing';
-export * as interactivityPointerEvents from './interactivity/pointerEvents';
-export * as interactivityResize from './interactivity/resize';
-export * as interactivityScrollBehavior from './interactivity/scrollBehavior';
-export * as interactivityScrollMargin from './interactivity/scrollMargin';
-export * as interactivityScrollPadding from './interactivity/scrollPadding';
-export * as interactivityScrollSnapAlign from './interactivity/scrollSnapAlign';
-export * as interactivityScrollSnapStop from './interactivity/scrollSnapStop';
-export * as interactivityScrollSnapType from './interactivity/scrollSnapType';
-export * as interactivitySelectNone from './interactivity/selectNone';
-export * as interactivityTouchAction from './interactivity/touchAction';
-export * as interactivityWillChange from './interactivity/willChange';
+    // grid
+    require('./grid/alignContent').default,
+    require('./grid/alignItems').default,
+    require('./grid/alignSelf').default,
+    require('./grid/flex').default,
+    require('./grid/flexBasis').default,
+    require('./grid/flexDirection').default,
+    require('./grid/flexGrow').default,
+    require('./grid/flexShrink').default,
+    require('./grid/flexWrap').default,
+    require('./grid/gap').default,
+    require('./grid/gridAutoColumns').default,
+    require('./grid/gridAutoFlow').default,
+    require('./grid/gridAutoRows').default,
+    require('./grid/gridColumn').default,
+    require('./grid/gridRow').default,
+    require('./grid/gridTemplateColumns').default,
+    require('./grid/gridTemplateRows').default,
+    require('./grid/justifyContent').default,
+    require('./grid/justifyItems').default,
+    require('./grid/justifySelf').default,
+    require('./grid/order').default,
+    require('./grid/placeContent').default,
+    require('./grid/placeItems').default,
+    require('./grid/placeSelf').default,
 
-// layout
-export * as layoutAspectRatio from './layout/aspectRatio';
-export * as layoutBoxDecorationBreak from './layout/boxDecorationBreak';
-export * as layoutBoxSizing from './layout/boxSizing';
-export * as layoutBreakAfter from './layout/breakAfter';
-export * as layoutBreakBefore from './layout/breakBefore';
-export * as layoutBreakInside from './layout/breakInside';
-export * as layoutClear from './layout/clear';
-export * as layoutColumns from './layout/columns';
-export * as layoutDisplay from './layout/display';
-export * as layoutFloat from './layout/float';
-export * as layoutIsolation from './layout/isolation';
-export * as layoutObjectFit from './layout/objectFit';
-export * as layoutObjectPosition from './layout/objectPosition';
-export * as layoutOverflow from './layout/overflow';
-export * as layoutOverscrollBehavior from './layout/overscrollBehavior';
-export * as layoutPosition from './layout/position';
-export * as layoutTopRightBottomLeft from './layout/topRightBottomLeft';
-export * as layoutVisibility from './layout/visibility';
-export * as layoutZIndex from './layout/zIndex';
+    // interactivity
+    require('./interactivity/accentColor').default,
+    require('./interactivity/appearance').default,
+    require('./interactivity/caretColor').default,
+    require('./interactivity/colorScheme').default,
+    require('./interactivity/cursor').default,
+    require('./interactivity/fieldSizing').default,
+    require('./interactivity/pointerEvents').default,
+    require('./interactivity/resize').default,
+    require('./interactivity/scrollBehavior').default,
+    require('./interactivity/scrollMargin').default,
+    require('./interactivity/scrollPadding').default,
+    require('./interactivity/scrollSnapAlign').default,
+    require('./interactivity/scrollSnapStop').default,
+    require('./interactivity/scrollSnapType').default,
+    require('./interactivity/selectNone').default,
+    require('./interactivity/touchAction').default,
+    require('./interactivity/willChange').default,
 
-// sizing
-export * as sizingHeight from './sizing/height';
-export * as sizingMaxHeight from './sizing/maxHeight';
-export * as sizingMaxWidth from './sizing/maxWidth';
-export * as sizingMinHeight from './sizing/minHeight';
-export * as sizingMinWidth from './sizing/minWidth';
-export * as sizingWidth from './sizing/width';
+    // layout
+    require('./layout/aspectRatio').default,
+    require('./layout/boxDecorationBreak').default,
+    require('./layout/boxSizing').default,
+    require('./layout/breakAfter').default,
+    require('./layout/breakBefore').default,
+    require('./layout/breakInside').default,
+    require('./layout/clear').default,
+    require('./layout/columns').default,
+    require('./layout/display').default,
+    require('./layout/float').default,
+    require('./layout/isolation').default,
+    require('./layout/objectFit').default,
+    require('./layout/objectPosition').default,
+    require('./layout/overflow').default,
+    require('./layout/overscrollBehavior').default,
+    require('./layout/position').default,
+    require('./layout/topRightBottomLeft').default,
+    require('./layout/visibility').default,
+    require('./layout/zIndex').default,
 
-// spacing
-export * as spacingMargin from './spacing/margin';
-export * as spacingPadding from './spacing/padding';
+    // sizing
+    require('./sizing/height').default,
+    require('./sizing/maxHeight').default,
+    require('./sizing/maxWidth').default,
+    require('./sizing/minHeight').default,
+    require('./sizing/minWidth').default,
+    require('./sizing/width').default,
 
-// svg
-export * as svgFill from './svg/fill';
-export * as svgStroke from './svg/stroke';
-export * as svgStrokeWidth from './svg/strokeWidth';
+    // spacing
+    require('./spacing/margin').default,
+    require('./spacing/padding').default,
 
-// tables
-export * as tablesBorderCollapse from './tables/borderCollapse';
-export * as tablesBorderSpacing from './tables/borderSpacing';
-export * as tablesCaptionSide from './tables/captionSide';
-export * as tablesTableLayout from './tables/tableLayout';
+    // svg
+    require('./svg/fill').default,
+    require('./svg/stroke').default,
+    require('./svg/strokeWidth').default,
 
-// transforms
-export * as transformsBackfaceVisibility from './transforms/backfaceVisibility';
-export * as transformsPerspective from './transforms/perspective';
-export * as transformsPerspectiveOrigin from './transforms/perspectiveOrigin';
-export * as transformsRotate from './transforms/rotate';
-export * as transformsScale from './transforms/scale';
-export * as transformsSkew from './transforms/skew';
-export * as transformsTransform from './transforms/transform';
-export * as transformsTransformOrigin from './transforms/transformOrigin';
-export * as transformsTransformStyle from './transforms/transformStyle';
-export * as transformsTranslate from './transforms/translate';
+    // tables
+    require('./tables/borderCollapse').default,
+    require('./tables/borderSpacing').default,
+    require('./tables/captionSide').default,
+    require('./tables/tableLayout').default,
 
-// transitions
-export * as transitionsAnimation from './transitions/animation';
-export * as transitionsTransitionBehavior from './transitions/transitionBehavior';
-export * as transitionsTransitionDelay from './transitions/transitionDelay';
-export * as transitionsTransitionDuration from './transitions/transitionDuration';
-export * as transitionsTransitionProperty from './transitions/transitionProperty';
-export * as transitionsTransitionTimingFunction from './transitions/transitionTimingFunction';
+    // transforms
+    require('./transforms/backfaceVisibility').default,
+    require('./transforms/perspective').default,
+    require('./transforms/perspectiveOrigin').default,
+    require('./transforms/rotate').default,
+    require('./transforms/scale').default,
+    require('./transforms/skew').default,
+    require('./transforms/transform').default,
+    require('./transforms/transformOrigin').default,
+    require('./transforms/transformStyle').default,
+    require('./transforms/translate').default,
 
-// typography
-export * as typographyColor from './typography/color';
-export * as typographyContent from './typography/content';
-export * as typographyFontFamily from './typography/fontFamily';
-export * as typographyFontSize from './typography/fontSize';
-export * as typographyFontSmoothing from './typography/fontSmoothing';
-export * as typographyFontStretch from './typography/fontStretch';
-export * as typographyFontStyle from './typography/fontStyle';
-export * as typographyFontVariantNumeric from './typography/fontVariantNumeric';
-export * as typographyFontWeight from './typography/fontWeight';
-export * as typographyHyphens from './typography/hyphens';
-export * as typographyLetterSpacing from './typography/letterSpacing';
-export * as typographyLineClamp from './typography/lineClamp';
-export * as typographyLineHeight from './typography/lineHeight';
-export * as typographyListStyleImage from './typography/listStyleImage';
-export * as typographyListStylePosition from './typography/listStylePosition';
-export * as typographyListStyleType from './typography/listStyleType';
-export * as typographyOverflowWrap from './typography/overflowWrap';
-export * as typographyTextAlign from './typography/textAlign';
-export * as typographyTextDecorationColor from './typography/textDecorationColor';
-export * as typographyTextDecorationLine from './typography/textDecorationLine';
-export * as typographyTextDecorationStyle from './typography/textDecorationStyle';
-export * as typographyTextDecorationThickness from './typography/textDecorationThickness';
-export * as typographyTextIndent from './typography/textIndent';
-export * as typographyTextOverflow from './typography/textOverflow';
-export * as typographyTextTransform from './typography/textTransform';
-export * as typographyTextUnderlineOffset from './typography/textUnderlineOffset';
-export * as typographyTextWrap from './typography/textWrap';
-export * as typographyVerticalAlign from './typography/verticalAlign';
-export * as typographyWhiteSpace from './typography/whiteSpace';
-export * as typographyWordBreak from './typography/wordBreak';
+    // transitions
+    require('./transitions/animation').default,
+    require('./transitions/transitionBehavior').default,
+    require('./transitions/transitionDelay').default,
+    require('./transitions/transitionDuration').default,
+    require('./transitions/transitionProperty').default,
+    require('./transitions/transitionTimingFunction').default,
 
-// base
-export * as base from './base';
+    // typography
+    require('./typography/color').default,
+    require('./typography/content').default,
+    require('./typography/fontFamily').default,
+    require('./typography/fontSize').default,
+    require('./typography/fontSmoothing').default,
+    require('./typography/fontStretch').default,
+    require('./typography/fontStyle').default,
+    require('./typography/fontVariantNumeric').default,
+    require('./typography/fontWeight').default,
+    require('./typography/hyphens').default,
+    require('./typography/letterSpacing').default,
+    require('./typography/lineClamp').default,
+    require('./typography/lineHeight').default,
+    require('./typography/listStyleImage').default,
+    require('./typography/listStylePosition').default,
+    require('./typography/listStyleType').default,
+    require('./typography/overflowWrap').default,
+    require('./typography/textAlign').default,
+    require('./typography/textDecorationColor').default,
+    require('./typography/textDecorationLine').default,
+    require('./typography/textDecorationStyle').default,
+    require('./typography/textDecorationThickness').default,
+    require('./typography/textIndent').default,
+    require('./typography/textOverflow').default,
+    require('./typography/textTransform').default,
+    require('./typography/textUnderlineOffset').default,
+    require('./typography/textWrap').default,
+    require('./typography/verticalAlign').default,
+    require('./typography/whiteSpace').default,
+    require('./typography/wordBreak').default,
+) satisfies GlobalStylesType;

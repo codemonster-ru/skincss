@@ -11,4 +11,4 @@ export default {
     'text-pretty': {
         textWrap: 'pretty',
     },
-};
+} satisfies RawStylesType;

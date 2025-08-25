@@ -5,4 +5,4 @@ export default {
     'mask-type-luminance': {
         maskType: 'luminance',
     },
-};
+} satisfies RawStylesType;

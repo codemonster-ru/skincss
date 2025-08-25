@@ -5,7 +5,7 @@ export default {
     '-indent-px': {
         textIndent: '-1px',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'indent-<number>': {
             textIndent: 'calc(var(--spacing) * <number>)',
         },
@@ -19,4 +19,4 @@ export default {
             textIndent: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

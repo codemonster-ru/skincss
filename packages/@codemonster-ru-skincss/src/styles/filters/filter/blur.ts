@@ -23,7 +23,7 @@ export default {
     'blur-none': {
         filter: '',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'blur-(<variable>)': {
             filter: 'blur(var(<variable>))',
         },
@@ -31,4 +31,4 @@ export default {
             filter: 'blur(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

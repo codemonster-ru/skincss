@@ -8,4 +8,4 @@ export default {
     'mask-match': {
         maskMode: 'match-source',
     },
-};
+} satisfies RawStylesType;

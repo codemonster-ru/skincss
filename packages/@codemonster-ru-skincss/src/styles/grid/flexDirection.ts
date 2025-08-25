@@ -11,4 +11,4 @@ export default {
     'flex-col-reverse': {
         flexDirection: 'column-reverse',
     },
-};
+} satisfies RawStylesType;

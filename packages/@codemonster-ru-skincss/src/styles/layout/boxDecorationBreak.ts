@@ -5,4 +5,4 @@ export default {
     'box-decoration-slice': {
         boxDecorationBreak: 'slice',
     },
-};
+} satisfies RawStylesType;

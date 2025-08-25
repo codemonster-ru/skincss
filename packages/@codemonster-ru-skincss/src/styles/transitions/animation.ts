@@ -2,7 +2,7 @@ export default {
     'animate-none': {
         animation: 'none',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'animate-(<variable>)': {
             animation: 'var(<variable>)',
         },
@@ -10,4 +10,4 @@ export default {
             animation: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

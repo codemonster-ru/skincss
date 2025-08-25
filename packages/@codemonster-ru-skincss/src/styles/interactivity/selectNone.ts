@@ -11,4 +11,4 @@ export default {
     'select-auto': {
         userSelect: 'auto',
     },
-};
+} satisfies RawStylesType;

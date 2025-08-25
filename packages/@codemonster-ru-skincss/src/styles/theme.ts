@@ -330,4 +330,4 @@ export default {
         extrabold: '800',
         black: '900',
     },
-};
+} satisfies GlobalThemeType;

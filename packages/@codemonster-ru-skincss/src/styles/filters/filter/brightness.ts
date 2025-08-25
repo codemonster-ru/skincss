@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'brightness-<number>': {
             filter: 'brightness(<number>%)',
         },
@@ -10,4 +10,4 @@ export default {
             filter: 'brightness(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

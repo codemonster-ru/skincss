@@ -26,4 +26,4 @@ export default {
     'overscroll-y-none': {
         overscrollBehaviorY: 'none',
     },
-};
+} satisfies RawStylesType;

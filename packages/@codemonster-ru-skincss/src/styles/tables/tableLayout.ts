@@ -5,4 +5,4 @@ export default {
     'table-fixed': {
         tableLayout: 'fixed',
     },
-};
+} satisfies RawStylesType;

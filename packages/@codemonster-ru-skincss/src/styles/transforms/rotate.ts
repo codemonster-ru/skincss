@@ -2,7 +2,7 @@ export default {
     'rotate-none': {
         rotate: 'none',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'rotate-<number>': {
             rotate: '<number>deg',
         },
@@ -52,4 +52,4 @@ export default {
             transform: 'var(--rotate-x) var(--rotate-y) rotateZ(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

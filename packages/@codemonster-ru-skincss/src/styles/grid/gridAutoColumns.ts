@@ -11,7 +11,7 @@ export default {
     'auto-cols-fr': {
         gridAutoColumns: 'minmax(0, 1fr)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'auto-cols-(<variable>)': {
             gridAutoColumns: 'var(<variable>)',
         },
@@ -19,4 +19,4 @@ export default {
             gridAutoColumns: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

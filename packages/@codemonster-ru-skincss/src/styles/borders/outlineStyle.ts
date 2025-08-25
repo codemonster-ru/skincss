@@ -18,4 +18,4 @@ export default {
     'outline-none': {
         outlineStyle: 'none',
     },
-};
+} satisfies RawStylesType;
