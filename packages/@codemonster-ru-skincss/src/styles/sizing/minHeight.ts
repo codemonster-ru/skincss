@@ -38,7 +38,7 @@ export default {
     'min-h-fit': {
         minHeight: 'fit-content',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'min-h-<number>': {
             minHeight: 'calc(var(--spacing) * <number>)',
         },
@@ -52,4 +52,4 @@ export default {
             minHeight: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

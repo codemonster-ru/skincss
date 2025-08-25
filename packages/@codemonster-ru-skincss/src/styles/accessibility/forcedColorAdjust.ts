@@ -5,4 +5,4 @@ export default {
     'forced-color-adjust-none': {
         forcedColorAdjust: 'none',
     },
-};
+} satisfies RawStylesType;

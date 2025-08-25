@@ -17,4 +17,4 @@ export default {
     'whitespace-break-spaces': {
         whiteSpace: 'break-spaces',
     },
-};
+} satisfies RawStylesType;

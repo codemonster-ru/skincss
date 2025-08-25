@@ -17,7 +17,7 @@ export default {
     'perspective-none': {
         perspective: 'none',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'perspective-(<variable>)': {
             perspective: 'var(<variable>)',
         },
@@ -25,4 +25,4 @@ export default {
             perspective: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

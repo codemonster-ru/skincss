@@ -23,4 +23,4 @@ export default {
     'break-after-column': {
         breakAfter: 'column',
     },
-};
+} satisfies RawStylesType;

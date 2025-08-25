@@ -1,84 +1,91 @@
-import fs from 'fs';
 import path from 'path';
-import ThemeClass from './theme';
+import { Dirent } from 'fs';
 import ConfigClass from './config';
-import * as styles from '../styles';
-import childProcess from 'child_process';
-import { version } from '../../package.json';
-import { findVar, findWholeWord } from './helper';
-import { deepMerge, camelToSnakeCase } from './helper';
+import binaryExtensions from '../binaryExtensions';
+import { getExtension, findWholeWords } from './helper';
+import fs, { ObjectEncodingOptions, PathLike, PathOrFileDescriptor } from 'fs';
 import {
     sourceRegex,
     importRegex,
     commentedRegex,
     ignoredSourceRegex,
     explicitlySourceRegex,
-    deleteIgnoredSourceRegex,
-    deleteExplicitlySourceRegex,
 } from '../patterns/scanner';
 
+const fsReadFileSync = fs.readFileSync;
+const fsReaddirSync = fs.readdirSync;
+const readFileSync = async (
+    name: PathOrFileDescriptor,
+    options:
+        | {
+              encoding: BufferEncoding;
+              flag?: string | undefined;
+          }
+        | BufferEncoding,
+) => fsReadFileSync(name, options);
+const readdirSync = async (
+    path: PathLike,
+    options: ObjectEncodingOptions & {
+        withFileTypes: true;
+        recursive?: boolean | undefined;
+    },
+) => fsReaddirSync(path, options);
+
 export default class ScannerClass {
-    private _styles = {};
-    private _theme: ThemeClass;
-    private _arbitraryStyles: arbitraryStylesType = {};
+    private _files: string[] = [];
+    private _foundStyles: ScanFileResult = {
+        styles: [],
+        arbitraryStyles: [],
+    };
 
-    constructor() {
-        this._theme = new ThemeClass();
+    get files(): string[] {
+        return this._files;
     }
 
-    get theme() {
-        return this._theme;
+    set files(files: string[]) {
+        this._files = files;
     }
 
-    get styles() {
-        return this._styles;
+    get foundStyles(): ScanFileResult {
+        return this._foundStyles;
     }
 
-    private set styles(value: object) {
-        this._styles = value;
+    set foundStyles(obj: ScanFileResult) {
+        this._foundStyles = obj;
     }
 
-    get arbitraryStyles(): arbitraryStylesType {
-        return this._arbitraryStyles;
-    }
+    isCssFile = (filePath: string): boolean => getExtension(filePath) === 'css' || filePath.includes('&lang.css');
 
-    private set arbitraryStyles(value: { file: string; styles: object }) {
-        this._arbitraryStyles[value.file] = value.styles;
-    }
+    isPotentialFile = (filePath: string) => !filePath.includes('.vite') && this.isCssFile(filePath);
 
-    loadCss = async () => {
-        if (Object.keys(this.styles).length) {
-            return;
+    isDetermineSource = async (code: string, config: ConfigClass, filePath: string): Promise<boolean> => {
+        if (config.enable || !this.isPotentialFile(filePath)) {
+            return false;
         }
 
-        Object.keys(styles).map(async style => {
-            const styleObject: {
-                [key: string]: {
-                    [key: string]: string | object | undefined;
-                    arbitraryValues?: object;
-                };
-            } = styles[style as keyof typeof styles].default;
+        if (!this.isImport(code)) {
+            return false;
+        }
 
-            if (styleObject.arbitraryValues !== undefined) {
-                this.arbitraryStyles = {
-                    file: style,
-                    styles: styleObject.arbitraryValues,
-                };
+        const baseSource: string = this.getBaseSource(code, filePath);
+        const getExplicitlySources: string[] = this.getExplicitlySources(code, filePath);
+        const getIgnoredSources: string[] = this.getIgnoredSources(code, filePath);
 
-                delete styleObject.arbitraryValues;
-            }
+        if (baseSource === 'none' && !getExplicitlySources) {
+            return false;
+        }
 
-            Object.assign(this.styles, styleObject);
-        });
+        config.enable = true;
+        config.baseSource = baseSource ? baseSource : config.base;
+        config.explicitlySources = getExplicitlySources ? getExplicitlySources : [];
+        config.ignoredSources = getIgnoredSources ? getIgnoredSources : [];
+
+        return true;
     };
 
-    isImport = (code: string): boolean => {
-        return code.replaceAll(commentedRegex, '').match(importRegex) ? true : false;
-    };
+    isImport = (code: string): boolean => (code.replaceAll(commentedRegex, '').match(importRegex) ? true : false);
 
-    isDir = (filePath: string) => {
-        return fs.statSync(filePath).isDirectory();
-    };
+    isDir = (filePath: string) => fs.statSync(filePath).isDirectory();
 
     getBaseSource = (code: string, filePath: string): string => {
         const replacedCode = code.replaceAll(commentedRegex, '');
@@ -162,49 +169,20 @@ export default class ScannerClass {
         return sources;
     };
 
-    isIgnoredByGit = async (filePath: string) => {
-        if (filePath.endsWith('.git') || filePath.endsWith('.github')) {
-            return true;
-        }
+    isIgnoredByGit = (filePath: string, gitIgnored: string[]) => gitIgnored.includes(filePath);
 
-        try {
-            const { stdout }: { stdout: string; stderr: string } = await new Promise((resolveZ, reject) => {
-                childProcess.exec(
-                    `git check-ignore ${filePath}`,
-                    (error: childProcess.ExecException | null, stdout: string, stderr: string) => {
-                        if (error) {
-                            if (error.code === 1) {
-                                resolveZ({ stdout: '', stderr: '' });
-                            } else {
-                                reject(error);
-                            }
-                        } else {
-                            resolveZ({ stdout, stderr });
-                        }
-                    },
-                );
-            });
-
-            return stdout.trim() !== '';
-        } catch (error) {
-            if (error instanceof Error) {
-                throw new Error(`Error checking git ignore status for ${filePath}: ${error.message}`);
-            }
-        }
-    };
-
-    isIgnored = async (config: ConfigClass, filePath: string): Promise<boolean> => {
+    isIgnored = (config: ConfigClass, filePath: string, gitIgnored: string[]): boolean => {
         config.explicitlySources.map(source => {});
 
-        if (filePath.includes('node_modules')) {
-            return true;
-        }
+        if (filePath.indexOf('node_modules') !== -1) return true;
 
-        const isIgnored = await this.isIgnoredByGit(filePath);
+        const extension = path.extname(filePath).substring(1);
 
-        if (isIgnored) {
-            return true;
-        }
+        if (binaryExtensions.includes(extension)) return true;
+
+        const isIgnored = this.isIgnoredByGit(filePath, gitIgnored);
+
+        if (isIgnored) return true;
 
         return false;
     };
@@ -234,461 +212,63 @@ export default class ScannerClass {
         return isIgnoredByConfig;
     };
 
-    scanDirectory = async (config: ConfigClass, directory: string = '') => {
+    scanDirectory = async (config: ConfigClass, directory: string = '', gitIgnored: string[]) => {
         let files: string[] = [];
         const sources = directory ? [directory] : [...[config.baseSource], ...config.explicitlySources];
+        const sourcePromises = sources.map(async (source: string) => {
+            if (!directory.length && !this.isDir(source)) return;
+            if (this.isIgnoredByConfig(config, source)) return;
 
-        await Promise.all(
-            sources.map(async (source: string) => {
-                if (!this.isDir(source)) {
-                    return;
+            const dirFiles = await readdirSync(source, { withFileTypes: true });
+            const dirPromises = dirFiles.map(async (file: Dirent) => {
+                const filePath = path.join(source, file.name).replace(/\\\\/g, '\\');
+
+                if (this.isIgnored(config, filePath, gitIgnored)) return [];
+                if (file.isDirectory()) {
+                    const deepFiles = await this.scanDirectory(config, filePath, gitIgnored);
+
+                    files = files.concat(deepFiles);
+                } else {
+                    files.push(filePath);
                 }
+            });
 
-                if (this.isIgnoredByConfig(config, source)) {
-                    return;
-                }
+            await Promise.all(dirPromises);
+        });
 
-                const dirFiles = fs.readdirSync(source);
-
-                await Promise.all(
-                    dirFiles.map(async (file: string) => {
-                        const filePath = path.isAbsolute(file) ? file : path.join(source, file);
-
-                        if (await this.isIgnored(config, filePath)) {
-                            return [];
-                        }
-
-                        if (this.isDir(filePath)) {
-                            const deepFiles = await this.scanDirectory(config, filePath);
-
-                            deepFiles?.map(deepFile => {
-                                files.push(deepFile);
-                            });
-                        } else {
-                            files.push(filePath);
-                        }
-                    }),
-                );
-            }),
-        );
+        await Promise.all(sourcePromises);
 
         return files;
     };
 
-    scanStyles = (content: string, scanResult: ScanResult, breakpoints: boolean = false) => {
-        if (breakpoints) {
-            let output: breakpointStylesType = {};
-
-            Object.keys(this.styles).map(style => {
-                Object.keys(this.theme.breakpoints).map((breakpoint: string) => {
-                    if (findWholeWord(content, `${breakpoint}:${style}`)) {
-                        if (!output[breakpoint as keyof typeof output]) {
-                            output[breakpoint as keyof typeof output] = [];
-                        }
-
-                        output[breakpoint as keyof typeof output].push(style);
-                    }
-                });
-            });
-
-            return output;
-        } else {
-            let output: string[] = [];
-
-            Object.keys(this.styles).map(style => {
-                if (scanResult.styles.includes(style)) {
-                    return;
-                }
-
-                if (style.includes(',')) {
-                    output.push(style);
-                } else {
-                    if (findWholeWord(content, style)) {
-                        output.push(style);
-                    }
-                }
-            });
-
-            return output;
-        }
-    };
-
-    scanArbitraryNumberStyles = (content: string, index: string, rule: string, breakpoints: boolean = false) => {
-        const output: breakpointArbitraryStylesType = {};
-        const themeBreakpoints = breakpoints ? this.theme.breakpoints : { null: null };
-
-        Object.keys(themeBreakpoints).map((breakpoint: string) => {
-            const breakpointString = breakpoints ? `${breakpoint}:` : '(?<!:)';
-            const regex = new RegExp(`${breakpointString}${index.replace('<number>', '[0-9]')}`, 'gi');
-            const matched = content.match(regex);
-
-            if (matched) {
-                matched.map((matchedValue: string) => {
-                    matchedValue = matchedValue.replace(breakpointString, '');
-
-                    const value = JSON.parse(
-                        JSON.stringify(rule).replace(
-                            '<number>',
-                            matchedValue.replace(index.replace('<number>', ''), ''),
-                        ),
-                    );
-
-                    if (breakpoints) {
-                        if (!output[breakpoint]) {
-                            output[breakpoint] = {};
-                        }
-
-                        output[breakpoint][matchedValue] = value;
-                    } else {
-                        output[matchedValue] = value;
-                    }
-                });
-            }
-        });
-
-        return output;
-    };
-
-    scanArbitraryVariableStyles = (content: string, index: string, rule: string, breakpoints: boolean = false) => {
-        const output: breakpointArbitraryStylesType = {};
-        const themeBreakpoints = breakpoints ? this.theme.breakpoints : { null: null };
-
-        Object.keys(themeBreakpoints).map((breakpoint: string) => {
-            const breakpointString = breakpoints ? `${breakpoint}:` : '(?<!:)';
-            const regex = new RegExp(
-                `${breakpointString}${index.replace('(<variable>)', '\\(--[a-z-0-9,\\s]+\\)')}`,
-                'gi',
-            );
-            const matched = content.match(regex);
-
-            if (matched) {
-                matched.map(matchedValue => {
-                    matchedValue = matchedValue.replace(breakpointString, '');
-
-                    const subMatched = matchedValue.match(/--[a-z-0-9,\s]+/gi);
-
-                    if (subMatched) {
-                        const value = JSON.parse(JSON.stringify(rule).replace('<variable>', subMatched[0]));
-
-                        if (breakpoints) {
-                            if (!output[breakpoint]) {
-                                output[breakpoint] = {};
-                            }
-
-                            output[breakpoint][matchedValue] = value;
-                        } else {
-                            output[matchedValue] = value;
-                        }
-                    }
-                });
-            }
-        });
-
-        return output;
-    };
-
-    scanArbitraryValueStyles = (content: string, index: string, rule: string, breakpoints: boolean = false) => {
-        const output: breakpointArbitraryStylesType = {};
-        const themeBreakpoints = breakpoints ? this.theme.breakpoints : { null: null };
-
-        Object.keys(themeBreakpoints).map((breakpoint: string) => {
-            const breakpointString = breakpoints ? `${breakpoint}:` : '(?<!:)';
-            const regex = new RegExp(`${breakpointString}${index.replace('[<value>]', '\\[(.*?)\\]')}`, 'gi');
-            const matched = content.match(regex);
-
-            if (matched) {
-                matched.map(matchedValue => {
-                    matchedValue = matchedValue.replace(breakpointString, '');
-
-                    const subMatched = matchedValue.match(/\[(.*?)\]/gi);
-
-                    if (subMatched) {
-                        const value = JSON.parse(
-                            JSON.stringify(rule).replace('<value>', subMatched[0].replace('[', '').replace(']', '')),
-                        );
-
-                        if (breakpoints) {
-                            if (!output[breakpoint]) {
-                                output[breakpoint] = {};
-                            }
-
-                            output[breakpoint][matchedValue] = value;
-                        } else {
-                            output[matchedValue] = value;
-                        }
-                    }
-                });
-            }
-        });
-
-        return output;
-    };
-
-    scanArbitraryStyles = (content: string, breakpoints: boolean = false) => {
-        let output: arbitraryStylesType | breakpointArbitraryStylesType = {};
-
-        Object.keys(this.arbitraryStyles).map((group: string) => {
-            const arbitraryValue = this.arbitraryStyles[group as keyof typeof this.arbitraryStyles];
-
-            Object.keys(arbitraryValue).map(index => {
-                const rule = arbitraryValue[index as keyof typeof arbitraryValue];
-
-                switch (true) {
-                    case index.includes('<number>'): {
-                        output = deepMerge(output, this.scanArbitraryNumberStyles(content, index, rule, breakpoints));
-
-                        break;
-                    }
-                    case index.includes('(<variable>)'): {
-                        output = deepMerge(output, this.scanArbitraryVariableStyles(content, index, rule, breakpoints));
-
-                        break;
-                    }
-                    case index.includes('[<value>]'): {
-                        output = deepMerge(output, this.scanArbitraryValueStyles(content, index, rule, breakpoints));
-
-                        break;
-                    }
-                }
-            });
-        });
-
-        return output;
-    };
-
-    scanFile = (content: string, scanResult: ScanResult): ScanResult => {
-        return {
-            styles: this.scanStyles(content, scanResult) as string[],
-            breakpointStyles: this.scanStyles(content, scanResult, true) as breakpointStylesType,
-            arbitraryStyles: this.scanArbitraryStyles(content) as arbitraryStylesType,
-            breakpointArbitraryStyles: this.scanArbitraryStyles(content, true) as breakpointArbitraryStylesType,
-        };
-    };
-
-    parseFiles = async (files: string[]) => {
-        let output: ScanResult = {
+    scanFile(content: string, stylePattern: string, arbitraryStylePattern: string) {
+        let output: ScanFileResult = {
             styles: [],
-            breakpointStyles: {},
-            arbitraryStyles: {},
-            breakpointArbitraryStyles: {},
+            arbitraryStyles: [],
         };
 
-        await Promise.all(
-            files.map(async (file: string) => {
-                const loadedFile = fs.readFileSync(file, 'utf8');
-
-                if (loadedFile) {
-                    const scanResult: ScanResult = this.scanFile(loadedFile, output);
-
-                    output.styles = deepMerge(output.styles, scanResult.styles);
-                    output.breakpointStyles = deepMerge(output.breakpointStyles, scanResult.breakpointStyles);
-                    output.arbitraryStyles = deepMerge(output.arbitraryStyles, scanResult.arbitraryStyles);
-                    output.breakpointArbitraryStyles = deepMerge(
-                        output.breakpointArbitraryStyles,
-                        scanResult.breakpointArbitraryStyles,
-                    );
-                }
-            }),
-        );
+        findWholeWords(content, stylePattern).map(math => output.styles.push(math[0]));
+        findWholeWords(content, arbitraryStylePattern).map(math => output.arbitraryStyles.push(math[0]));
 
         return output;
-    };
+    }
 
-    prepareStyle = (style: string, styles: object) => {
-        const output: { [key: string]: object } = {};
+    async readFiles(files: string[]): Promise<string[]> {
+        const filePromises = files.map(async (file: string) => await readFileSync(file, { encoding: 'utf8' }));
+        const fileContents = await Promise.all(filePromises);
 
-        let properties = {};
+        return fileContents;
+    }
 
-        if (styles[style as keyof typeof styles] !== undefined) {
-            properties = styles[style as keyof typeof styles];
-        }
+    async init(obj: ScannerStylesType) {
+        const files: string[] = await this.scanDirectory(obj.config, '', obj.ignored);
+        const fileContents = await this.readFiles(files);
+        const foundStyles = this.scanFile(fileContents.join(' '), obj.styles, obj.arbitraryStyles);
 
-        output[style] = properties;
+        foundStyles.styles = Array.from(new Set(foundStyles.styles));
+        foundStyles.arbitraryStyles = Array.from(new Set(foundStyles.arbitraryStyles));
 
-        return output;
-    };
-
-    prepareStyles = (styles: string[]) => {
-        let newStyles = {};
-
-        styles.map((style: string) => {
-            newStyles = deepMerge(newStyles, this.prepareStyle(style, this.styles));
-        });
-
-        return newStyles;
-    };
-
-    prepareArbitraryStyles = (arbitraryStyles: object) => {
-        let newStyles = {};
-
-        Object.keys(arbitraryStyles).map((style: string) => {
-            newStyles = deepMerge(newStyles, this.prepareStyle(style, arbitraryStyles));
-        });
-
-        return newStyles;
-    };
-
-    prepareBreakpointStyles = (breakpointStyles: breakpointStylesType) => {
-        let newStyles: breakpointArbitraryStylesType = {};
-
-        Object.keys(breakpointStyles).map((breakpointIndex: string) => {
-            const styles = breakpointStyles[breakpointIndex];
-
-            styles.map((style: string, styleIndex: number) => {
-                deepMerge(newStyles, { [breakpointIndex]: this.prepareStyle(style, this.styles) });
-            });
-        });
-
-        return newStyles;
-    };
-
-    prepareBreakpointArbitraryStyles = (breakpointArbitraryStyles: breakpointArbitraryStylesType) => {
-        let newStyles: breakpointArbitraryStylesType = {};
-
-        Object.keys(breakpointArbitraryStyles).map((breakpointIndex: string) => {
-            const styles = breakpointArbitraryStyles[breakpointIndex];
-
-            Object.keys(styles).map((style: string, styleIndex: number) => {
-                deepMerge(newStyles, { [breakpointIndex]: this.prepareStyle(style, styles) });
-            });
-        });
-
-        return newStyles;
-    };
-
-    prepareScanResult = (foundStyles: ScanResult) => {
-        return {
-            styles: deepMerge(
-                this.prepareStyles(foundStyles.styles),
-                this.prepareArbitraryStyles(foundStyles.arbitraryStyles),
-            ),
-            breakpointStyles: deepMerge(
-                this.prepareBreakpointStyles(foundStyles.breakpointStyles),
-                this.prepareBreakpointArbitraryStyles(foundStyles.breakpointArbitraryStyles),
-            ),
-        };
-    };
-
-    convertStyleToCss = (styles: StylesType, spaces: string = '') => {
-        let css = '';
-
-        Object.keys(styles).map((style: string, index: number) => {
-            let selector = style.includes(',') ? style : `.${style}`;
-
-            selector = selector.replace(/[*+?^${}()|[\]\\]/g, '\\$&');
-
-            let properties = {};
-
-            if (styles[style as keyof typeof styles] !== undefined) {
-                properties = styles[style as keyof typeof styles];
-            }
-
-            css += `${spaces}${selector} {\n`;
-
-            Object.keys(properties).forEach((value: string) => {
-                const prop: string = value.includes('-') ? value : camelToSnakeCase(value);
-                const propValue: string = properties[value as keyof typeof properties];
-
-                css += `${spaces}    ${prop}: ${propValue};\n`;
-            });
-
-            css += `${spaces}}`;
-
-            if (!spaces || (spaces && index + 1 !== Object.keys(styles).length)) {
-                css += '\n\n';
-            }
-        });
-
-        return css;
-    };
-
-    convertBreakpointStyleToCss = (breakpointArbitraryStyles: breakpointArbitraryStylesType) => {
-        let css = '';
-
-        Object.keys(breakpointArbitraryStyles).map((breakpointIndex: string, index: number) => {
-            css += `@media (width >= ${this.theme.breakpoints[breakpointIndex]}) {\n`;
-            css += this.convertStyleToCss(breakpointArbitraryStyles[breakpointIndex], '    ');
-            css += '\n}';
-
-            if (index + 1 !== Object.keys(breakpointArbitraryStyles).length) {
-                css += '\n\n';
-            }
-        });
-
-        return css;
-    };
-
-    convertToCss = (obj: { styles: StylesType; breakpointStyles: breakpointArbitraryStylesType }) => {
-        return this.convertStyleToCss(obj.styles) + this.convertBreakpointStyleToCss(obj.breakpointStyles);
-    };
-
-    getCss = async (files: string[]) => {
-        return this.convertToCss(this.prepareScanResult(await this.parseFiles(files)));
-    };
-
-    getVarCss = (css: string) => {
-        let varCss = '';
-        const vars = this.theme.getVars();
-
-        Object.keys(vars).map((themeIndex: string) => {
-            if (findVar(css, themeIndex)) {
-                varCss += `    ${themeIndex}: ${vars[themeIndex as keyof typeof vars]};\n`;
-            }
-        });
-
-        return varCss;
-    };
-
-    applyCss = async (config: ConfigClass, code: string) => {
-        let files: string[] = [];
-        const replaced = [...code.matchAll(importRegex)];
-
-        if (replaced) {
-            await this.loadCss();
-            files = await this.scanDirectory(config);
-            let css = await this.getCss(files);
-
-            if (css) {
-                const varCss = this.getVarCss(css);
-
-                if (varCss) {
-                    css = `:root {\n${varCss}}\n\n${css}`;
-                }
-
-                const cutCode: {
-                    code: string;
-                    index: number;
-                    length: number;
-                    end: number;
-                }[] = [];
-                const commented = [...code.matchAll(commentedRegex)];
-
-                commented.forEach(match => {
-                    cutCode.push({
-                        code: match[0],
-                        index: match.index,
-                        length: match[0].length,
-                        end: match.index + match[0].length,
-                    });
-                });
-
-                let cutLength = 0;
-
-                cutCode.map(match => {
-                    code = code.slice(0, match.index - cutLength) + '' + code.slice(match.end - cutLength, code.length);
-                    cutLength += match.length;
-                });
-
-                code =
-                    code.slice(0, replaced[0].index) +
-                    `/* skincss v${version} | MIT License | https://skincss.com */\n` +
-                    css +
-                    code.slice(replaced[0].index + replaced[0][0].length, code.length);
-                code = code.replace(deleteExplicitlySourceRegex, '');
-                code = code.replace(deleteIgnoredSourceRegex, '');
-            }
-        }
-
-        return { code: code, files: files };
-    };
+        this.files = files;
+        this.foundStyles = foundStyles;
+    }
 }

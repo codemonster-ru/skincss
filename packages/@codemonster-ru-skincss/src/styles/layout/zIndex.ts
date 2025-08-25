@@ -2,7 +2,7 @@ export default {
     'z-auto': {
         zIndex: 'auto',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'z-<number>': {
             zIndex: '<number>',
         },
@@ -13,4 +13,4 @@ export default {
             zIndex: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

@@ -2,7 +2,7 @@ export default {
     'duration-initial': {
         transitionDuration: 'initial',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'duration-<number>': {
             transitionDuration: '<number>ms',
         },
@@ -13,4 +13,4 @@ export default {
             transitionDuration: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

@@ -107,7 +107,7 @@ export default {
     'cursor-zoom-out': {
         cursor: 'zoom-out',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'cursor-(<variable>)': {
             cursor: 'var(<variable>)',
         },
@@ -115,4 +115,4 @@ export default {
             cursor: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

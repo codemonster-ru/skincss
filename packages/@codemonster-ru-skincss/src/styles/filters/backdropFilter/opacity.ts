@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'backdrop-opacity-<number>': {
             backdropFilter: 'opacity(<number>%)',
         },
@@ -10,4 +10,4 @@ export default {
             backdropFilter: 'opacity(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

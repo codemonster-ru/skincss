@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'hue-rotate-<number>': {
             filter: 'hue-rotate(<number>deg)',
         },
@@ -13,4 +13,4 @@ export default {
             filter: 'hue-rotate(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

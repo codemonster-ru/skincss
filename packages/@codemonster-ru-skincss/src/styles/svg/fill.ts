@@ -743,7 +743,7 @@ export default {
     'fill-stone-950': {
         fill: 'var(--color-stone-950)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'fill-(<variable>)': {
             fill: 'var(<variable>)',
         },
@@ -751,4 +751,4 @@ export default {
             fill: '<color>',
         },
     },
-};
+} satisfies RawStylesType;

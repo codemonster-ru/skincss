@@ -11,7 +11,7 @@ export default {
     'row-auto': {
         gridRow: 'auto',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'row-span-<number>': {
             gridRow: 'span <number> / span <number>',
         },
@@ -58,4 +58,4 @@ export default {
             gridRow: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

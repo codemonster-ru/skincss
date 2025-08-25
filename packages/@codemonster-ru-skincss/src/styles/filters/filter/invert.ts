@@ -2,7 +2,7 @@ export default {
     invert: {
         filter: 'invert(100%)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'invert-<number>': {
             filter: 'invert(<number>%)',
         },
@@ -13,4 +13,4 @@ export default {
             filter: 'invert(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

@@ -1,17 +1,17 @@
 export default {
-    'static': {
+    static: {
         position: 'static',
     },
-    'fixed': {
+    fixed: {
         position: 'fixed',
     },
-    'absolute': {
+    absolute: {
         position: 'absolute',
     },
-    'relative': {
+    relative: {
         position: 'relative',
     },
-    'sticky': {
+    sticky: {
         position: 'sticky',
     },
-};
+} satisfies RawStylesType;

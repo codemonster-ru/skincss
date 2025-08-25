@@ -26,7 +26,7 @@ export default {
     'font-black': {
         fontWeight: '900',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'font-(<variable>)': {
             fontWeight: 'var(<variable>)',
         },
@@ -34,4 +34,4 @@ export default {
             fontWeight: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

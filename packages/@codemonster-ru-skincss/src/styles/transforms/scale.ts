@@ -5,7 +5,7 @@ export default {
     'scale-3d': {
         scale: 'var(--scale-x) var(--scale-y) var(--scale-z)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'scale-<number>': {
             scale: '<number>% <number>%',
         },
@@ -55,4 +55,4 @@ export default {
             scale: 'var(--scale-x) var(--scale-y) <value>',
         },
     },
-};
+} satisfies RawStylesType;

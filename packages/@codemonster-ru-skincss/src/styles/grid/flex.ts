@@ -8,7 +8,7 @@ export default {
     'flex-none': {
         flex: 'none',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'flex-<number>': {
             flex: '<number>',
         },
@@ -22,4 +22,4 @@ export default {
             flex: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

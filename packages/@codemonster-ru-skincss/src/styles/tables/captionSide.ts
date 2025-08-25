@@ -5,4 +5,4 @@ export default {
     'caption-bottom': {
         captionSide: 'bottom',
     },
-};
+} satisfies RawStylesType;

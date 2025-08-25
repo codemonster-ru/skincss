@@ -53,4 +53,4 @@ export default {
     'mix-blend-plus-lighter': {
         mixBlendMode: 'plus-lighter',
     },
-};
+} satisfies RawStylesType;

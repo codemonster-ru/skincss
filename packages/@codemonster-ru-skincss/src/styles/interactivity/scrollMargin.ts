@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'scroll-m-<number>': {
             scrollMargin: 'calc(var(--spacing) * <number>)',
         },
@@ -109,4 +109,4 @@ export default {
             scrollMarginLeft: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

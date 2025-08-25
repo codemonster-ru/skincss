@@ -3005,7 +3005,7 @@ export default {
     'inset-ring-stone-950': {
         '--inset-ring-color': 'var(--color-stone-950)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'shadow-(<variable>)': {
             boxShadow: 'var(<variable>)',
         },
@@ -3040,4 +3040,4 @@ export default {
             '--inset-ring-shadow': 'inset 0 0 0 <value>',
         },
     },
-};
+} satisfies RawStylesType;

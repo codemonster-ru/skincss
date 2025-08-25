@@ -5,7 +5,7 @@ export default {
     'grid-cols-subgrid': {
         gridTemplateColumns: 'subgrid',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'grid-cols-<number>': {
             gridTemplateColumns: 'repeat(<number>, minmax(0, 1fr))',
         },
@@ -16,4 +16,4 @@ export default {
             gridTemplateColumns: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

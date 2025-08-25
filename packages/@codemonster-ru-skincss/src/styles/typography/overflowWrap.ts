@@ -8,4 +8,4 @@ export default {
     'wrap-normal': {
         overflowWrap: 'normal',
     },
-};
+} satisfies RawStylesType;

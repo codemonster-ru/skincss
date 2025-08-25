@@ -26,4 +26,4 @@ export default {
     'content-stretch': {
         alignContent: 'stretch',
     },
-};
+} satisfies RawStylesType;

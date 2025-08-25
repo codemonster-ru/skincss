@@ -2,7 +2,7 @@ export default {
     'leading-none': {
         lineHeight: '1',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'text-<size>/<number>': {
             fontSize: '<size>',
             lineHeight: 'calc(var(--spacing) * <number>)',
@@ -25,4 +25,4 @@ export default {
             lineHeight: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

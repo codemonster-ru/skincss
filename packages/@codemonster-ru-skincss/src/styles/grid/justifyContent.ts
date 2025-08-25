@@ -32,4 +32,4 @@ export default {
     'justify-normal': {
         justifyContent: 'normal',
     },
-};
+} satisfies RawStylesType;

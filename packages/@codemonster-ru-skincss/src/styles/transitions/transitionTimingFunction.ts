@@ -14,7 +14,7 @@ export default {
     'ease-initial': {
         transitionTimingFunction: 'initial',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'ease-(<variable>)': {
             transitionTimingFunction: 'var(<variable>)',
         },
@@ -22,4 +22,4 @@ export default {
             transitionTimingFunction: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

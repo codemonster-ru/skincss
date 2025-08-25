@@ -26,4 +26,4 @@ export default {
     'stacked-fractions': {
         fontVariantNumeric: 'stacked-fractions',
     },
-};
+} satisfies RawStylesType;

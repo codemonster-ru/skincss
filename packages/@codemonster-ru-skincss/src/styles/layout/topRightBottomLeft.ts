@@ -134,7 +134,7 @@ export default {
     'left-auto': {
         left: 'auto',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'inset-<number>': {
             inset: 'calc(var(--spacing) * <number>)',
         },
@@ -298,4 +298,4 @@ export default {
             left: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

@@ -5,4 +5,4 @@ export default {
     'appearance-auto': {
         appearance: 'auto',
     },
-};
+} satisfies RawStylesType;

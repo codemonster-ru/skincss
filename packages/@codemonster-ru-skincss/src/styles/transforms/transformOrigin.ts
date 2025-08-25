@@ -26,7 +26,7 @@ export default {
     'origin-top-left': {
         transformOrigin: 'top left',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'origin-(<variable>)': {
             transformOrigin: 'var(<variable>)',
         },
@@ -34,4 +34,4 @@ export default {
             transformOrigin: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

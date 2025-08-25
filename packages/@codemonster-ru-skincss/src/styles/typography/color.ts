@@ -740,7 +740,7 @@ export default {
     'text-stone-950': {
         color: 'var(--color-stone-950)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'text-(<variable>)': {
             color: 'var(<variable>)',
         },
@@ -748,4 +748,4 @@ export default {
             color: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

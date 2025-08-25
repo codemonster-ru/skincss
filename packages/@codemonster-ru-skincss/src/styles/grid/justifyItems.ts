@@ -20,4 +20,4 @@ export default {
     'justify-items-normal': {
         justifyItems: 'normal',
     },
-};
+} satisfies RawStylesType;

@@ -5,4 +5,4 @@ export default {
     'snap-always': {
         scrollSnapStop: 'always',
     },
-};
+} satisfies RawStylesType;

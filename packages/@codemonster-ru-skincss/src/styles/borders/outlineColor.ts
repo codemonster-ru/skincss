@@ -740,7 +740,7 @@ export default {
     'outline-stone-950': {
         outlineColor: 'var(--color-stone-950)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'outline-(<variable>)': {
             outlineColor: 'var(<variable>)',
         },
@@ -748,4 +748,4 @@ export default {
             outlineColor: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

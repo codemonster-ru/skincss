@@ -743,7 +743,7 @@ export default {
     'stroke-stone-950': {
         stroke: 'var(--color-stone-950)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'stroke-(<variable>)': {
             stroke: 'var(<variable>)',
         },
@@ -751,4 +751,4 @@ export default {
             stroke: '<color>',
         },
     },
-};
+} satisfies RawStylesType;

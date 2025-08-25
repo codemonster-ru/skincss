@@ -29,4 +29,4 @@ export default {
     'touch-manipulation': {
         touchAction: 'manipulation',
     },
-};
+} satisfies RawStylesType;

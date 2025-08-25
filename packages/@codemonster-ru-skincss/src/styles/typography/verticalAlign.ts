@@ -23,7 +23,7 @@ export default {
     'align-super': {
         verticalAlign: 'super',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'align-(<variable>)': {
             verticalAlign: 'var(<variable>)',
         },
@@ -31,4 +31,4 @@ export default {
             verticalAlign: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

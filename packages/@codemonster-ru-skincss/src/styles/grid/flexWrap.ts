@@ -8,4 +8,4 @@ export default {
     'flex-wrap-reverse': {
         flexWrap: 'wrap-reverse',
     },
-};
+} satisfies RawStylesType;

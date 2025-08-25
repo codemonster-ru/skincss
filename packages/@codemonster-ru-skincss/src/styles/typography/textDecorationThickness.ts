@@ -5,7 +5,7 @@ export default {
     'decoration-auto': {
         textDecorationThickness: 'auto',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'decoration-<number>': {
             textDecorationThickness: '<number>px',
         },
@@ -16,4 +16,4 @@ export default {
             textDecorationThickness: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

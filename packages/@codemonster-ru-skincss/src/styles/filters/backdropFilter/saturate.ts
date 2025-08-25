@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'backdrop-saturate-<number>': {
             backdropFilter: 'saturate(<number>%)',
         },
@@ -10,4 +10,4 @@ export default {
             backdropFilter: 'saturate(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

@@ -26,7 +26,7 @@ export default {
     'font-stretch-ultra-expanded': {
         fontStretch: 'ultra-expanded',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'font-stretch-(<variable>)': {
             fontStretch: 'var(<variable>)',
         },
@@ -34,4 +34,4 @@ export default {
             fontStretch: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

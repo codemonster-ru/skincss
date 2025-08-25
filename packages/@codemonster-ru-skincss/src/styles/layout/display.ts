@@ -1,8 +1,8 @@
 export default {
-    'inline': {
+    inline: {
         display: 'inline',
     },
-    'block': {
+    block: {
         display: 'block',
     },
     'inline-block': {
@@ -11,22 +11,22 @@ export default {
     'flow-root': {
         display: 'flow-root',
     },
-    'flex': {
+    flex: {
         display: 'flex',
     },
     'inline-flex': {
         display: 'inline-flex',
     },
-    'grid': {
+    grid: {
         display: 'grid',
     },
     'inline-grid': {
         display: 'inline-grid',
     },
-    'contents': {
+    contents: {
         display: 'contents',
     },
-    'table': {
+    table: {
         display: 'table',
     },
     'inline-table': {
@@ -59,7 +59,7 @@ export default {
     'list-item': {
         display: 'list-item',
     },
-    'hidden': {
+    hidden: {
         display: 'none',
     },
     'sr-only': {
@@ -83,4 +83,4 @@ export default {
         clip: 'auto',
         whiteSpace: 'normal',
     },
-};
+} satisfies RawStylesType;

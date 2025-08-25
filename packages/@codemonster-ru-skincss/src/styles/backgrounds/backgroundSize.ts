@@ -8,7 +8,7 @@ export default {
     'bg-contain': {
         backgroundSize: 'contain',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'bg-size-(<variable>)': {
             backgroundSize: 'var(<variable>)',
         },
@@ -16,4 +16,4 @@ export default {
             backgroundSize: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

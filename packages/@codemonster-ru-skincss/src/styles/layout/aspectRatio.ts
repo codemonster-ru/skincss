@@ -8,7 +8,7 @@ export default {
     'aspect-auto': {
         aspectRatio: 'auto',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'aspect-<ratio>': {
             aspectRatio: '<ratio>',
         },
@@ -19,4 +19,4 @@ export default {
             aspectRatio: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

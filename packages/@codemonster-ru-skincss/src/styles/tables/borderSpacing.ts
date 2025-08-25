@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'border-spacing-<number>': {
             borderSpacing: 'calc(var(--spacing) * <number>)',
         },
@@ -28,4 +28,4 @@ export default {
             borderSpacing: 'var(--border-spacing-x) <value>',
         },
     },
-};
+} satisfies RawStylesType;

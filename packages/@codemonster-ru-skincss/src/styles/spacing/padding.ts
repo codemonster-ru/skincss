@@ -26,7 +26,7 @@ export default {
     'pl-px': {
         paddingLeft: '1px',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'p-<number>': {
             padding: 'calc(var(--spacing) * <number>)',
         },
@@ -109,4 +109,4 @@ export default {
             paddingLeft: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

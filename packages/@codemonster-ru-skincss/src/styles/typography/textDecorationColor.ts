@@ -740,7 +740,7 @@ export default {
     'decoration-stone-950': {
         textDecorationColor: 'var(--color-stone-950)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'decoration-(<variable>)': {
             textDecorationColor: 'var(<variable>)',
         },
@@ -748,4 +748,4 @@ export default {
             textDecorationColor: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

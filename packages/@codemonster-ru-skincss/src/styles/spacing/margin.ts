@@ -80,7 +80,7 @@ export default {
     '-ml-px': {
         marginLeft: '-1px',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'm-<number>': {
             margin: 'calc(var(--spacing) * <number>)',
         },
@@ -190,4 +190,4 @@ export default {
             marginLeft: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

@@ -34,7 +34,7 @@ export default {
     'transition-none': {
         transitionProperty: 'none',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'transition-(<variable>)': {
             transitionProperty: 'var(<variable>)',
             transitionTimingFunction: 'var(--default-transition-timing-function)',
@@ -46,4 +46,4 @@ export default {
             transitionDuration: 'var(--default-transition-duration)',
         },
     },
-};
+} satisfies RawStylesType;

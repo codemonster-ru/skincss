@@ -8,7 +8,7 @@ export default {
     'list-none': {
         listStyleType: 'none',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'list-(<variable>)': {
             listStyleType: 'var(<variable>)',
         },
@@ -16,4 +16,4 @@ export default {
             listStyleType: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

@@ -12,7 +12,7 @@ export default class ThemeClass {
         return this._fonts;
     }
 
-    set font(obj: FontSetterType) {
+    set fonts(obj: FontSetterType) {
         this._fonts[obj.key] = obj.value;
     }
 
@@ -20,7 +20,7 @@ export default class ThemeClass {
         return this._texts;
     }
 
-    set text(obj: TextSetterType) {
+    set texts(obj: TextSetterType) {
         this._texts[obj.key] = obj.value;
     }
 
@@ -28,7 +28,7 @@ export default class ThemeClass {
         return this._colors;
     }
 
-    set color(obj: ColorSetterType) {
+    set colors(obj: ColorSetterType) {
         this._colors[obj.key] = obj.value;
     }
 
@@ -44,7 +44,7 @@ export default class ThemeClass {
         return this._breakpoints;
     }
 
-    set breakpoint(obj: BreakpointSetterType) {
+    set breakpoints(obj: BreakpointSetterType) {
         this._breakpoints[obj.key] = obj.value;
     }
 
@@ -52,7 +52,7 @@ export default class ThemeClass {
         return this._fontWeights;
     }
 
-    set fontWeight(obj: FontWeightSetterType) {
+    set fontWeights(obj: FontWeightSetterType) {
         this._fontWeights[obj.key] = obj.value;
     }
 

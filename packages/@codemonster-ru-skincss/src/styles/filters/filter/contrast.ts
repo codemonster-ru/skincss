@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'contrast-<number>': {
             filter: 'contrast(<number>%)',
         },
@@ -10,4 +10,4 @@ export default {
             filter: 'contrast(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

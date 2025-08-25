@@ -26,7 +26,7 @@ export default {
     'perspective-origin-top-left': {
         perspectiveOrigin: 'top left',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'perspective-origin-(<variable>)': {
             perspectiveOrigin: 'var(<variable>)',
         },
@@ -34,4 +34,4 @@ export default {
             perspectiveOrigin: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

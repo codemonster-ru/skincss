@@ -17,4 +17,4 @@ export default {
     'text-end': {
         textAlign: 'end',
     },
-};
+} satisfies RawStylesType;

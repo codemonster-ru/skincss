@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'backdrop-hue-rotate-<number>': {
             backdropFilter: 'hue-rotate(<number>deg)',
         },
@@ -13,4 +13,4 @@ export default {
             backdropFilter: 'hue-rotate(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

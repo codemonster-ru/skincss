@@ -11,4 +11,4 @@ export default {
     'snap-align-none': {
         scrollSnapAlign: 'none',
     },
-};
+} satisfies RawStylesType;

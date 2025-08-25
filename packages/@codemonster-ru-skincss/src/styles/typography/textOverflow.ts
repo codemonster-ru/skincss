@@ -10,4 +10,4 @@ export default {
     'text-clip': {
         textOverflow: 'clip',
     },
-};
+} satisfies RawStylesType;

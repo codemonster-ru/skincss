@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'outline-offset-<number>': {
             outlineOffset: '<number>px',
         },
@@ -13,4 +13,4 @@ export default {
             outlineOffset: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

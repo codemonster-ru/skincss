@@ -44,7 +44,7 @@ export default {
     'translate-none': {
         translate: 'none',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'translate-<number>': {
             translate: 'calc(var(--spacing) * <number>) calc(var(--spacing) * <number>)',
         },
@@ -112,4 +112,4 @@ export default {
             translate: 'var(--translate-x) var(--translate-y) <value>',
         },
     },
-};
+} satisfies RawStylesType;

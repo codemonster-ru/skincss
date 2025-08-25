@@ -5,7 +5,7 @@ export default {
         '-webkit-box-orient': 'horizontal',
         '-webkit-line-clamp': 'unset',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'line-clamp-<number>': {
             overflow: 'hidden',
             display: '-webkit-box',
@@ -25,4 +25,4 @@ export default {
             '-webkit-line-clamp': '<value>',
         },
     },
-};
+} satisfies RawStylesType;

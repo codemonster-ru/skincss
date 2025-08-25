@@ -2,7 +2,7 @@ export default {
     shrink: {
         flexShrink: '1',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'shrink-<number>': {
             flexShrink: '<number>',
         },
@@ -13,4 +13,4 @@ export default {
             flexShrink: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

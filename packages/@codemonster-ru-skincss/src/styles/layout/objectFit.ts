@@ -14,4 +14,4 @@ export default {
     'object-scale-down': {
         objectFit: 'scale-down',
     },
-};
+} satisfies RawStylesType;

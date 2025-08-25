@@ -8,7 +8,7 @@ export default {
     'mask-contain': {
         maskSize: 'contain',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'mask-size-(<variable>)': {
             maskSize: 'var(<variable>)',
         },
@@ -16,4 +16,4 @@ export default {
             maskSize: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

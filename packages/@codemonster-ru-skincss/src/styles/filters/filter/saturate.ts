@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'saturate-<number>': {
             filter: 'saturate(<number>%)',
         },
@@ -10,4 +10,4 @@ export default {
             filter: 'saturate(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

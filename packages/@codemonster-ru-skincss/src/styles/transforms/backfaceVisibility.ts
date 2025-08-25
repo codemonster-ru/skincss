@@ -5,4 +5,4 @@ export default {
     'backface-visible': {
         backfaceVisibility: 'visible',
     },
-};
+} satisfies RawStylesType;

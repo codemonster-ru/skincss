@@ -1,49 +1,40 @@
 import './index.css';
-import path from 'path';
+import CssClass from './core/css';
+import GitClass from './core/git';
+import ThemeClass from './core/theme';
+import StyleClass from './core/style';
 import ConfigClass from './core/config';
 import ScannerClass from './core/scanner';
+import PatternClass from './core/pattern';
 
 const config = new ConfigClass();
 const scanner = new ScannerClass();
-const getExtension = (filePath: string) => {
-    const [fileName] = filePath.split('?', 2);
 
-    return path.extname(fileName).slice(1);
-};
-const isCssFile = (filePath: string): boolean => getExtension(filePath) === 'css' || filePath.includes('&lang.css');
-const isPotentialFile = (filePath: string) => !filePath.includes('.vite') && isCssFile(filePath);
-const isDetermineSource = async (code: string, filePath: string): Promise<boolean> => {
-    if (config.enable || !isPotentialFile(filePath)) {
-        return false;
-    }
+export const setBase = (path: string) => (config.base = path);
+export const bootstrap = async (code: string, id: string) => {
+    if (await scanner.isDetermineSource(code, config, id)) {
+        const css = new CssClass();
+        const git = new GitClass();
+        const theme = new ThemeClass();
+        const style = new StyleClass();
+        const pattern = new PatternClass({
+            styles: style.styles,
+            arbitraryStyles: style.arbitraryStyles,
+            breakpoints: theme.breakpoints,
+        });
 
-    if (!scanner.isImport(code)) {
-        return false;
-    }
+        await git.init(config);
+        await scanner.init({
+            styles: pattern.styles,
+            arbitraryStyles: pattern.arbitraryStyles,
+            ignored: git.ignored,
+            config: config,
+        });
 
-    const baseSource: string = scanner.getBaseSource(code, filePath);
-    const getExplicitlySources: string[] = scanner.getExplicitlySources(code, filePath);
-    const getIgnoredSources: string[] = scanner.getIgnoredSources(code, filePath);
+        style.processStyles(scanner.foundStyles, pattern.breakpoints);
+        css.applyCss(style.processedStyles, code, theme);
 
-    if (baseSource === 'none' && !getExplicitlySources) {
-        return false;
-    }
-
-    config.enable = true;
-    config.baseSource = baseSource ? baseSource : config.base;
-    config.explicitlySources = getExplicitlySources ? getExplicitlySources : [];
-    config.ignoredSources = getIgnoredSources ? getIgnoredSources : [];
-
-    return true;
-};
-const setBase = (path: string) => (config.base = path);
-const bootstrap = async (code: string, id: string) => {
-    if (await isDetermineSource(code, id)) {
-        return await scanner.applyCss(config, code);
+        return { code: css.code, files: scanner.files };
     }
 };
-const refresh = () => {
-    config.enable = false;
-};
-
-export { setBase, refresh, bootstrap };
+export const refresh = () => (config.enable = false);

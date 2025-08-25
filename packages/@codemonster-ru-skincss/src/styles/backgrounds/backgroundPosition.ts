@@ -26,7 +26,7 @@ export default {
     'bg-bottom-right': {
         backgroundPosition: 'bottom right',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'bg-position-(<variable>)': {
             backgroundPosition: 'var(<variable>)',
         },
@@ -34,4 +34,4 @@ export default {
             backgroundPosition: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

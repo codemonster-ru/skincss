@@ -11,4 +11,4 @@ export default {
     'break-inside-avoid-column': {
         breakInside: 'avoid-column',
     },
-};
+} satisfies RawStylesType;

@@ -8,7 +8,7 @@ export default {
     'font-mono': {
         fontFamily: 'var(--font-mono)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'font-(<variable>)': {
             fontFamily: 'var(<variable>)',
         },
@@ -16,4 +16,4 @@ export default {
             fontFamily: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

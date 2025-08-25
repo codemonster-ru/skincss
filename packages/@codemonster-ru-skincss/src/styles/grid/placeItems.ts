@@ -20,4 +20,4 @@ export default {
     'place-items-stretch': {
         placeItems: 'stretch',
     },
-};
+} satisfies RawStylesType;

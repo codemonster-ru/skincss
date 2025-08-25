@@ -20,4 +20,4 @@ export default {
     'place-self-stretch': {
         placeSelf: 'stretch',
     },
-};
+} satisfies RawStylesType;

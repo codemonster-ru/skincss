@@ -11,4 +11,4 @@ export default {
     'normal-case': {
         textTransform: 'none',
     },
-};
+} satisfies RawStylesType;

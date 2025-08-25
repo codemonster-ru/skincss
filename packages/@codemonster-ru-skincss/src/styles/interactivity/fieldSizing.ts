@@ -5,4 +5,4 @@ export default {
     'field-sizing-content': {
         fieldSizing: 'content',
     },
-};
+} satisfies RawStylesType;

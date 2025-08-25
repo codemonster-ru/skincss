@@ -509,7 +509,7 @@ export default {
     'rounded-bl-full': {
         borderBottomLeftRadius: 'calc(infinity * 1px)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'rounded-(<variable>)': {
             borderRadius: 'var(<variable>)',
         },
@@ -613,4 +613,4 @@ export default {
             borderBottomLeftRadius: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

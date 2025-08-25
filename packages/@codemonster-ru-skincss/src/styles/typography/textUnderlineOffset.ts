@@ -2,7 +2,7 @@ export default {
     'underline-offset-auto': {
         textUnderlineOffset: 'auto',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'underline-offset-<number>': {
             textUnderlineOffset: '<number>px',
         },
@@ -16,4 +16,4 @@ export default {
             textUnderlineOffset: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

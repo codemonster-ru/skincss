@@ -6668,7 +6668,7 @@ export default {
     'border-l-stone-950': {
         borderLeftColor: 'var(--color-stone-950)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'border-(<variable>)': {
             borderColor: 'var(<variable>)',
         },
@@ -6724,4 +6724,4 @@ export default {
             borderLeftColor: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

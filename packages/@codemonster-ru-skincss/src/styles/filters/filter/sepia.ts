@@ -2,7 +2,7 @@ export default {
     sepia: {
         filter: 'sepia(100%)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'sepia-<number>': {
             filter: 'sepia(<number>%)',
         },
@@ -13,4 +13,4 @@ export default {
             filter: 'sepia(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

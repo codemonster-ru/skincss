@@ -44,7 +44,7 @@ export default {
     'basis-7xl': {
         flexBasis: '80rem',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'basis-<number>': {
             flexBasis: 'calc(var(--spacing) * <number>)',
         },
@@ -58,4 +58,4 @@ export default {
             flexBasis: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

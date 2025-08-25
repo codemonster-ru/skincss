@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'backdrop-contrast-<number>': {
             backdropFilter: 'contrast(<number>%)',
         },
@@ -10,4 +10,4 @@ export default {
             backdropFilter: 'contrast(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

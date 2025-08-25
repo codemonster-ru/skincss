@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'skew-<number>': {
             transform: 'skewX(<number>deg) skewY(<number>deg)',
         },
@@ -37,4 +37,4 @@ export default {
             transform: 'skewY(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

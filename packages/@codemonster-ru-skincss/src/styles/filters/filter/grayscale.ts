@@ -2,7 +2,7 @@ export default {
     grayscale: {
         filter: 'grayscale(100%)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'grayscale-<number>': {
             filter: 'grayscale(<number>%)',
         },
@@ -13,4 +13,4 @@ export default {
             filter: 'grayscale(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

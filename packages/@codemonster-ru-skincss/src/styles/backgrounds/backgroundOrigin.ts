@@ -8,4 +8,4 @@ export default {
     'bg-origin-content': {
         backgroundOrigin: 'content-box',
     },
-};
+} satisfies RawStylesType;

@@ -1,8 +1,8 @@
 export default {
-    'isolate': {
+    isolate: {
         isolation: 'isolate',
     },
     'isolation-auto': {
         isolation: 'auto',
     },
-};
+} satisfies RawStylesType;
