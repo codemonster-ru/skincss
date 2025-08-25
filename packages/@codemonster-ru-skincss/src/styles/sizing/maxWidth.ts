@@ -77,7 +77,7 @@ export default {
     'max-w-fit': {
         maxWidth: 'fit-content',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'max-w-<number>': {
             maxWidth: 'calc(var(--spacing) * <number>)',
         },
@@ -91,4 +91,4 @@ export default {
             maxWidth: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

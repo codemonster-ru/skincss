@@ -17,4 +17,4 @@ export default {
     'mask-repeat-round': {
         maskRepeat: 'round',
     },
-};
+} satisfies RawStylesType;

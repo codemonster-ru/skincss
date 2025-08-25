@@ -26,7 +26,7 @@ export default {
     'object-bottom-right': {
         objectPosition: 'bottom right',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'object-(<variable>)': {
             objectPosition: 'var(<variable>)',
         },
@@ -34,4 +34,4 @@ export default {
             objectPosition: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

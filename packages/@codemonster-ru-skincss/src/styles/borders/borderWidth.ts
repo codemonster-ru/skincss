@@ -26,7 +26,7 @@ export default {
     'border-l': {
         borderLeftWidth: '1px',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'border-<number>': {
             borderWidth: '<number>px',
         },
@@ -109,4 +109,4 @@ export default {
             borderLeftWidth: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

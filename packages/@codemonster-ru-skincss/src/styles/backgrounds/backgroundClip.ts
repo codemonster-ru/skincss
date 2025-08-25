@@ -11,4 +11,4 @@ export default {
     'bg-clip-text': {
         backgroundClip: 'text',
     },
-};
+} satisfies RawStylesType;

@@ -5,4 +5,4 @@ export default {
     'box-content': {
         boxSizing: 'content-box',
     },
-};
+} satisfies RawStylesType;

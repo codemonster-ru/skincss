@@ -47,7 +47,7 @@ export default {
     'mask-radial-at-bottom-right': {
         '--mask-radial-position': 'bottom right',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'mask-(<variable>)': {
             maskImage: 'var(<variable>)',
         },
@@ -426,4 +426,4 @@ export default {
                 'conic-gradient(from var(--mask-conic-position), black var(--mask-conic-from), transparent <value>)',
         },
     },
-};
+} satisfies RawStylesType;

@@ -8,4 +8,4 @@ export default {
     'bg-scroll': {
         backgroundAttachment: 'scroll',
     },
-};
+} satisfies RawStylesType;

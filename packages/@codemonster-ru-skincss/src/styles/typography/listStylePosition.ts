@@ -5,4 +5,4 @@ export default {
     'list-outside': {
         listStylePosition: 'outside',
     },
-};
+} satisfies RawStylesType;

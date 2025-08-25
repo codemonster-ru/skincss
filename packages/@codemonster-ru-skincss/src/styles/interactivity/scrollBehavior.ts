@@ -5,4 +5,4 @@ export default {
     'scroll-smooth': {
         scrollBehavior: 'smooth',
     },
-};
+} satisfies RawStylesType;

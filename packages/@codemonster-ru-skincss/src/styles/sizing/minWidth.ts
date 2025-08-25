@@ -77,7 +77,7 @@ export default {
     'min-w-fit': {
         minWidth: 'fit-content',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'min-w-<number>': {
             minWidth: 'calc(var(--spacing) * <number>)',
         },
@@ -91,4 +91,4 @@ export default {
             minWidth: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

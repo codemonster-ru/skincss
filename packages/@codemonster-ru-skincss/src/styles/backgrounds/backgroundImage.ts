@@ -29,7 +29,7 @@ export default {
     'bg-radial': {
         backgroundImage: 'radial-gradient(in oklab, var(--gradient-stops))',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'bg-(image:<variable>)': {
             backgroundImage: 'var(<variable>)',
         },
@@ -103,4 +103,4 @@ export default {
             '--gradient-to': '<value>',
         },
     },
-};
+} satisfies RawStylesType;

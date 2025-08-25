@@ -14,4 +14,4 @@ export default {
     'decoration-wavy': {
         textDecorationStyle: 'wavy',
     },
-};
+} satisfies RawStylesType;

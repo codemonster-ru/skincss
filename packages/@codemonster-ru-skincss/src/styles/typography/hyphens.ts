@@ -8,4 +8,4 @@ export default {
     'hyphens-auto': {
         hyphens: 'auto',
     },
-};
+} satisfies RawStylesType;

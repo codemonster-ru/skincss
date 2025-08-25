@@ -761,7 +761,7 @@ export default {
     'drop-shadow-stone-950': {
         '--drop-shadow-color': 'var(--color-stone-950)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'drop-shadow-(<variable>)': {
             filter: 'drop-shadow(var(<variable>))',
         },
@@ -772,4 +772,4 @@ export default {
             filter: 'drop-shadow(<value>)',
         },
     },
-};
+} satisfies RawStylesType;

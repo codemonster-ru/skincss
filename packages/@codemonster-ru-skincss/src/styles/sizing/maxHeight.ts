@@ -38,7 +38,7 @@ export default {
     'max-h-fit': {
         maxHeight: 'fit-content',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'max-h-<number>': {
             maxHeight: 'calc(var(--spacing) * <number>)',
         },
@@ -52,4 +52,4 @@ export default {
             maxHeight: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

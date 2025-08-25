@@ -20,4 +20,4 @@ export default {
     'mask-no-clip': {
         maskClip: 'no-clip',
     },
-};
+} satisfies RawStylesType;

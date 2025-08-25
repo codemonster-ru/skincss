@@ -5,4 +5,4 @@ export default {
     'border-separate': {
         borderCollapse: 'separate',
     },
-};
+} satisfies RawStylesType;

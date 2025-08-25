@@ -51,7 +51,7 @@ export default {
         fontSize: 'var(--text-9xl)',
         lineHeight: 'var(--text-9xl--line-height)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'text-(length:<variable>)': {
             fontSize: 'var(<variable>)',
         },
@@ -59,4 +59,4 @@ export default {
             fontSize: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

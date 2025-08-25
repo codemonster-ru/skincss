@@ -5,4 +5,4 @@ export default {
     'transition-discrete': {
         transitionBehavior: 'allow-discrete',
     },
-};
+} satisfies RawStylesType;

@@ -26,7 +26,7 @@ export default {
     'mask-bottom-right': {
         maskPosition: 'bottom right',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'mask-position-(<variable>)': {
             maskPosition: 'var(<variable>)',
         },
@@ -34,4 +34,4 @@ export default {
             maskPosition: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

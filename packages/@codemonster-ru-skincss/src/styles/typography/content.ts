@@ -2,7 +2,7 @@ export default {
     'content-none': {
         content: 'none',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'content-(<variable>)': {
             content: 'var(<variable>)',
         },
@@ -10,4 +10,4 @@ export default {
             content: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

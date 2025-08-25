@@ -17,4 +17,4 @@ export default {
     'bg-no-repeat': {
         backgroundRepeat: 'no-repeat',
     },
-};
+} satisfies RawStylesType;

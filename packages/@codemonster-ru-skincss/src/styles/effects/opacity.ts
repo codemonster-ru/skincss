@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'opacity-<number>': {
             opacity: '<number>%',
         },
@@ -10,4 +10,4 @@ export default {
             opacity: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

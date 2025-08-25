@@ -47,4 +47,4 @@ export default {
     'bg-blend-luminosity': {
         backgroundBlendMode: 'luminosity',
     },
-};
+} satisfies RawStylesType;

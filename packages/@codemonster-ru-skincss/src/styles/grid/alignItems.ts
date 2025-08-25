@@ -23,4 +23,4 @@ export default {
     'items-stretch': {
         alignItems: 'stretch',
     },
-};
+} satisfies RawStylesType;

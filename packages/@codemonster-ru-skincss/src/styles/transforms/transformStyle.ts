@@ -5,4 +5,4 @@ export default {
     'transform-flat': {
         transformStyle: 'flat',
     },
-};
+} satisfies RawStylesType;

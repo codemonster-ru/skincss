@@ -2,7 +2,7 @@ export default {
     'list-image-none': {
         listStyleImage: 'none',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'list-image-(<variable>)': {
             listStyleImage: 'var(<variable>)',
         },
@@ -10,4 +10,4 @@ export default {
             listStyleImage: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

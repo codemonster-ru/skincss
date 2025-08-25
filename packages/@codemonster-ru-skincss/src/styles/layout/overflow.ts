@@ -44,4 +44,4 @@ export default {
     'overflow-y-scroll': {
         overflowY: 'scroll',
     },
-};
+} satisfies RawStylesType;

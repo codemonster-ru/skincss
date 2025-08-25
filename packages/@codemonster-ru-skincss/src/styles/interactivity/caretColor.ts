@@ -740,7 +740,7 @@ export default {
     'caret-stone-950': {
         caretColor: 'var(--color-stone-950)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'caret-<variable>': {
             caretColor: 'var(<variable>)',
         },
@@ -748,4 +748,4 @@ export default {
             caretColor: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

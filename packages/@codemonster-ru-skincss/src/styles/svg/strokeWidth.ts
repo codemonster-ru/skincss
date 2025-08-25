@@ -1,5 +1,5 @@
 export default {
-    arbitraryValues: {
+    arbitraryStyles: {
         'stroke-<number>': {
             strokeWidth: '<number>',
         },
@@ -10,4 +10,4 @@ export default {
             strokeWidth: '<value>',
         },
     },
-};
+} satisfies RawStylesType;

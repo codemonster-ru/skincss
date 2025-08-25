@@ -2,7 +2,7 @@ export default {
     'backdrop-invert': {
         backdropFilter: 'invert(100%)',
     },
-    arbitraryValues: {
+    arbitraryStyles: {
         'backdrop-invert-<number>': {
             backdropFilter: 'invert(<number>%)',
         },
@@ -13,4 +13,4 @@ export default {
             backdropFilter: 'invert(<value>)',
         },
     },
-};
+} satisfies RawStylesType;
