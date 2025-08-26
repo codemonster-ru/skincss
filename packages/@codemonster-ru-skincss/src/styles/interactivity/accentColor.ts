@@ -744,8 +744,8 @@ export default {
         'accent-<variable>': {
             accentColor: 'var(<variable>)',
         },
-        'accent-[<value>]': {
-            accentColor: '<value>',
+        'accent-[<color>]': {
+            accentColor: '<color>',
         },
     },
 } satisfies RawStylesType;
