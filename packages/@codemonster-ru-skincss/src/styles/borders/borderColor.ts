@@ -6672,56 +6672,56 @@ export default {
         'border-(<variable>)': {
             borderColor: 'var(<variable>)',
         },
-        'border-[<value>]': {
-            borderColor: '<value>',
+        'border-[<color>]': {
+            borderColor: '<color>',
         },
         'border-x-(<variable>)': {
             borderInlineColor: 'var(<variable>)',
         },
-        'border-x-[<value>]': {
-            borderInlineColor: '<value>',
+        'border-x-[<color>]': {
+            borderInlineColor: '<color>',
         },
         'border-y-(<variable>)': {
             borderBlockColor: 'var(<variable>)',
         },
-        'border-y-[<value>]': {
-            borderBlockColor: '<value>',
+        'border-y-[<color>]': {
+            borderBlockColor: '<color>',
         },
         'border-s-(<variable>)': {
             borderInlineStartColor: 'var(<variable>)',
         },
-        'border-s-[<value>]': {
-            borderInlineStartColor: '<value>',
+        'border-s-[<color>]': {
+            borderInlineStartColor: '<color>',
         },
         'border-e-(<variable>)': {
             borderInlineEndColor: 'var(<variable>)',
         },
-        'border-e-[<value>]': {
-            borderInlineEndColor: '<value>',
+        'border-e-[<color>]': {
+            borderInlineEndColor: '<color>',
         },
         'border-t-(<variable>)': {
             borderTopColor: 'var(<variable>)',
         },
-        'border-t-[<value>]': {
-            borderTopColor: '<value>',
+        'border-t-[<color>]': {
+            borderTopColor: '<color>',
         },
         'border-r-(<variable>)': {
             borderRightColor: 'var(<variable>)',
         },
-        'border-r-[<value>]': {
-            borderRightColor: '<value>',
+        'border-r-[<color>]': {
+            borderRightColor: '<color>',
         },
         'border-b-(<variable>)': {
             borderBottomColor: 'var(<variable>)',
         },
-        'border-b-[<value>]': {
-            borderBottomColor: '<value>',
+        'border-b-[<color>]': {
+            borderBottomColor: '<color>',
         },
         'border-l-(<variable>)': {
             borderLeftColor: 'var(<variable>)',
         },
-        'border-l-[<value>]': {
-            borderLeftColor: '<value>',
+        'border-l-[<color>]': {
+            borderLeftColor: '<color>',
         },
     },
 } satisfies RawStylesType;
