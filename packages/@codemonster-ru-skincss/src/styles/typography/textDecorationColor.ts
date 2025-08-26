@@ -744,8 +744,8 @@ export default {
         'decoration-(<variable>)': {
             textDecorationColor: 'var(<variable>)',
         },
-        'decoration-[<value>]': {
-            textDecorationColor: '<value>',
+        'decoration-[<color>]': {
+            textDecorationColor: '<color>',
         },
     },
 } satisfies RawStylesType;

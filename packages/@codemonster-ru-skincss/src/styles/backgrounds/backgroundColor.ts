@@ -744,8 +744,8 @@ export default {
         'bg-(<variable>)': {
             backgroundColor: 'var(<variable>)',
         },
-        'bg-[<value>]': {
-            backgroundColor: '<value>',
+        'bg-[<color>]': {
+            backgroundColor: '<color>',
         },
     },
 } satisfies RawStylesType;

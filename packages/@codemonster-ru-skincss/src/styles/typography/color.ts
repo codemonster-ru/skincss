@@ -744,8 +744,8 @@ export default {
         'text-(<variable>)': {
             color: 'var(<variable>)',
         },
-        'text-[<value>]': {
-            color: '<value>',
+        'text-[<color>]': {
+            color: '<color>',
         },
     },
 } satisfies RawStylesType;

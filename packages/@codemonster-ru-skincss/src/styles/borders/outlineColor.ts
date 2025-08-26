@@ -744,8 +744,8 @@ export default {
         'outline-(<variable>)': {
             outlineColor: 'var(<variable>)',
         },
-        'outline-[<value>]': {
-            outlineColor: '<value>',
+        'outline-[<color>]': {
+            outlineColor: '<color>',
         },
     },
 } satisfies RawStylesType;

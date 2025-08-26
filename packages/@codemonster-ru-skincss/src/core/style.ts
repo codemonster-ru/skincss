@@ -1,6 +1,6 @@
 import baseStyles from '../styles/base';
 import * as globalStyles from '../styles';
-import { getRegexes, prepareAttribute } from './helper';
+import { getRegexes, prepareAttribute, removeParentheses } from './helper';
 
 export default class StyleClass {
     private _styles: StylesType = {};
@@ -115,7 +115,10 @@ export default class StyleClass {
                             const matchValue = purifiedSelector.match(regex);
 
                             if (matchValue) {
-                                properties[property] = properties[property].replace(pattern[0], matchValue[0]);
+                                properties[property] = properties[property].replace(
+                                    removeParentheses(pattern[0]),
+                                    removeParentheses(matchValue[0]),
+                                );
                             }
                         });
                     });
