@@ -744,8 +744,8 @@ export default {
         'caret-<variable>': {
             caretColor: 'var(<variable>)',
         },
-        'caret-[<value>]': {
-            caretColor: '<value>',
+        'caret-[<color>]': {
+            caretColor: '<color>',
         },
     },
 } satisfies RawStylesType;

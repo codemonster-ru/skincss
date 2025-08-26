@@ -111,8 +111,8 @@ export default {
         'cursor-(<variable>)': {
             cursor: 'var(<variable>)',
         },
-        'cursor-[<value>]': {
-            cursor: '<value>',
+        'cursor-[<cursor>]': {
+            cursor: '<cursor>',
         },
     },
 } satisfies RawStylesType;
