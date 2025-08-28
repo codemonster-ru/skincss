@@ -38,7 +38,7 @@ export default class CssClass {
         return css;
     };
 
-    getCss = (realClasses: ProcessedStylesType[]) => {
+    getCss = (realClasses: ProcessedStylesType[], theme: ThemeClass) => {
         let css = '';
 
         const styles = realClasses.filter((value: ProcessedStylesType) => !value.minBreakpoint && !value.maxBreakpoint);
@@ -90,6 +90,14 @@ export default class CssClass {
                     min = breakpoint;
                 }
 
+                if (min.length) {
+                    min = theme.breakpoints[min];
+                }
+
+                if (max.length) {
+                    max = theme.breakpoints[max];
+                }
+
                 if (min.length && !max.length) {
                     css += `@media (width >= ${min}) {\n`;
                 } else if (!min.length && max.length) {
@@ -134,7 +142,7 @@ export default class CssClass {
         const replaced = [...code.matchAll(importRegex)];
 
         if (replaced) {
-            let css = this.getCss(realClasses);
+            let css = this.getCss(realClasses, theme);
 
             if (css) {
                 const varCss = this.getVarCss(css, theme);
