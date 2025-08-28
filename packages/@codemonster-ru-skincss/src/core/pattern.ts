@@ -1,7 +1,7 @@
 import { prepareAttribute } from './helper';
 
 const getPattern = (breakpoints: string, styles: string) => {
-    return `((?<!:)|${breakpoints})(\\b${styles.replaceAll(/[/]/g, '\\$&')}\\b)`;
+    return `((?<!:)|${breakpoints})(((?<=\\s)|(\\b))(${styles.replaceAll(/[/]/g, '\\$&')}))((?=\\s)|(\\b)|(?=['";]))`;
 };
 
 export default class PatternClass {
