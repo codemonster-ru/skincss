@@ -2,7 +2,7 @@ import path from 'path';
 
 export const findVar = (text: string, wordToFind: string) => {
     const escapedWord = wordToFind.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(`var\\(${escapedWord}\\)`, 'i');
+    const regex = new RegExp(`var\\(\\s*${escapedWord}\\s*(,|\\))`, 'i');
 
     return regex.test(text);
 };

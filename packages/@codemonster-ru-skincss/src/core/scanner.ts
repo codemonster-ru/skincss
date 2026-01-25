@@ -71,14 +71,14 @@ export default class ScannerClass {
         const getExplicitlySources: string[] = this.getExplicitlySources(code, filePath);
         const getIgnoredSources: string[] = this.getIgnoredSources(code, filePath);
 
-        if (baseSource === 'none' && !getExplicitlySources) {
+        if (baseSource === 'none' && getExplicitlySources.length === 0) {
             return false;
         }
 
         config.enable = true;
-        config.baseSource = baseSource ? baseSource : config.base;
-        config.explicitlySources = getExplicitlySources ? getExplicitlySources : [];
-        config.ignoredSources = getIgnoredSources ? getIgnoredSources : [];
+        config.baseSource = baseSource === 'none' ? '' : baseSource ? baseSource : config.base;
+        config.explicitlySources = getExplicitlySources;
+        config.ignoredSources = getIgnoredSources;
 
         return true;
     };
@@ -214,7 +214,7 @@ export default class ScannerClass {
 
     scanDirectory = async (config: ConfigClass, directory: string = '', gitIgnored: string[]) => {
         let files: string[] = [];
-        const sources = directory ? [directory] : [...[config.baseSource], ...config.explicitlySources];
+        const sources = directory ? [directory] : [config.baseSource, ...config.explicitlySources].filter(Boolean);
         const sourcePromises = sources.map(async (source: string) => {
             if (!directory.length && !this.isDir(source)) return;
             if (this.isIgnoredByConfig(config, source)) return;

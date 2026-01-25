@@ -139,50 +139,42 @@ export default class CssClass {
     };
 
     applyCss(realClasses: ProcessedStylesType[], code: string, theme: ThemeClass) {
-        const replaced = [...code.matchAll(importRegex)];
+        const commented = [...code.matchAll(commentedRegex)].map(match => ({
+            index: match.index ?? 0,
+            end: (match.index ?? 0) + match[0].length,
+        }));
+        const isInComment = (index: number) => commented.some(range => index >= range.index && index < range.end);
 
-        if (replaced) {
-            let css = this.getCss(realClasses, theme);
+        let importMatch: RegExpMatchArray | null = null;
 
-            if (css) {
-                const varCss = this.getVarCss(css, theme);
-
-                if (varCss) {
-                    css = `:root {\n${varCss}}\n\n${css}`;
-                }
-
-                const cutCode: {
-                    code: string;
-                    index: number;
-                    length: number;
-                    end: number;
-                }[] = [];
-                const commented = [...code.matchAll(commentedRegex)];
-
-                commented.forEach(match => {
-                    cutCode.push({
-                        code: match[0],
-                        index: match.index,
-                        length: match[0].length,
-                        end: match.index + match[0].length,
-                    });
-                });
-
-                let cutLength = 0;
-
-                cutCode.map(match => {
-                    code = code.slice(0, match.index - cutLength) + '' + code.slice(match.end - cutLength, code.length);
-                    cutLength += match.length;
-                });
-
-                code =
-                    code.slice(0, replaced[0].index) +
-                    `/* skincss v${version} | MIT License | https://skincss.com */\n` +
-                    css +
-                    code.slice(replaced[0].index + replaced[0][0].length, code.length);
-                code = code.replace(deleteExplicitlySourceRegex, '');
-                code = code.replace(deleteIgnoredSourceRegex, '');
+        for (const match of code.matchAll(importRegex)) {
+            if (!isInComment(match.index ?? 0)) {
+                importMatch = match;
+                break;
             }
+        }
+
+        if (!importMatch) {
+            this.code = code;
+            return;
+        }
+
+        let css = this.getCss(realClasses, theme);
+
+        if (css) {
+            const varCss = this.getVarCss(css, theme);
+
+            if (varCss) {
+                css = `:root {\n${varCss}}\n\n${css}`;
+            }
+
+            code =
+                code.slice(0, importMatch.index) +
+                `/* skincss v${version} | MIT License | https://skincss.com */\n` +
+                css +
+                code.slice((importMatch.index ?? 0) + importMatch[0].length, code.length);
+            code = code.replace(deleteExplicitlySourceRegex, '');
+            code = code.replace(deleteIgnoredSourceRegex, '');
         }
 
         this.code = code;
