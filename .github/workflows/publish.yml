@@ -20,6 +20,9 @@ jobs:
         with:
           node-version: 20
           registry-url: "https://registry.npmjs.org/"
+          
+      - run: npm i -g npm@^11.5.1
+      - run: npm -v
 
       - name: publish @codemonster-ru-skincss
         continue-on-error: true
