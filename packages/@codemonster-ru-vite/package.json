@@ -1,7 +1,7 @@
 {
     "name": "@codemonster-ru/vite-plugin-skincss",
     "type": "module",
-    "version": "0.2.1",
+    "version": "1.0.0",
     "description": "Vite plugin for SkinCSS.",
     "license": "MIT",
     "author": "Kirill Kolesnikov",
@@ -33,10 +33,11 @@
         "link-package": "npm link ../@codemonster-ru-skincss",
         "build": "tsup"
     },
-    "dependencies": {
-        "@codemonster-ru/skincss": "latest"
+    "peerDependencies": {
+        "@codemonster-ru/skincss": "^1.0.0"
     },
     "devDependencies": {
+        "@codemonster-ru/skincss": "^1.0.0",
         "vite": "7.0.5",
         "tsup": "8.5.0",
         "typescript": "^5.8.3",

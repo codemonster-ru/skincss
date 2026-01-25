@@ -1,16 +1,24 @@
 {
     "name": "@codemonster-ru/skincss-root",
     "version": "1.0.0",
+    "private": true,
     "license": "MIT",
     "author": "Kirill Kolesnikov",
+    "workspaces": [
+        "packages/*"
+    ],
     "scripts": {
         "boostrap": "npm cache clear --force && npm run uninstall-all && npm run link-all && npm run install-all && npm run link-all",
         "build-all": "cd ./packages/@codemonster-ru-skincss && npm run build && cd ../../packages/@codemonster-ru-vite && npm run build",
+        "changeset": "changeset",
+        "version-packages": "changeset version",
+        "release": "npm run build-all && changeset publish",
         "link-all": "cd ./packages/@codemonster-ru-vite && npm run link-package && cd ../../playgrounds/vite && npm run link-packages",
         "install-all": "npm i && cd ./packages/@codemonster-ru-skincss && npm i && cd ../../packages/@codemonster-ru-vite && npm i && cd ../../playgrounds/vite && npm i",
         "uninstall-all": "(rm -rf **/node_modules) || ((if exist .\\node_modules rd /s /q .\\node_modules) && (if exist .\\packages\\@codemonster-ru-skincss\\node_modules rd /s /q .\\packages\\@codemonster-ru-skincss\\node_modules) && (if exist .\\packages\\@codemonster-ru-vite\\node_modules rd /s /q .\\packages\\@codemonster-ru-vite\\node_modules) && (if exist .\\playgrounds\\vite\\node_modules rd /s /q .\\playgrounds\\vite\\node_modules))"
     },
     "devDependencies": {
+        "@changesets/cli": "^2.29.8",
         "@typescript-eslint/eslint-plugin": "^8.35.0",
         "eslint": "^9.30.0",
         "eslint-config-prettier": "^10.1.5",
