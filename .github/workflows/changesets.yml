@@ -6,8 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
   id-token: write
 
 jobs:
@@ -15,7 +14,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/create-github-app-token@v3
+        id: changesets-app
+        with:
+          client-id: ${{ vars.CHANGESETS_APP_CLIENT_ID }}
+          private-key: ${{ secrets.CHANGESETS_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+
       - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.changesets-app.outputs.token }}
 
       - uses: actions/setup-node@v4
         with:
@@ -32,5 +41,5 @@ jobs:
           commit: Prepare SkinCSS package releases
           title: Prepare SkinCSS package releases
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.changesets-app.outputs.token }}
           NPM_CONFIG_PROVENANCE: true
